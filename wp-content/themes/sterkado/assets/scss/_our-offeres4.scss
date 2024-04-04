@@ -1,0 +1,210 @@
+body {
+    .our-offers4 {
+        .gift-section {
+            .gift-title {
+                text-align: center;
+                padding-bottom: 70px;
+                max-width: 500px;
+                margin: 0 auto;
+
+                @media only screen and (max-width: $small) {
+                    padding-bottom: 35px;
+
+                    h2 {
+                        font-size: 26px;
+                        line-height: 33px;
+                        text-align: left;
+
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+                @media only screen and (max-width: $small){
+                    padding-bottom: 20px !important;
+                }
+            }
+
+            .gift-listing {
+                .row {
+                    // justify-content: center;
+                    justify-content: space-between;
+                    row-gap: 40px;
+
+                    @media only screen and (max-width: $small) {
+                        row-gap: 22px;
+                    }
+
+                    >div {
+                        padding: 0 20px;
+                        text-align: center;
+
+                        // @media (max-width: 1280px){
+                        //     flex: 0 0 33%;
+                        //     max-width: 33%;
+                        // }
+                        @media (max-width: 1200px) {
+                            padding: 0 10px;
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+
+                        @media only screen and (max-width: $small) {
+                            text-align: left;
+                            padding: 0px 10px;
+                        }
+
+                        @media (max-width: 700px) {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            padding: 0px;
+                        }
+
+                        .inner-col {
+                            background-color: $opal-light;
+                            box-shadow: 0px 4px 4px $gray;
+                            border-radius: 15px;
+                            padding: 40px 30px;
+                            height: 100%;
+                            display: flex;
+                            flex-flow: column;
+                            align-items: stretch;
+
+                            @media only screen and (max-width: 1700px) {
+                                padding: 40px 15px;
+                            }
+                        }
+                    }
+
+
+                }
+
+                .gift-description {
+                    text-align: left;
+                    width: 100%;
+                    display: flex;
+                    flex-flow: column;
+                    height: 100%;
+                    padding-bottom: 0 !important;
+
+                    @media only screen and (max-width: $small) {
+                        margin: initial;
+                        width: 100%;
+                        padding-bottom: 55px !important;
+                    }
+
+                    p {
+                        padding-bottom: 10px;
+
+                        &:empty {
+                            display: none;
+                        }
+                    }
+
+
+                    h3 {
+                        padding: 30px 0 10px;
+
+                        @media only screen and (max-width: 2000px) {
+                            font-size: 35px;
+                        }
+
+                        @media only screen and (max-width: 1700px) {
+                            word-break: break-all;
+                            font-size: 24px;
+                        }
+
+                        @media only screen and (max-width: $small) {
+                            padding: 20px 0 10px;
+                            font-size: 27px;
+                            line-height: 29px;
+                        }
+
+                    }
+
+                    ul {
+                        margin: 0px 0;
+                        padding-bottom: 5px;
+
+                        li {
+                            font-size: 14px;
+                            margin-bottom: 10px;
+
+                            @media only screen and (max-width: 1700px) {
+                                font-size: 13px;
+                            }
+
+                            &::before {
+                                top: 5px;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: $danger !important;
+                        text-decoration: none;
+                        transition: all 0.3s ease-in-out 0s;
+                        margin-top: auto;
+                        font-weight: 700 !important;
+                        font-size: 14px !important;
+                        line-height: 22px !important;
+                        border: 2px solid $danger !important;
+                        background-color: transparent;
+                        max-width: max-content;
+
+                        @media (max-width: 1700px) {
+                            padding: 15px !important;
+                            font-size: 13px !important;
+                        }
+
+                        &:after {
+                            display: none;
+                        }
+
+                        &:hover {
+                            color: $white !important;
+                            background-color: $danger;
+                        }
+
+                        @media only screen and (max-width: $small) {
+                            padding: 10px !important;
+                        }
+                    }
+
+                    @media only screen and (min-width: $large2) and (max-width: 1699px) {
+                        padding-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: $small) {
+    body {
+        .our-offers4 {
+            .gift-section {
+                .gift-title {
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+
+                >.row {
+                    div {
+                        &:last-child {
+                            .gift-description {
+                                padding-bottom: 45px !important;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

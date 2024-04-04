@@ -1,0 +1,375 @@
+.pd-200{
+    padding-top: 180px;
+    @media only screen and (max-width:$desktop) {
+        padding-top: 120px;
+    }
+}
+.site-breadcrumbs-wrapper{
+    &.pd-200{
+        @media only screen and (max-width:$small) { 
+            padding-top: 91px !important;
+        }
+    }
+}
+.related-faq_list{
+    .faq_list_row{
+        margin-top: 25px;
+    }
+
+    .faq-list-boxs {
+
+        .sub-header {
+            .subject_name{
+                @media only screen and (min-width:$ipad-min) and (max-width:$m-large-1600) {
+                 
+                }  
+            }
+        }
+    }
+}
+.site-breadcrumbs{
+    
+    ol, ul{
+        li{
+            a{
+                font-weight: 600;       
+                color: $primary;
+                opacity: 0.7;
+                padding: 0px 15px 0 0 !important;
+                margin: 0px 0px 0 15px !important;
+                border: 0 !important;
+                &:hover{
+                    color: $danger;
+                }
+                @media only screen and (max-width:$small) {       
+                    line-height: 20px;
+                    padding: 0px 8px 0 0 !important;
+                    margin: 0px 0px 0 8px !important;
+                }
+            }
+            .separator{
+                color: $primary;
+                opacity: 0.7; 
+                font-size: 12px;
+                line-height: 12px; 
+            }
+            &:first-child{
+                a{
+                    margin-left: 0 !important;
+                    margin-left: 0;   
+                }
+            }
+            &:last-child{
+                a{
+                    color: $primary-ming;
+                }
+            }
+        }
+    }
+}
+
+.faq_details {
+    padding-bottom: 50px;
+    @media only screen and (max-width:$small) {
+        padding-bottom: 0;
+    }
+    #faq_list_row{
+        .w-100{
+            &:last-child{
+                .faq-list-boxs {
+                        margin-bottom: 0;
+                }
+            }   
+        }
+    }
+    .faq_entry_detail{
+        margin-top: 15px;
+        padding-right: 20%;
+        position: relative;
+        padding-bottom: 95px;
+        margin-bottom: 21px;
+        @media only screen and (max-width:$small) {
+            padding-bottom: 61px;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: auto;
+            bottom: 0;
+            width: 232px;
+            height: 1px;
+            background-color: $black;
+            @media only screen and (max-width:$small) {
+                width: 100%;
+            }
+        }
+        @media only screen and (max-width:$large-1400) {
+            padding-right: 20px;
+        }
+        @media only screen and (max-width:$small) {
+            padding-right: 0;
+        }
+        .content{
+            margin-top: 30px;
+            p{
+
+                margin-bottom: 30px;
+            }
+            h5{
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .yes-no-form{
+        .phone_title{
+            margin-bottom: 21px;
+        }
+        .ghost-btn{
+            background: rgba(64, 67, 78, 0.25) !important;
+            color: $white !important;
+            border: 1px solid #cfd0d3 !important;
+            line-height: 1 !important;
+            padding: 16px 20px !important;
+            min-width: 116px;
+        }
+        a.btn.primary-btn{
+            line-height: 1 !important;
+            padding: 16px 20px !important;
+            min-width: 119px;
+        }
+    }
+    .contact-form-box{
+        max-width: 790px;
+        .form-box{
+            padding-top: 88px;
+            @media only screen and (max-width:$large1){
+                padding-top: 98px;
+            }
+            &::before{
+                content: "";
+                background-image: url(../images/faq-detail-form-arrow.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 54px;
+                height: 57px;
+                position: absolute;
+                top: 88px;
+                right: 270px;
+                @media only screen and (max-width:$small-laptop){
+                    right: 240px;
+                }
+                @media only screen and (max-width:$large1){
+                    right: 180px;
+                }
+                @media only screen and (max-width:$desktop){
+                    right: 150px;
+                }
+                @media only screen and (max-width:992px){
+                    right: 100px;
+                }
+                @media only screen and (max-width:991px){
+                    right: 240px;
+                }
+                @media only screen and (max-width:$ipad){
+                    background-image: url(../images/faq-detail-form-arrow01.svg);
+                    width: 47px;
+                    height: 50px;
+                    top: 60px;
+                    right: 250px;
+                }
+                @media only screen and (max-width:700px){
+                    right: 180px;
+                }
+                @media only screen and (max-width:567px){
+                    right: 0;
+                    left: 52%;
+                    width: 100%;
+                }
+            }
+            .style-text{
+                position: absolute;
+                transform: rotate(13.05deg);
+                color: $primary-ming;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 31px;
+                text-align: center;
+                font-family: $rajdhani_font;
+                max-width: 197px;
+                top: 23px;
+                right: 140px;
+                @media only screen and (max-width:$small-laptop){
+                    right: 110px;
+                }
+                @media only screen and (max-width:$large1){
+                    right: 60px;
+                }
+                @media only screen and (max-width:$desktop){
+                    right: 30px;
+                }
+                @media only screen and (max-width:992px){
+                    right: 0px;
+                }
+                @media only screen and (max-width:991px){
+                    right: 110px;
+                }
+                @media only screen and (max-width:$ipad){
+                    font-size: 16px;
+                    line-height: 20px;
+                    top: 20px;
+                    right: 180px;
+                }
+                @media only screen and (max-width:700px){
+                    right: 115px;
+                }
+                @media only screen and (max-width:567px){
+                    right: 0;
+                    width: 100%;
+                    left: 9%;
+                    max-width: 100%;
+                }
+            }
+            .form-img{
+                position: relative;
+                top: 40px;
+                @media only screen and (max-width:$large1){
+                    top: 29px;
+                }
+                @media only screen and (max-width:$ipad){
+                    top: 21.5px;
+                }
+                img{
+                    width: 100% !important;
+                    max-width: 427px;
+                    @media only screen and (max-width:$large1){
+                        max-width: 300px;
+                    }
+                    @media only screen and (max-width:$ipad){
+                        max-width: 200px;
+                    }
+                }
+            }
+            .hero-contact-form-section{
+                padding: 40px 85px !important;
+                @media only screen and (max-width:$small-laptop){
+                    padding: 36px 35px !important;
+                }
+                @media only screen and (max-width:$small){
+                    margin-top: 0 !important;
+                    padding: 36px 18px 26px !important;
+                }
+                h3{
+                    @media only screen and (max-width:$small){
+                        font-size: 24px;
+                        line-height: 31px;
+                    }    
+                }
+                .text-md-right.text-center{
+                    display: none !important;
+                }
+                .validation_message {
+                    line-height: 1 !important;
+                }
+                .gform_wrapper.gravity-theme {
+                    .gfield.gfield--width-half {
+                        @media only screen and (max-width:$desktop){
+                            -ms-grid-column-span: 12;
+                            grid-column: span 12;
+                        }
+                    }
+                }
+                .gform_wrapper.gravity-theme {
+                    .gform_fields {
+                        @media only screen and (max-width:$desktop){
+                            grid-column-gap: 9px;
+                            grid-row-gap: 9px;
+                        }
+                    }
+                }
+                form{
+                    margin-top: 0 !important;
+                    input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], 
+                    input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+                        padding: 13px 13px 13px 32px;
+                        font-size: 14px !important;
+                    }
+                    textarea{
+                        height: 122px !important;
+                    }
+                    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                        font-size: 14px !important;
+                    }
+                    ::-moz-placeholder { /* Firefox 19+ */
+                        font-size: 14px !important;
+                    }
+                    :-ms-input-placeholder { /* IE 10+ */
+                        font-size: 14px !important;
+                    }
+                    :-moz-placeholder { /* Firefox 18- */
+                        font-size: 14px !important;
+                    }
+                    input[type="submit"]{
+                        min-width: 152px;
+                        line-height: 32px;
+                        margin: 0 !important;
+                    }
+                    .gform_footer.top_label {
+                        padding-top: 12px !important;
+                        padding-bottom: 0 !important;
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+        .contact_phone{
+            padding-top: 40px;
+            @media only screen and (max-width:$small){
+                padding-top: 30px;
+            }
+            .phone_title{
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 38px;
+                margin-bottom: 27px;
+            }
+            .contact_phone_no{
+                display: flex;
+                position: relative;
+                font-size: 16px;
+                font-weight: 600;
+                color: $primary;
+                transition: all 0.5s;
+                text-decoration:none;
+                flex-flow: wrap;
+                padding-left: 91px;
+                @media only screen and (max-width:360px){
+                    padding-left: 60px;
+                }
+                &:hover{
+                    color: $primary-btn-hover;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    background: url(../images/phone-iicon.svg) no-repeat;
+                    left: 0;
+                    width: 46px;
+                    height: 46px;
+                    background-size: contain;
+                }
+            }
+            p{
+                padding-left: 91px;
+                font-size: 14px;
+                font-weight: 400;
+                @media only screen and (max-width:360px){
+                    padding-left: 60px;
+                }
+            }
+        }
+    }
+   
+}

@@ -1,0 +1,200 @@
+<?php get_header(); ?>
+<?php
+  global $post;
+  $featured_img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+  $post_shape_image=get_field('post_shape_image');
+  if($post_shape_image){
+    $shape_img=$post_shape_image;
+  }else{
+    $shape_img=$featured_img;
+  }
+  $short_description=get_field('short_description');
+  $post_date = get_the_date( 'F j Y' );
+
+  $content=get_the_content();
+
+  $reading_time=reading_time($content);
+  $category = get_the_terms(get_the_ID(),'category');
+    $cat_array = [];
+    foreach($category as $cat){
+        // $cat_array[] = $cat->name;
+    }
+    // $cat_name = implode(' ',$cat_array);
+    
+?> 
+<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section inner-comm-banner bg-banner-custom <?php if(!$short_description){ echo "no_short_description";} ?>" <?php if($post_shape_image){ ?> style="background: url(<?php echo $post_shape_image; ?>) no-repeat;" <?php } ?>>   
+    <div class="container-fluid">
+        <div class="row align-items-center details-banner-content">
+            <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full right-space">
+                <ul class="cat_name">
+                <?php foreach($category as $cat){ ?>
+                    <li class="cat_item"><?= $cat->name; ?></li>
+                <?php } ?>
+                </ul>
+                <h1><?php echo the_title(); ?></h1>
+ 
+                <?php //if(!empty($short_description)): ?>
+                    <!-- <p><?php //echo $short_description; ?></p> -->
+                <?php //endif; ?> 
+                <ul class="news-meta">
+                    <li class="read_time"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/clock.svg"/><?php echo $reading_time; ?></li>
+                    <li class="date"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/date.svg"/><?php echo $post_date; ?></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 md-full  norightpadding text-center">
+                <figure class="hide-sm-device">
+                    <img class="w-100" src="<?php echo $shape_img; ?>">
+                   
+                </figure>
+               
+            </div>
+        </div>
+    </div>
+</section>
+<?php
+  $news_form_background_image = get_field('news_form_background_image','option');
+  $news_form_title = get_field('news_form_title','option');
+  $news_form_subtitle = get_field('news_form_subtitle','option');
+  $news_form_content = get_field('news_form_content','option');
+  $news_form_shortcode = get_field('news_form_shortcode','option');
+  $news_chat_content = get_field('news_chat_content','option');
+  $news_rating_text = get_field('news_rating_text','option');
+?>
+<section class="post_detail_content w-100  container-1600">
+    <div class="container ">
+        <div class="row"> 
+            <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12"> 
+                <div class="entry_content details-content">
+                    <?php echo apply_filters('the_content', $post->post_content); ?>
+                </div>
+                <?php
+                $cta_content_alignment = get_field('cta_content_alignment');
+                $cta_heading          = get_field('cta_heading');
+                $cta_content          = get_field('cta_content');
+                $cta_button             = get_field('cta_button');
+                $cat_is_background    = get_field('cat_is_background');
+                $cta_background_color = get_field('cta_background_color');
+
+                $cta_text_after_button            = get_field('cta_text_after_button');
+                $cta_image= get_field('cta_image');
+
+                if($cta_image){
+                    $col='8';
+                }else{
+                    $col='12';
+                }
+                $enable_cta=get_field('enable_cta');
+                if($enable_cta=='1'){
+                ?>
+                <section class="w-100 section_10  section-cta_with_image bg-cont-sec">
+                    <div class="details-content">
+                        <div class=" link-cases content_align_<?= $cta_content_alignment; ?>">
+                            <div class="row cases-box " <?php if($cat_is_background=='1'):?>style="background:<?= $cta_background_color; ?>"<?php endif; ?>>
+                                <div class="col-md-<?= $col; ?>">
+                                    <div class="case-description">
+                                        <?php if(!empty($cta_heading)): ?>
+                                            <h2><?php echo $cta_heading; ?></h2>
+                                        <?php endif; ?>
+                                        <?php if(!empty($cta_content)): ?>
+                                            <p class="normal-paragraph-desktop"><?=$cta_content;?></p>
+                                        <?php endif; ?>
+                                        <?php if(!empty($cta_button)): ?>
+                                            <a href="<?= $cta_button['url'];?>" class="btn btn-primary" role="button" title="<?= $cta_button['title'];?>"><?= $cta_button['title'];?></a>
+                                        <?php endif; ?>
+                                        <?php if(!empty($cta_text_after_button)): ?>
+                                            <p class="font-italic normal-paragraph-desktop"><?=$cta_text_after_button;?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <?php if($cta_image): ?>
+                                    <div class="col-md-4 text-right client-img">
+                                        <img class="w-100" src="<?= $cta_image; ?>" />
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+                <?php } ?>
+                <div class="additional_content entry_content details-content">
+                    <div class="content">
+                        <?php echo get_field('additional_content'); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12"> 
+                <div class="form-box single-new-form">
+                    <div class="form-img">
+                        <img src="<?php echo $news_form_background_image; ?>">
+                    </div>
+                    <div class="hero-contact-form-section form-new-design" style="background:url('<?php echo $news_form_background_image; ?>');">
+                        <?php if(!empty($news_form_title)): ?>
+                            <h3><?php echo $news_form_title; ?></h3>
+                        <?php endif; ?> 
+                        <?php if(!empty($news_form_subtitle)): ?>
+                            <p><?php echo $news_form_subtitle; ?></p>
+                        <?php endif; ?>  
+                        <?php if(!empty($news_form_content)): ?>
+                            <p><?php echo $news_form_content; ?></p>
+                        <?php endif; ?> 
+                        <?php echo do_shortcode(get_field('news_form_shortcode','option')); ?>
+                        <div class="chat_content">
+                            <?php if(!empty($news_chat_content)): ?>
+                                <?php echo $news_chat_content; ?>
+                            <?php endif; ?> 
+                        </div>
+                        <?php 
+                            $news_chat_button = get_field('news_chat_button','option');
+                            if( $news_chat_button ): 
+                                $link_url = $news_chat_button['url'];
+                                $link_title = $news_chat_button['title'];
+                                $link_target = $news_chat_button['target'] ? $news_chat_button['target'] : '_self';
+                                ?>
+                                <a class="news_chat_button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                        <?php endif; ?>
+                        <div class="rating-text">
+                            <?php if(!empty($news_rating_text)): ?>
+                                <p><?php echo $news_rating_text; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+<?php
+$latest_news_title = get_field('related_news_title','option');
+?>
+<section  class="w-100 section_12  section-latest_news container-1600">
+    <div class="container">
+        <?php if ($latest_news_title) : ?> <h2 class="latest_news__title"><?php echo $latest_news_title; ?></h2> <?php endif; ?> 
+            <?php
+         
+                $args = array(  
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                    'category__in' => wp_get_post_categories($post->ID),
+                    'posts_per_page' => 4, 
+                    'post__not_in' => array($post->ID),
+                    'orderby' => 'date', 
+                    'order' => 'DESC', 
+                );
+            
+                $loop = new WP_Query( $args ); 
+                if ( $loop->have_posts() ) : ?>
+                    <div class="row latest-news-wrapper">
+                        <?php
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                       
+                        get_template_part( 'template-parts/latest', 'post');
+                        endwhile; ?>
+                    </div> 
+                    <?php
+                    endif;
+                wp_reset_postdata();
+            ?>
+    </div>
+</section>
+<?php get_footer(); ?>

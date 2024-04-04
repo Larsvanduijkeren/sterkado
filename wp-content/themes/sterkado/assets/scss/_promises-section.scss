@@ -1,0 +1,106 @@
+.section-promises_section{
+    padding: 100px 0;
+    @media(max-width: $large2) {
+        padding: 50px 0;
+    }
+    @media(max-width: 767px) {
+        padding: 25px 0;
+    }
+    .latest_news__title{
+        text-align: center;
+        @media only screen and (max-width: $small) {
+            text-align: left;
+        }
+    }
+    .promises-wrapper{
+        padding-top: 50px;
+        @media only screen and (max-width: $small) {
+            padding-top: 30px;
+        }
+        > div{
+            display: flex;
+        }
+        .promises-img{
+            margin-bottom: 20px;
+            img{
+                @media only screen and (max-width:$large2) {
+                    width: 94px;
+                }  
+            }
+        }
+        .promises-heading{
+            font-size: 34px;
+            line-height: 42px;
+            // @media only screen and (max-width: $m-large-1600){
+            //     font-size: 24px;
+            //     line-height: 28px;
+            // }
+        }
+        .promises-item{
+            background: rgba($opal, 0.66);
+            border-radius: 20px;
+            padding: 50px 60px;
+            @media only screen and (max-width:$large-1400) {
+                padding: 30px 15px;
+            }
+            @media only screen and (max-width: $small) {
+                padding: 25px ;
+                margin-bottom: 20px;
+            }
+            h5{
+                &.promises-heading{
+                    @media only screen and (max-width: $large1){
+                        min-height: auto;
+                    }
+                }
+            }
+        }
+        h5{
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 51px;
+            color: $primary;
+            @media only screen and (max-width:1500px) {
+                font-size: 30px;
+                line-height: 40px;
+            }
+            @media only screen and (max-width:$large2) {
+                font-size: 20px;
+                line-height: 25px;
+                 min-height: 50px;
+            }
+            @media only screen and (max-width: $small) {
+                font-size: 20px;
+                line-height: 26px;
+                min-height: auto;
+            }
+        }
+        .promises-content{
+            font-family: $montserrat_font;
+            margin-top: 20px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: $primary;
+            min-height: 121px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            @media only screen and (max-width: 1700px){
+                min-height: auto;
+                -webkit-line-clamp: initial;
+                text-overflow: initial;
+            }
+            @media only screen and (max-width: $m-large-1600) {
+                font-size: 14px;
+                line-height: 21px;
+            }
+            @media only screen and (max-width: $small){
+                margin-top: 15px;
+            }
+           
+        }
+    }
+}

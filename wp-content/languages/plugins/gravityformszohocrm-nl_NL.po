@@ -1,0 +1,476 @@
+# Translation of RocketGenius - Gravity Forms Zoho CRM in Dutch
+# This file is distributed under the same license as the RocketGenius - Gravity Forms Zoho CRM package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-05-04 08:14:12+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: nl\n"
+"Project-Id-Version: RocketGenius - Gravity Forms Zoho CRM\n"
+
+#: class-gf-zohocrm.php:372
+msgid "Last time the cache was cleared manually: "
+msgstr "De laatste keer dat de cache handmatig is geleegd:"
+
+#: class-gf-zohocrm.php:371
+msgid "never cleared manually before"
+msgstr "nooit eerder handmatig geleegd"
+
+#: class-gf-zohocrm.php:360
+msgid "The cache could not be cleared at the moment."
+msgstr "De cache kan op dit moment niet worden geleegd."
+
+#: class-gf-zohocrm.php:352
+msgid "Cache was cleared successfully."
+msgstr "Cache werd succesvol geleegd."
+
+#: class-gf-zohocrm.php:498
+msgid "Unable to connect to Zoho CRM due to mismatched state."
+msgstr "Kan geen verbinding maken met Zoho CRM vanwege een niet-overeenkomende status."
+
+#: class-gf-zohocrm.php:2963 class-gf-zohocrm.php:2968
+msgid "Access denied."
+msgstr "Toegang geweigerd."
+
+#: class-gf-zohocrm.php:710
+msgid "Click here to connect to Zoho CRM"
+msgstr "Klik hier om verbinding te maken met Zoho CRM"
+
+#: class-gf-zohocrm.php:685
+msgid "Disconnect from Zoho CRM"
+msgstr "Verbreek de verbinding met Zoho CRM"
+
+#: class-gf-zohocrm.php:681
+msgid "Connected to Zoho CRM."
+msgstr "Verbonden met Zoho CRM."
+
+#: class-gf-zohocrm.php:568
+msgid "Connect With"
+msgstr "Maak verbinding met"
+
+#: class-gf-zohocrm.php:531
+msgid "Unable to connect to Zoho CRM."
+msgstr "Kan niet verbinden met Zoho CRM."
+
+#. Author of the plugin
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: class-gf-zohocrm.php:2351
+msgid "Could not create task; "
+msgstr "Kon taak niet aanmaken;"
+
+#: class-gf-zohocrm.php:2235
+msgid "Could not create lead; "
+msgstr "Kon lead niet aanmaken;"
+
+#: class-gf-zohocrm.php:2226
+msgid "Lead #%d already exists."
+msgstr "Lead #%d bestaat al."
+
+#: class-gf-zohocrm.php:2221
+msgid "Could not validate if the lead already exists; "
+msgstr "Kon niet valideren of de lead al bestaat;"
+
+#: class-gf-zohocrm.php:2212
+msgid "Could not validate if the lead already exists; the lead has no email."
+msgstr "Kon niet valideren of lead al bestaat; de lead heeft geen e-mailadres."
+
+#: class-gf-zohocrm.php:2091
+msgid "Could not create lead; Leads module is hidden, please check your Zoho CRM account."
+msgstr "Kon lead niet aanmaken;leadsmodule is verborgen, controleer je Zoho CRM account."
+
+#: class-gf-zohocrm.php:2040
+msgid "Could not %s contact; %s"
+msgstr "Kon niet %s contact; %s"
+
+#: class-gf-zohocrm.php:2031
+msgid "Contact #%d already exists."
+msgstr "Contact #%d bestaat al."
+
+#: class-gf-zohocrm.php:2026
+msgid "Could not validate if the contact already exists; "
+msgstr "Kon niet valideren of het contact al bestaat;"
+
+#: class-gf-zohocrm.php:2017
+msgid "Could not validate if the contact already exists; the contact has no email."
+msgstr "Kon niet valideren of contact al bestaat; het contact heeft geen e-mailadres."
+
+#: class-gf-zohocrm.php:1959 class-gf-zohocrm.php:2157
+msgid "The value of %s cannot be sent to Zoho CRM. Reason: The characters of the field value exceed %d."
+msgstr "De waarde van %s kan niet worden verstuurd naar Zoho CRM. Reden: de karakters in het veld overschrijden %d."
+
+#: class-gf-zohocrm.php:1947 class-gf-zohocrm.php:2145
+msgid "The field %s cannot be found at Zoho CRM."
+msgstr "Het %s veld kan niet worden gevonden in Zoho CRM."
+
+#: class-gf-zohocrm.php:1897
+msgid "Could not create contact; Contacts module is hidden, please check your Zoho CRM account."
+msgstr "Kon contact niet aanmaken; contacten-module is verborgen, controleer je Zoho CRM account."
+
+#: class-gf-zohocrm.php:1539
+msgid "Please show the Contacts or Leads module in your Zoho CRM account to create feed."
+msgstr "Toon de contacten of leads module in je Zoho CRM account om een feed aan te maken."
+
+#: class-gf-zohocrm.php:716
+msgid "Make sure you have an SSL certificate installed and enabled, then %1$sclick here to continue%2$s."
+msgstr "Zorg ervoor dat je een SSL-certificaat hebt geïnstalleerd en ingeschakeld, %1$s klik dan hier om door te gaan%2$s."
+
+#: class-gf-zohocrm.php:715
+msgid "SSL Certificate Required"
+msgstr "Verplicht"
+
+#: class-gf-zohocrm.php:587
+msgid "Third Party Service"
+msgstr "Dienst van een externe partij"
+
+#: class-gf-zohocrm.php:582 class-gf-zohocrm.php:587
+msgid "Communicate with Zoho CRM with their version 1.0 API. Version 1.0 API will be sunsetting on Dec 31, 2019, that means you can no longer submit data to Zoho CRM if you still use this method. %sWe strongly recommend you to switch to \"REST API\" before then%s."
+msgstr "Communiceer met Zoho CRM en versie 1.0 van hun API. Versie 1.0 API stop met werken op 31 december 2019, dat betekent dat je daarna geen gegevens meer kunt sturen naar Zoho CRM met deze methode. %sWe adviseren je te veranderen voor die datum naar de \"REST API\" %s."
+
+#: class-gf-zohocrm.php:577
+msgid "Communicate with Zoho CRM with their version 2.0 API."
+msgstr "Communiceer met Zoho CRM via versie 2.0 van de API."
+
+#: class-gf-zohocrm.php:574 class-gf-zohocrm.php:577
+msgid "OAuth Authentication (recommended)"
+msgstr "OAuth authenticatie (aanbevolen)"
+
+#: class-gf-zohocrm.php:574
+msgid "OAuth Authentication (recommended, you must have an SSL certificate installed and enabled)"
+msgstr "OAuth authenticatie (aanbevolen, je moet een SSL certificaat geïnstalleerd en geactiveerd hebben)"
+
+#: class-gf-zohocrm.php:270
+msgid "Are you sure you want to disconnect from Zoho CRM?"
+msgstr "Weet je zeker dat je de verbinding met Zoho CRM wilt verbreken?"
+
+#: class-gf-zohocrm.php:1843 includes/legacy/class-gf-zohocrm.php:1508
+msgid "Feed was not processed because API was not initialized."
+msgstr "Feed is niet verwerkt, omdat API niet was geinitialiseerd."
+
+#: class-gf-zohocrm.php:1735 includes/legacy/class-gf-zohocrm.php:1380
+msgid "-None-"
+msgstr "-Geen-"
+
+#: class-gf-zohocrm.php:1588 includes/legacy/class-gf-zohocrm.php:1233
+msgid "This field must be numeric or a merge tag."
+msgstr "Dit veld moet numeriek of een samenvoegtag zijn."
+
+#: class-gf-zohocrm.php:1568 includes/legacy/class-gf-zohocrm.php:1213
+msgid "No Action"
+msgstr "Geen actie"
+
+#: class-gf-zohocrm.php:1361 includes/legacy/class-gf-zohocrm.php:1061
+msgid "Task Status"
+msgstr "Status taak"
+
+#: class-gf-zohocrm.php:1346 includes/legacy/class-gf-zohocrm.php:1046
+msgid "Task Description"
+msgstr "Beschrijving taak"
+
+#: class-gf-zohocrm.php:1337 includes/legacy/class-gf-zohocrm.php:1037
+msgid "Task Owner"
+msgstr "Eigenaar taak"
+
+#: class-gf-zohocrm.php:1331 includes/legacy/class-gf-zohocrm.php:1031
+msgid "Days Until Due"
+msgstr "Dagen tot verval"
+
+#: class-gf-zohocrm.php:1323 includes/legacy/class-gf-zohocrm.php:1023
+msgid "Task Subject"
+msgstr "Onderwerp taak"
+
+#: class-gf-zohocrm.php:1313 includes/legacy/class-gf-zohocrm.php:1013
+msgid "Create Task for %s"
+msgstr "Taak aanmaken voor %s"
+
+#: class-gf-zohocrm.php:1306 includes/legacy/class-gf-zohocrm.php:1006
+msgid "Create Task"
+msgstr "Taak aanmaken"
+
+#: class-gf-zohocrm.php:1301 includes/legacy/class-gf-zohocrm.php:1001
+msgid "Task Details"
+msgstr "Details taak"
+
+#: class-gf-zohocrm.php:1248 includes/legacy/class-gf-zohocrm.php:948
+msgid "Lead Status"
+msgstr "Status lead"
+
+#: class-gf-zohocrm.php:1210 includes/legacy/class-gf-zohocrm.php:910
+msgid "Lead Rating"
+msgstr "Beoordeling lead"
+
+#: class-gf-zohocrm.php:1194 includes/legacy/class-gf-zohocrm.php:894
+msgid "Update Lead if lead already exists for email address"
+msgstr "Lead bijwerken als lead al bestaat voor e-mailadres"
+
+#: class-gf-zohocrm.php:1190 includes/legacy/class-gf-zohocrm.php:890
+msgid "If duplicate leads are allowed, you will not be able to update leads if they already exist."
+msgstr "Als dubbele leads zijn toegestaan, zul je leads niet kunnen bijwerken als deze al bestaan."
+
+#: class-gf-zohocrm.php:1189 includes/legacy/class-gf-zohocrm.php:889
+msgid "Allow duplicate leads"
+msgstr "Dubbele leads toestaan"
+
+#: class-gf-zohocrm.php:1168 includes/legacy/class-gf-zohocrm.php:868
+msgid "Lead Description"
+msgstr "Beschrijving lead"
+
+#: class-gf-zohocrm.php:1160 includes/legacy/class-gf-zohocrm.php:860
+msgid "Lead Owner"
+msgstr "Eigenaar eigenaar"
+
+#: class-gf-zohocrm.php:1137 includes/legacy/class-gf-zohocrm.php:842
+msgid "Lead Details"
+msgstr "Details lead"
+
+#: class-gf-zohocrm.php:1107 class-gf-zohocrm.php:1270
+#: includes/legacy/class-gf-zohocrm.php:812
+#: includes/legacy/class-gf-zohocrm.php:970
+msgid "Zoho CRM has a maximum file size of 20MB. Any file larger than this will not be uploaded. Additionally, files will not be uploaded if you have reached the storage allocation for your Zoho CRM account."
+msgstr "Zoho CRM heeft een maximale bestandsgrootte van 20MB. Elk bestand groter dan dit, zal niet worden geüpload. Bovendien zullen bestanden niet worden geüpload als de opslagcapaciteit van je Zoho CRM-account is bereikt."
+
+#: class-gf-zohocrm.php:1105 class-gf-zohocrm.php:1107
+#: class-gf-zohocrm.php:1268 class-gf-zohocrm.php:1270
+#: includes/legacy/class-gf-zohocrm.php:810
+#: includes/legacy/class-gf-zohocrm.php:812
+#: includes/legacy/class-gf-zohocrm.php:968
+#: includes/legacy/class-gf-zohocrm.php:970
+msgid "Attachments"
+msgstr "Bijlagen"
+
+#: class-gf-zohocrm.php:1085 class-gf-zohocrm.php:1229
+#: includes/legacy/class-gf-zohocrm.php:790
+#: includes/legacy/class-gf-zohocrm.php:929
+msgid "Lead Source"
+msgstr "Bron lead"
+
+#: class-gf-zohocrm.php:1069 includes/legacy/class-gf-zohocrm.php:774
+msgid "Update Contact if contact already exists for email address"
+msgstr "Contact bijwerken als contact al bestaat voor e-mailadres"
+
+#: class-gf-zohocrm.php:1065 includes/legacy/class-gf-zohocrm.php:770
+msgid "If duplicate contacts are allowed, you will not be able to update contacts if they already exist."
+msgstr "Als dubbele contacten zijn toegestaan, zul je contacten niet kunnen bijwerken als deze al bestaan."
+
+#: class-gf-zohocrm.php:1064 includes/legacy/class-gf-zohocrm.php:769
+msgid "Allow duplicate contacts"
+msgstr "Dubbele contacten toestaan"
+
+#: class-gf-zohocrm.php:1060 class-gf-zohocrm.php:1185
+#: includes/legacy/class-gf-zohocrm.php:765
+#: includes/legacy/class-gf-zohocrm.php:885
+msgid "Email Opt Out"
+msgstr "E-mail opt-out"
+
+#: class-gf-zohocrm.php:1056 class-gf-zohocrm.php:1181
+#: includes/legacy/class-gf-zohocrm.php:761
+#: includes/legacy/class-gf-zohocrm.php:881
+msgid "Workflow Mode"
+msgstr "Workflow-modus"
+
+#: class-gf-zohocrm.php:1052 class-gf-zohocrm.php:1177
+#: includes/legacy/class-gf-zohocrm.php:757
+#: includes/legacy/class-gf-zohocrm.php:877
+msgid "Approval Mode"
+msgstr "Goedkeuring-modus"
+
+#: class-gf-zohocrm.php:1047 class-gf-zohocrm.php:1172
+#: includes/legacy/class-gf-zohocrm.php:752
+#: includes/legacy/class-gf-zohocrm.php:872
+msgid "Options"
+msgstr "Opties"
+
+#: class-gf-zohocrm.php:1043 includes/legacy/class-gf-zohocrm.php:748
+msgid "Contact Description"
+msgstr "Beschrijving contact"
+
+#: class-gf-zohocrm.php:1035 includes/legacy/class-gf-zohocrm.php:740
+msgid "Contact Owner"
+msgstr "Eigenaar contact"
+
+#: class-gf-zohocrm.php:1020 class-gf-zohocrm.php:1145
+#: includes/legacy/class-gf-zohocrm.php:730
+#: includes/legacy/class-gf-zohocrm.php:850
+msgid "Select which Gravity Form fields pair with their respective Zoho CRM fields."
+msgstr "Selecteer welke Gravity Form-velden gekoppeld zijn aan hun desbetreffende Zoho CRM-velden."
+
+#: class-gf-zohocrm.php:1017 class-gf-zohocrm.php:1020
+#: class-gf-zohocrm.php:1142 class-gf-zohocrm.php:1145
+#: includes/legacy/class-gf-zohocrm.php:727
+#: includes/legacy/class-gf-zohocrm.php:730
+#: includes/legacy/class-gf-zohocrm.php:847
+#: includes/legacy/class-gf-zohocrm.php:850
+msgid "Map Fields"
+msgstr "Velden toewijzen"
+
+#: class-gf-zohocrm.php:1012 includes/legacy/class-gf-zohocrm.php:722
+msgid "Contact Details"
+msgstr "Details contact"
+
+#: class-gf-zohocrm.php:986 includes/legacy/class-gf-zohocrm.php:690
+msgid "When conditional logic is enabled, form submissions will only be exported to Zoho CRM when the condition is met. When disabled, all form submissions will be posted."
+msgstr "Als voorwaardelijke logica is ingeschakeld, zullen formulierinzendingen alleen naar Zoho CRM worden geëxporteerd als er aan de voorwaarde is voldaan. Indien uitgeschakeld, zullen alle formulierinzendingen worden geplaatst."
+
+#: class-gf-zohocrm.php:985 includes/legacy/class-gf-zohocrm.php:689
+msgid "Export to Zoho CRM if"
+msgstr "Naar Zoho CRM exporteren als"
+
+#: class-gf-zohocrm.php:984 includes/legacy/class-gf-zohocrm.php:688
+msgid "Enable"
+msgstr "Inschakelen"
+
+#: class-gf-zohocrm.php:983 class-gf-zohocrm.php:986
+#: includes/legacy/class-gf-zohocrm.php:687
+#: includes/legacy/class-gf-zohocrm.php:690
+msgid "Conditional Logic"
+msgstr "Voorwaardelijke logica"
+
+#: class-gf-zohocrm.php:977 includes/legacy/class-gf-zohocrm.php:681
+msgid "Feed Conditional Logic"
+msgstr "Voorwaardelijke logica feed"
+
+#: class-gf-zohocrm.php:935 class-gf-zohocrm.php:1565
+#: includes/legacy/class-gf-zohocrm.php:671
+#: includes/legacy/class-gf-zohocrm.php:1210
+msgid "Create a New Lead"
+msgstr "Nieuwe lead aanmaken"
+
+#: class-gf-zohocrm.php:929 class-gf-zohocrm.php:1560
+#: includes/legacy/class-gf-zohocrm.php:667
+#: includes/legacy/class-gf-zohocrm.php:1205
+msgid "Create a New Contact"
+msgstr "Nieuw contact aanmaken"
+
+#: class-gf-zohocrm.php:922 includes/legacy/class-gf-zohocrm.php:663
+msgid "Select an Action"
+msgstr "Selecteer een actie"
+
+#: class-gf-zohocrm.php:958 includes/legacy/class-gf-zohocrm.php:660
+msgid "Choose what will happen when this feed is processed."
+msgstr "Kies wat er zal gebeuren wanneer deze feed is verwerkt."
+
+#: class-gf-zohocrm.php:954 class-gf-zohocrm.php:958 class-gf-zohocrm.php:1521
+#: includes/legacy/class-gf-zohocrm.php:656
+#: includes/legacy/class-gf-zohocrm.php:660
+#: includes/legacy/class-gf-zohocrm.php:1186
+msgid "Action"
+msgstr "Actie"
+
+#: class-gf-zohocrm.php:950 includes/legacy/class-gf-zohocrm.php:652
+msgid "Enter a feed name to uniquely identify this setup."
+msgstr "Vul een naam voor de feed in om deze installatie uniek te identificeren."
+
+#: class-gf-zohocrm.php:950 class-gf-zohocrm.php:1520
+#: includes/legacy/class-gf-zohocrm.php:652
+#: includes/legacy/class-gf-zohocrm.php:1185
+msgid "Name"
+msgstr "Naam"
+
+#: class-gf-zohocrm.php:945 includes/legacy/class-gf-zohocrm.php:648
+msgid "Feed Name"
+msgstr "Naam feed"
+
+#: class-gf-zohocrm.php:885 includes/legacy/class-gf-zohocrm.php:612
+msgid "Maximum number of allowed auth tokens exceeded. You can remove old tokens via the Active Authtokens area of your Zoho account."
+msgstr "Maximum aantal toegestane auth-tokens overschreden. Je kunt oude tokens via het Active Authtokens-gebied in je Zoho-account verwijderen."
+
+#: class-gf-zohocrm.php:875 includes/legacy/class-gf-zohocrm.php:602
+msgid "Invalid password. If two factor authentication is enabled for your account you'll need to use an application specific password."
+msgstr "Ongeldig wachtwoord. Als twee-staps-authenticatie is ingeschakeld voor je account, moet je een applicatie specifiek wachtwoord gebruiken."
+
+#: class-gf-zohocrm.php:845 class-gf-zohocrm.php:855
+#: includes/legacy/class-gf-zohocrm.php:572
+#: includes/legacy/class-gf-zohocrm.php:582
+msgid "Invalid password."
+msgstr "Ongeldig wachtwoord."
+
+#: class-gf-zohocrm.php:844 class-gf-zohocrm.php:865
+#: includes/legacy/class-gf-zohocrm.php:571
+#: includes/legacy/class-gf-zohocrm.php:592
+msgid "User does not exist."
+msgstr "Gebruiker bestaat niet."
+
+#: class-gf-zohocrm.php:728 includes/legacy/class-gf-zohocrm.php:468
+msgid "Click here to generate an authentication token."
+msgstr "Klik hier om een authenticatie-token te genereren."
+
+#: class-gf-zohocrm.php:526 class-gf-zohocrm.php:638
+#: includes/legacy/class-gf-zohocrm.php:439
+msgid "Zoho CRM settings have been updated."
+msgstr "Zoho CRM-instellingen zijn bijgewerkt."
+
+#: class-gf-zohocrm.php:622 includes/legacy/class-gf-zohocrm.php:430
+msgid "Authentication Token"
+msgstr "Authenticatie-token"
+
+#: class-gf-zohocrm.php:601 includes/legacy/class-gf-zohocrm.php:409
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: class-gf-zohocrm.php:593 includes/legacy/class-gf-zohocrm.php:401
+msgid "Email Address"
+msgstr "E-mailadres"
+
+#: class-gf-zohocrm.php:585 includes/legacy/class-gf-zohocrm.php:394
+msgid "Third Party Service (Google Apps, Facebook, Yahoo)"
+msgstr "Externe partij (Google Apps, Faccebook, Yahoo)"
+
+#: class-gf-zohocrm.php:580 class-gf-zohocrm.php:582
+#: includes/legacy/class-gf-zohocrm.php:390
+msgid "Email Address and Password"
+msgstr "E-mailadres en wachtwoord"
+
+#: includes/legacy/class-gf-zohocrm.php:384
+msgid "Authenticate With"
+msgstr "Authenticeren met"
+
+#: class-gf-zohocrm.php:551 includes/legacy/class-gf-zohocrm.php:372
+msgid "Zoho CRM is a contact management tool that gives you a 360-degree view of your complete sales cycle and pipeline. Use Gravity Forms to collect customer information and automatically add it to your Zoho CRM account. If you don't have a Zoho CRM account, you can %1$ssign up for one here.%2$s"
+msgstr "Zoho CRM is een beheertool voor contacten die je een 360-graden beeld geeft van je complete verkoopcyclus en pijplijn. Gebruik Gravity Forms om klantinformatie te verzamelen en voeg deze automatisch toe aan je Zoho CRM-account. Als je geen Zoho CRM-account hebt, kun je je %1$shier aanmelden.%2$s"
+
+#: class-gf-zohocrm.php:418 includes/legacy/class-gf-zohocrm.php:355
+msgid "Custom fields cache has been cleared."
+msgstr "Aangepaste velden-cache is geleegd."
+
+#: class-gf-zohocrm.php:365 includes/legacy/class-gf-zohocrm.php:311
+msgid "Due to Zoho CRM's daily API usage limits, Gravity Forms stores Zoho CRM custom fields data for twelve hours. If you make a change to your custom fields, you might not see it reflected immediately due to this data caching. To manually clear the custom fields cache, click the button below."
+msgstr "Door de dagelijkse API-gebruikslimiet van Zoho CRM, slaat Gravity Forms gegevens van aangepaste velden van Zoho CRM voor twaalf uur op. Als je een wijziging doet aan je aangepaste velden, zie je het misschien niet direct terug door de caching van deze gegevens. Om de cache van aangepaste velden handmatig te legen, klik op de knop hieronder."
+
+#: class-gf-zohocrm.php:366 class-gf-zohocrm.php:651
+#: includes/legacy/class-gf-zohocrm.php:310
+#: includes/legacy/class-gf-zohocrm.php:312
+msgid "Clear Custom Fields Cache"
+msgstr "Aangepaste velden-cache legen"
+
+#: includes/legacy/class-gf-zohocrm.php:250
+msgid "Zoho CRM's v1 API has been deprecated. %sTo use the v2 API, please switch your Zoho CRM Authentication method to OAuth Authentication.%s"
+msgstr "Zoho CRM v1 API is gedateerd. %sOm versie 2 van de API te gebruiken moet je de Zoho CRM authenticatie methode veranderen naar OAuth authenticatie.%s"
+
+#: class-gf-zohocrm.php:227 includes/legacy/class-gf-zohocrm.php:234
+msgid "Create record in Zoho CRM only when payment is received."
+msgstr "Record alleen in Zoho CRM aanmaken als betaling is ontvangen."
+
+#: includes/class-gf-zohocrm-api.php:405
+msgid "The value of %s cannot be sent to Zoho CRM. Reason: The data format is invalid."
+msgstr "De waarde van %s kon niet worden verstuurd naar Zoho CRM. Reden: het formaat van de datum is ongeldig."
+
+#: includes/class-gf-zohocrm-api.php:166 includes/class-gf-zohocrm-api.php:215
+msgid "Refresh token must be provided."
+msgstr "Refresh token moet worden opgegeven."
+
+#. Description of the plugin
+msgid "Integrates Gravity Forms with Zoho CRM, allowing form submissions to be automatically sent to your Zoho CRM account."
+msgstr "Integreert Gravity Forms met Zoho CRM, waardoor formulierinzendingen automatisch naar je Zoho CRM-account worden verstuurd."
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://gravityforms.com"
+msgstr "https://gravityforms.com"
+
+#. Plugin Name of the plugin
+msgid "Gravity Forms Zoho CRM Add-On"
+msgstr "Gravity Forms Zoho CRM add-on"

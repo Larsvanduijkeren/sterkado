@@ -1,0 +1,80 @@
+.error-page-banner{
+    h3{
+        margin-bottom: 30px;
+    }
+    p{
+        max-width: 50%;
+        margin: 0 auto;
+    }
+    .btn{
+        margin-top: 50px;
+    }
+    .contact_phone, .contact_email{
+        margin-top: 50px;
+        position: relative;
+        &::before{
+            content: "";
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            background-size: contain !important;
+        }
+        a, span{
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: $primary;
+            text-decoration: none;
+        }
+        a{
+            font-weight: 600;
+            &:hover{
+                color: $danger;   
+            }
+        }
+    }
+    .contact_phone{
+        &::before{
+            background: url(../images/phone-404.svg) no-repeat;
+        }
+        .contact_phone_no{
+            margin-top: 10px;
+        }
+    }
+    .contact_email{
+        &::before{
+            background: url(../images/mail-404.svg) no-repeat;
+            width: 68px;
+            height: 60px;
+        } 
+    }
+}
+
+.error404{
+    .only-banner-content{
+        .error-page-banner{
+            a{
+                &.btn{
+                    color: $danger !important;
+                    border: 1px solid $danger !important;
+                    text-decoration: none;
+                    background-color: transparent;
+                    &:hover{
+                        background-color: $danger !important;
+                        color: $white !important;
+                    }
+                }
+            }
+        }
+    }
+    .section-cta_with_image{
+        .section-space{
+            .link-cases{
+                .cases-box{
+                    margin: 50px 0;
+                }
+            }
+        }
+    }
+}

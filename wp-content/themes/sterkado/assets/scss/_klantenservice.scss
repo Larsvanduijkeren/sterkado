@@ -1,0 +1,69 @@
+.page-template-tpl-klantenservice{
+    .block-cart-sec{
+        padding-top: 60px;
+        @media(max-width: $large-1400){
+            padding-top: 10px;
+        }
+        @media(max-width: $large){
+            padding-top: 60px;
+        }
+        @media(max-width: $ipad-min){
+            padding-top: 0px;
+        }
+        @media(max-width: $small){
+            margin-top: 30px;
+        }
+        .row{
+            flex-wrap: wrap;
+            align-items: initial;
+            > div{
+                display: flex;
+                @media(max-width: $small){
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .section_contact-details{
+        &.contact-details-wrapper{
+            .slide-title{
+                @media(max-width: $small){
+                    margin-bottom: 35px;
+                }
+                h2{
+                    @media(max-width: $small){
+                        text-align: left;
+                    }
+                }
+            }
+            .contact-about-detail{
+                .chat_wrapper{
+                    .chat_title{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .section-faq_section{
+        .section-space{
+            @media(max-width: $small){
+                padding-top: 45px;
+            }
+            .faq_wrapper{
+                .slide-title{
+                    h2{
+                        @media(max-width: $small){
+                            text-align: left;
+                        }
+                        br{
+                            @media(max-width: $small){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

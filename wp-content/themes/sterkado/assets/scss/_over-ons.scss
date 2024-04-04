@@ -1,0 +1,227 @@
+.team_lists{
+    > .row{
+        > div{
+            @media only screen and (min-width: $large2){
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+    }
+    .team-item{
+        margin-top: 60px;
+        @media only screen and (max-width: $ipad-min) {
+            margin-top: 30px;
+        }
+        .team-img{
+            @media only screen and (max-width: $ipad-min) {
+                width: 105px;
+                height: 102px;
+                margin: 0 auto;
+            }
+            img{
+                max-width: 142px;
+            }
+        }
+        .team-wrapper-content{
+            h4{
+               
+                margin-top: 5px;
+                color: $primary;
+                @media only screen and (max-width: $ipad-min) {
+                   
+                    margin-top: 15px;
+                }
+            }
+            h6{
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 25px;
+                font-family: $montserrat_font;
+                color: $primary;
+                margin-top: 10px;
+                @media only screen and (max-width: $ipad-min) {
+                    font-size: 14px;
+                    margin-top: 0;
+                    line-height: 17px;
+                }
+            }
+            .team-content{
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 24px;
+                color: $primary;
+                padding-top: 15px;
+                font-family: $montserrat_font;
+                width: 80%;
+                margin: 0 auto;
+                @media only screen and (max-width: $m-large-1600){
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                @media only screen and (max-width: $ipad-min) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.section-open_vacancies{
+    padding: 80px 0px;
+
+    @media only screen and (max-width: $ipad-min) {
+        padding: 50px 0;
+    }
+    .latest_news__title{
+        margin-bottom: 80px;
+        @media only screen and (max-width: $ipad-min) {
+            margin-bottom:50px;
+            text-align: left !important;
+        }
+    }
+    .latest-job-wrapper{
+        padding-left: 100px;
+        padding-right: 100px;
+        @media only screen and (max-width: 1700px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @media only screen and (max-width: $small) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .job-item{
+            padding: 35px;
+            background: $white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            margin-bottom: 35px;
+            @media only screen and (max-width: $ipad-min) {
+                padding: 30px;
+            }
+            .job-wrapper-content{
+                .job_type{
+                    color: $primary-success;
+                    letter-spacing: 0.02em;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 14px;
+                    margin-bottom: 5px;
+                    @media only screen and (max-width:$ipad-min) {
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 26px;
+                        margin-bottom: 0;
+                    }
+                }
+                .job-heading{
+                    a{
+                        font-weight: 600;
+                        font-size: 22px;
+                        line-height: 28px;
+                        color: #323F52;
+                        text-decoration: none;
+                        display: block;
+                        @media only screen and (max-width: $ipad-min) {
+                            font-weight: 600;
+                            font-size: 24px;
+                            line-height: 31px;
+                        }
+                    }
+                }
+                .job-meta{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    li{
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 14px;
+                        letter-spacing: 0.02em;
+                        color: $primary-success;
+                        margin-right: 15px;
+                        display: none !important;
+                        @media only screen and (max-width: $ipad-min) {
+                            font-size: 11px;
+                        }
+                        &.location{
+                            margin-right: 0;
+                            display: none !important;
+                        }
+                        img{
+                            margin-right: 6px;
+                            display: inline-block;
+                            vertical-align: bottom;
+                            @media only screen and (max-width: $ipad-min) {
+                                margin-right: 3px;
+                            }
+                        }
+                    }
+                }
+                .job-content{
+                    color: #323F52;
+                    margin-top: 15px;
+                }
+                .more-job-link{
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: $secondary-warning;
+                    font-family: $montserrat_font;
+                    border: 1px solid $secondary-warning;
+                    display: inline-block;
+                    text-decoration: none;
+                    padding: 15px 20px;
+                    border-radius: 30px;
+                    margin-top: 15px;
+                    transition: all 0.5s ease;
+                    &:hover{
+                        background:$secondary-warning;
+                        color: #fff;
+                    }
+                    @media only screen and (max-width: $ipad-min) {
+                        font-size: 12px;
+                        line-height: 17px;
+                        padding: 12px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+.section-image_with_faq{
+    .faq_wrapper {
+        margin: 0 auto;
+    }
+}
+
+
+.page-template-tpl-over-ons{
+    .section-open_vacancies{
+        .custom-solution-container {
+            @media only screen and (max-width: 1700px){
+                max-width: 1220px !important;
+            }
+            @media only screen and (max-width:1700px){
+                max-width: 1200px !important;
+            }
+            @media only screen and (max-width:$large-1400){
+                max-width: 1180px !important;
+            }
+            @media only screen and (max-width:$large2){
+                max-width: 1120px !important;
+                padding: 0 20px;
+            }
+            @media only screen and (max-width:992px){
+                max-width: 940px !important;
+                padding: 0 15px;
+            }
+            @media only screen and (max-width:$ipad){
+                max-width: 700px !important;
+            }
+            @media only screen and (max-width:576px){
+                max-width: 100% !important;
+            }
+        }
+    }
+}

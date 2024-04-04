@@ -1,0 +1,447 @@
+body {
+    .our-customers2 {
+        .believe-us {
+            float: left;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 44px 60px;
+
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+
+                li {
+                    padding: 0 60px;
+
+                    @media only screen and (max-width: 1700px) {
+                        padding: 0 30px 0 60px;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            .logo-head {
+                padding-right: 0px;
+                width: 26%;
+
+                @media only screen and (max-width: 1700px) {
+                    width: 46%;
+                }
+
+                @media only screen and (max-width: 1210px) {
+                    width: 48%;
+                }
+
+                @media only screen and (max-width: 1140px) {
+                    width: 52%;
+                }
+
+                h5 {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+
+            .logo-list {
+                ul {
+                    li {
+                        @media only screen and (max-width: $small) {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .employee-unique {
+            float: left;
+            width: 100%;
+            padding: 38px 0 0;
+            position: relative;
+
+            .emp-thought {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .emp-title {
+                    padding: 0 20px;
+
+                    h2 {
+                        span {
+                            position: relative;
+                            // &:after{
+                            //     content: '';
+                            //     background-image: url(../images/unique-circle.png);
+                            //     background-repeat: no-repeat;
+                            //     width: 105px;
+                            //     height: 53px;
+                            //     display: inline-block;
+                            //     text-align: center;
+                            //     position: absolute;
+                            //     left: -8px;
+                            //     top: -6px;                                
+                            // }    
+                        }
+
+                        font-size: 34px;
+                        line-height: 43px;
+
+                        @media only screen and (max-width: $m-large-1920) {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+
+                        @media only screen and (max-width: $small) {
+                            font-size: 26px;
+                            line-height: 31px;
+                        }
+                    }
+                }
+
+                .emp-desc {
+                    padding: 0 20px;
+
+                    p {
+                        max-width: 550px;
+
+                        @media only screen and (max-width: $small) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &:before {
+                content: '';
+                background-image: url(../images/unique-arrow.png);
+                display: inline-block;
+                width: 121px;
+                height: 124px;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 20%;
+                top: -129px;
+                transform: rotate(32deg);
+
+                @media only screen and (max-width: $large2) {
+                    width: 89px;
+                    height: 124px;
+                    top: -109px;
+                    transform: rotate(32deg);
+                    background-size: contain;
+                }
+                @media(max-width:767px){
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $m-large-1600) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                padding: 44px 40px;
+
+                .logo-head {
+                    padding-right: 0px;
+                }
+
+                ul {
+                    li {
+                        padding: 0 30px 0 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: $large-1400) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                padding: 44px 30px;
+
+                ul {
+                    li {
+                        padding: 0 20px 0 35px;
+                    }
+                }
+            }
+
+            .employee-unique {
+                &:before {
+                    left: 5%;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: $small-laptop) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                .logo-head {
+                    h5 {
+                        font-size: 22px;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $touch-laptop) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                .logo-head {
+                    padding-right: 0;
+                    // width: 50%;
+                }
+
+                ul {
+                    li {
+                        padding: 0 15px 0 25px;
+                    }
+                }
+            }
+
+            .employee-unique {
+                &:before {
+                    left: 150px;
+                }
+            }
+        }
+    }
+}
+
+// @media only screen and (max-width: $large1){
+//     body {
+//         .our-customers2 {
+//             .believe-us {
+//                 .logo-head{
+//                     width: 62%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@media only screen and (max-width: $ipad-min) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                flex-direction: column;
+
+                .logo-head {
+                    width: 100%;
+                    text-align: center;
+                    padding-bottom: 20px;
+
+                    h5 {
+                        opacity: 1;
+                        text-shadow: initial;
+                        // opacity: 0.3;
+                        // text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $medium) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                flex-wrap: wrap;
+                padding: 30px 0px;
+
+                .logo-head {
+                    padding: 0 0 20px 0;
+                    width: 100%;
+                    text-align: center;
+                    @media(max-width:767px){
+                        padding-bottom: 15px;
+                    }
+                    // h5{
+                    //     opacity: 0.3;
+                    //     // text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+                    //     font-size: 22px;
+                    //     line-height: 28px;
+                    // }
+                }
+
+                .logo-list {
+                    ul {
+                        li {
+                            padding: 0 20px;
+
+                            &:last-child {
+                                padding: 0 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .employee-unique {
+                .emp-thought {
+                    .emp-title {
+                        h2 {
+                            br {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $small) {
+    body {
+        .our-customers2 {
+            .believe-us {
+
+                .logo-list {
+                    ul {
+                        flex-wrap: wrap;
+
+                        li {
+                            padding: 0 20px 20px;
+                            flex: 0 0 33.33%;
+
+                            &:last-child {
+                                padding: 0 20px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .employee-unique {
+                padding: 25px 0 0;
+
+                .emp-thought {
+                    flex-wrap: wrap;
+                    justify-content: initial;
+
+                    .emp-title {
+                        padding: 0 0 10px;
+
+                        h2 {
+
+
+                            br {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .emp-desc {
+                        padding: 0;
+
+                    }
+                }
+
+                &:before {
+                    right: 27%;
+                    left: initial;
+                    background-image: url(../images/mobile-believe.png);
+                    width: 23px;
+                    height: 86px;
+                    top: -18px;
+                    transform: rotate(0deg);
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $iphone) {
+    body {
+        .our-customers2 {
+            .believe-us {
+                .logo-list {
+                    ul {
+                        li {
+                            padding: 0 15px 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-template-tpl-vraag-demo-aan-product {
+    .our-customers2 {
+        .believe-us {
+            .logo-head {
+                h5 {
+                    white-space: nowrap;
+
+                    @media only screen and (max-width: 1022px) {
+                        white-space: inherit;
+                    }
+
+                    @media only screen and (max-width:$small) {
+                        opacity: 0.3;
+                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-template-tpl-keuze-brievenbus-product,
+.page-template-tpl-moment-1-keuzes-product {
+    .section-logo_section {
+        .employee-unique {
+            @media only screen and (max-width:767px) {
+                padding-top: 70px;
+            }
+
+            &:before {
+                display: none !important;
+            }
+        }
+    }
+
+}
+@media(max-width:767px){
+    body {
+        .our-customers2 {
+            .emp-thought {
+                .emp-title {
+                    h2 {
+                        br{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

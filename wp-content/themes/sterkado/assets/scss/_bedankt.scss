@@ -1,0 +1,85 @@
+.section-great_guys{
+    padding-bottom: 70px;
+    @media only screen and (max-width: $small) {
+        padding-bottom: 40px;
+    }
+    .latest_news__title{
+        text-align: center;
+    }
+    .great_guys-item{
+        margin-top: 50px;
+        text-align: center;
+        @media only screen and (max-width: $small) {
+            text-align: left;
+        }
+        .great_guys-img{
+            img{
+                display: block;
+                margin: 0 auto;
+                @media only screen and (max-width: $small) {
+                    margin: 0;
+                    width: 66px;
+                }
+            }
+        }
+        .great_guys-content{
+            margin-top: 15px;
+            .great_guys-heading{
+                color: $primary;
+                margin-bottom: 25px;
+                text-transform: uppercase;
+                @media only screen and (max-width: $small) {
+                    max-width: 100%;
+                    font-weight: 400;
+                    text-transform: none;
+                    margin-bottom: 10px;
+                }
+            }
+            .great_guys-sub{
+                color: $primary;
+                margin-bottom: 10px;
+            }
+            .great_guys-info{
+                max-width: 60%;
+                margin: 0 auto;
+                @media only screen and (max-width: $small) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.page-template-tpl-bedankt{
+    .section-hero_banner_section,
+    .section-great_guys{
+        // padding-left: 120px;
+        // @media only screen and (max-width: 1700px){
+        //     padding-left: 100px;
+        // }
+        // @media only screen and (max-width: $large1){
+        //     padding-left: 0px;
+        // }
+        .great_guys_wrapper {
+            justify-content: center;
+            &.minus-space{
+                margin-left: 0;
+            }
+        }
+    }
+    .section-hero_banner_section{
+        @media only screen and (max-width: $ipad-min){
+            padding-top: 0;
+        }
+        // > .container-fluid{
+        //     @media only screen and (max-width: $small){
+        //         max-width: 100%;
+        //     }
+        // }
+        // .mobile-bg{
+        //     @media only screen and (max-width: $small){
+        //         background-size: 100% 100% !important;
+        //     }
+        // }
+    }
+}

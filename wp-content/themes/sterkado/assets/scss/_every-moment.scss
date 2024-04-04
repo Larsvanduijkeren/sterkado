@@ -1,0 +1,146 @@
+body {
+    .every-moments {
+        .moment-title {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        h6{
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        .moments-slider {
+            .slick-slide {
+                padding: 0 25px;
+
+                .slider-img {
+                    img {
+                        width: 100%;
+                        border-radius: 20px 20px 0 0;
+                    }
+                }
+
+                .slider-head {
+                    padding: 20px;
+                    border-radius: 0 0 20px 20px;
+
+                    &.primary-ming {
+                        background-color: $primary-ming;
+                    }
+
+                    &.secondary-bg {
+                        background-color: $secondary-btn;
+                    }
+
+                    &.primary-danger {
+                        background-color: $primary-btn;
+                    }
+
+                    a {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 22px;
+                        color: $white;
+                        // @media(max-width: $small){
+                        //     font-size: 16px;
+                        // }
+                    }
+                }
+            }
+
+            .slick-prev {
+                position: absolute;
+                left: 0;
+                transform: translate(0%, -50%);
+                top: 50%;
+                height: 56px;
+                width: 56px;
+                border-radius: 50px;
+                background-color: $secondary-btn;
+                z-index: 9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                &:before {
+                    content: '';
+                    // background-image: url(../images/moment-left.png);
+                    background-image: url('../images/moment-left.svg');
+                    width: 17px;
+                    height: 16px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                }
+
+                &:hover {
+                    background-color: $secondary-btn-hover;
+                }
+            }
+
+            .slick-next {
+                position: absolute;
+                right: 0;
+                transform: translate(0%, -50%);
+                top: 50%;
+                height: 56px;
+                width: 56px;
+                border-radius: 50px;
+                background-color: $secondary-btn;
+                z-index: 9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                &:before {
+                    content: '';
+                    // background-image: url(../images/moment-right.png);
+                    background-image: url('../images/moment-right.svg');
+                    width: 17px;
+                    height: 16px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                }
+
+                &:hover {
+                    background-color: $secondary-btn-hover;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $small) {
+    body {
+        .every-moments {
+            .moment-title {
+                padding-bottom: 20px;
+            }
+
+            .moments-slider {
+
+                .slick-next,
+                .slick-prev {
+                    top: -40px;
+                    height: 40px;
+                    width: 40px;
+                }
+
+                .slick-slide {
+                    padding: 0 6.5px;
+
+                    >div {
+                        &:first-child {
+                            padding-bottom: 15px;
+                        }
+
+                        a {
+                            display: block !important;
+                            width: 100% !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

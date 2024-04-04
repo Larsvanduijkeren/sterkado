@@ -1,0 +1,114 @@
+.sec_pak_het{
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    @media only screen and (max-width: $small){
+        margin-top: 25px;
+        margin-bottom: 50px;    
+    }
+    .container{
+        .inner-row {
+            background: $opal-light;
+            padding: 65px 85px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            flex-flow: wrap;
+            @media only screen and (max-width: 1700px){
+                padding: 65px;
+            }
+            @media only screen and (max-width: $large2){
+                padding: 50px 30px;
+            }
+            @media only screen and (max-width: $small){
+                padding: 50px 15px;
+            }
+            @media only screen and (max-width: 567px){
+                max-width: calc(100% - 30px);
+                margin: 0 auto;
+            }
+            .text-col{
+                @media only screen and (max-width: 992px){
+                    margin-bottom: 50px;
+                }
+                @media only screen and (max-width: 767px){
+                    margin-bottom: 30px;
+                }
+                p{
+                    max-width: 550px;
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                }
+            }
+            .cards-col{
+                display: flex;
+                gap: 40px;
+                @media only screen and (max-width: 1700px){
+                gap: 30px;
+                flex-flow: wrap;
+                }
+                @media only screen and (max-width: $large2){
+                    gap: 15px;
+                }
+                @media only screen and (max-width: 767px){
+                    gap: 30px;
+                }
+                .card {
+                    box-shadow: 0px 0px 20px $black-light;
+                    border-radius: 15px;
+                    padding: 40px 30px;
+                    width: 100%;
+                    @media only screen and (max-width: 1700px){
+                        max-width: calc((100% - 30px)/2);
+                    }
+                    @media only screen and (max-width: $large2){
+                        padding: 25px 15px;
+                    }
+                    @media only screen and (max-width: 767px){
+                        max-width: 100%;
+                        padding: 15px 30px 40px;
+                    }
+                    .card-img-top {
+                        width: 80px;
+                        height: 75px;
+                        object-fit: cover;
+                    }
+                    .card-body {
+                        padding: 0;
+                        .card-title {
+                            font-weight: 600;
+                            font-size: 20px;
+                            line-height: 26px;
+                            margin-top: 20px;
+                            @media only screen and (max-width: 767px){
+                                font-size: 22px;
+                                line-height: 28px;
+                            }
+                        }
+                        p{
+                            margin: 20px 0 15px;
+                        }
+                        // a{
+                        //     &.btn-primary {
+                        //         background: transparent !important;
+                        //         color: $danger !important;
+                        //         border: 2px solid $danger !important;
+                        //         border-radius: 30px !important;
+                        //         padding: 13px 20px !important;
+                        //         font-weight: 700 !important;
+                        //         line-height: 1 !important;
+                        //         &:hover{
+                        //             background-color: $danger !important;
+                        //             color: $white !important;
+                        //         }
+                        //     }
+                        //     &.secondary-yellow-btn{
+                        //         color:$primary !important ;
+                        //     }
+                        // }
+                    }
+                }
+            }
+        }
+    }
+}

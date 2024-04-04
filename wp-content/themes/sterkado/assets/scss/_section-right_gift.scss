@@ -1,0 +1,125 @@
+.section-right_gift {
+    @media only screen and (max-width:$small) {
+        padding-top: 0 !important;
+    }
+    .gift-listing {
+        @media only screen and (max-width: $large2) {
+            padding: 0 15px;
+        }
+
+        @media only screen and (max-width:$small) {
+            padding-bottom: 0px;
+        }
+
+        .row {
+
+            >div {
+                &:last-child {
+                    .special-list-gift {
+                        @media only screen and (max-width:$small) {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+
+        .special-list-gift {
+            padding: 0 10%;
+            @media only screen and (max-width:1700px){
+                padding: 0 5%;
+            }
+            @media only screen and (max-width:1450px){
+                padding:  0 0;
+            }
+            @media only screen and (max-width:$small) {
+                padding: 0 0 70px;
+            }
+        }
+
+        .gift-description {
+            p {
+                color: $primary;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                opacity: 0.7;
+                font-family: $montserrat_font;
+
+                @media only screen and (max-width:$m-large-1600) {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                @media only screen and (max-width:$large2) {
+                    width: 76%;
+                }
+                @media only screen and (max-width:$small) {
+                    width: 100%;
+                }
+            }
+
+            ul {
+                padding-bottom: 20px;
+
+                @media only screen and (max-width:$small) {
+                    padding-bottom: 0;
+                }
+
+                li {
+                    position: relative;
+                    padding-left: 30px;
+                    margin-bottom: 8px;
+
+                    &::before {
+                        content: "\f00c";
+                        position: absolute;
+                        display: inline-block;
+                        font: normal normal normal 18px/1 FontAwesome;
+                        left: 0;
+                        top: 0;
+                    }
+
+                    @media only screen and (max-width:$small) {
+                        font-size: 14px !important;
+                        line-height: 21px;
+                        margin-bottom: 20px;
+                        display: block;
+                    }
+                }
+            }
+
+            a {
+                font-family: $poppins_font;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 24px;
+                color: $primary;
+                text-decoration: underline;
+                transition: all 0.3s ease-in-out 0s;
+                @media only screen and (min-width:1440px) {
+                    font-size: 14px;
+                }
+                &:after {
+                    content: '\2192' !important;
+                    font-size: 20px;
+                    display: inline-block;
+                    margin-left: 8px;
+                    color: $primary;
+                    transition: all 0.3s ease-in-out 0s;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    color: $danger;
+
+                    &:after {
+                        color: $danger;
+                    }
+                }
+            }
+        }
+    }
+}

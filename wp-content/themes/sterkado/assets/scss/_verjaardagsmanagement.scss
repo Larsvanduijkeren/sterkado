@@ -1,0 +1,72 @@
+.stylist_txt{
+    p{
+        font-weight: 600;
+        text-align: center;
+        color: $primary-ming;
+        transform: rotate(-9.29deg);
+        @media only screen and (max-width: $medium) {
+            transform: rotate(12.69deg);
+        }
+        br{
+            @media only screen and (max-width: $medium) {
+                display: none;
+            }    
+        }
+    }
+}
+.red-bttom-arrow{
+    position: relative;
+    &::after{
+        content: "";
+        background: url(../images/red-top-arrow.svg) no-repeat;
+        display: inline-block;
+        width: 80px;
+        height: 70px;
+        position: absolute;
+        top: -50px;
+        background-size: contain;
+        @media only screen and (max-width: $medium) {
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            width: 60px;
+            height: 50px;
+            top: -75px;
+            transform: rotate(340deg);
+        }  
+    }
+}
+.drk-green-arrow{
+    position: relative;
+    &::after{
+        content: "";
+        background: url(../images/drkgreen-bottom-arrow.svg) no-repeat;
+        display: inline-block;
+        width: 55px;
+        height: 145px;
+        position: absolute;
+        top: -50px;
+        background-size: contain;
+        right: 0;
+        left: 20%;
+        margin: 0 auto;
+        @media only screen and (max-width: $large1){
+            left: 10%;
+        }
+        @media only screen and (max-width: $medium) {
+            position: relative;
+            height: 80px;
+            right: 0;
+            left: 0;
+            top: 20px;
+            margin: 0 auto;
+            display: block;
+            transform: rotate(25deg);
+        }  
+    }
+}
+.empty-space{
+    @media only screen and (max-width: $medium) {
+        padding-top: 120px !important;
+    } 
+}
