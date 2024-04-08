@@ -8,58 +8,33 @@
  *
  * @package WP_Bootstrap_Starter
  */
-$social_media_title=get_field('social_media_title','option');
-$facebook_url=get_field('facebook_url','option');
-$instagram_url=get_field('instagram_url','option');
-$youtube_url=get_field('youtube_url','option');
-$linkedin_url=get_field('linkedin_url','option');
-$newsletter_title=get_field('newsletter_title','option');
-$logo_text=get_field('logo_text','option');
+$social_media_title     = get_field('social_media_title','option');
+$facebook_url           = get_field('facebook_url','option');
+$instagram_url          = get_field('instagram_url','option');
+$youtube_url            = get_field('youtube_url','option');
+$linkedin_url           = get_field('linkedin_url','option');
+$newsletter_title       = get_field('newsletter_title','option');
+$logo_text              = get_field('logo_text','option');
+
 ?>
 <!-- Add your FOOTER HTML HERE  -->
     <footer class="footer w-100">
         <div class="container">
             <div class="footer-bg">
                 <div class="footer-top">
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-sm-12">
                             <?php if($social_media_title):?><h4><?= $social_media_title; ?></h4><?php endif;?>
-                            <div class="social-icon-desktop">
-                                <ul>
-                                    <?php if($facebook_url):?><li><a class="facebook" href="<?= $facebook_url; ?>" target="_blank" title="Facebook"></a></li><?php endif;?>
-                                    <?php if($instagram_url):?><li><a class="instagram" href="<?= $instagram_url; ?>" target="_blank" title="Instagram"></a></li><?php endif;?>
-                                    <?php if($youtube_url):?><li><a class="youtube" href="<?= $youtube_url; ?>" target="_blank" title="Youtube"></a></li><?php endif;?>
-                                    <?php if($linkedin_url):?><li><a class="linkedin" href="<?= $linkedin_url; ?>" target="_blank" title="LinkedIN"></a></li><?php endif;?>
-                                </ul>
+                            
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="footer-contact-box">
+                                <?php if ( is_active_sidebar( 'footer-6' )) : ?>
+                                    <?php dynamic_sidebar( 'footer-6' ); ?>
+                                <?php endif; ?>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-12">
-                            <div class="footer-newsletter">
-                                <?php if($newsletter_title):?>
-                                    <p class="normal-paragraph-desktop"><?= $newsletter_title; ?></p>
-                                <?php endif;?>
-                                <div class="newsletter-section">
-                                    <?php echo do_shortcode(get_field('newsletter_form_shortcode','option')); ?>
-                                    <!-- <div class="row">
-                                        <div class="col-lg-8 col-md-8">
-                                            <input type="text" placeholder="Vul je e-mailadres in" />
-                                        </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <a href="#" class="btn btn-primary" role="button" title="Schrijf je in en mis niks">Schrijf je in en mis niks</a>
-                                        </div>
-                                    </div> -->
-                                </div>
-                                <div class="social-icon-mobile">
-                                    <ul>
-                                        <?php if($facebook_url):?><li><a class="facebook" href="<?= $facebook_url; ?>" title="Facebook"></a></li><?php endif;?>
-                                        <?php if($instagram_url):?><li><a class="instagram" href="<?= $instagram_url; ?>" title="Instagram"></a></li><?php endif;?>
-                                        <?php if($youtube_url):?><li><a class="youtube" href="<?= $youtube_url; ?>" title="Youtube"></a></li><?php endif;?>
-                                        <?php if($linkedin_url):?><li><a class="linkedin" href="<?= $linkedin_url; ?>" title="LinkedIN"></a></li><?php endif;?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-12">
+                        <div class="col-lg-3 col-sm-12">
                             <div class="footer-logo-desktop">
                                 <?php if($logo_text):?><h2><?= $logo_text; ?></h2><?php endif;?>
                             </div>
@@ -68,45 +43,46 @@ $logo_text=get_field('logo_text','option');
                 </div>
                 <div class="footer-bottom">
                     <div class="row">
-                        <div class="col-lg-12 col-xl-6 spacing-footer">
+                        <div class="col-lg-12 col-xl-12 spacing-footer">
                             <div class="row">
                                 <?php if ( is_active_sidebar( 'footer-1' )) : ?>
-                                    <div class="col-lg-4 col-md-4"><?php dynamic_sidebar( 'footer-1' ); ?></div>
+                                    <div class="col"><?php dynamic_sidebar( 'footer-1' ); ?></div>
                                 <?php endif; ?>
 
                                 <?php if ( is_active_sidebar( 'footer-2' )) : ?>
-                                    <div class="col-lg-4 col-md-4"><?php dynamic_sidebar( 'footer-2' ); ?></div>
+                                    <div class="col"><?php dynamic_sidebar( 'footer-2' ); ?></div>
                                 <?php endif; ?>
 
                                 <?php if ( is_active_sidebar( 'footer-3' )) : ?>
-                                    <div class="col-lg-4 col-md-4"><?php dynamic_sidebar( 'footer-3' ); ?></div>
+                                    <div class="col"><?php dynamic_sidebar( 'footer-3' ); ?></div>
+                                <?php endif; ?>
+                                <?php if ( is_active_sidebar( 'footer-4' )) : ?>
+                                    <div class="col"><?php dynamic_sidebar( 'footer-4' ); ?></div>
                                 <?php endif; ?>
                                 
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-xl-6">
-                            <div class="row">
-                                <?php if ( is_active_sidebar( 'footer-4' )) : ?>
-                                    <div class="col-md-4 col-lg-4 col-xl-4"><?php dynamic_sidebar( 'footer-4' ); ?></div>
-                                <?php endif; ?>
-                          
                                 <?php if ( is_active_sidebar( 'footer-5' )) : ?>
-                                    <div class="col-md-4 col-lg-4 col-xl-3"><?php dynamic_sidebar( 'footer-5' ); ?></div>
+                                    <div class="col"><?php dynamic_sidebar( 'footer-5' ); ?></div>
                                 <?php endif; ?>
-                                <?php if ( is_active_sidebar( 'footer-6' )) : ?>
-                                    <div class="col-md-4 col-lg-4 col-xl-5"><?php dynamic_sidebar( 'footer-6' ); ?></div>
-                                <?php endif; ?>
-                             
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php if ( is_active_sidebar( 'copyright-menu' )) : ?>
                     <div class="sub-footer">
-                        <div class="row">
-                            <div class="col-lg-12">
+                        <div class="row align-items-center ">
+                            <div class="col-lg-8">
                                 <div class="disclaimar">
                                     <?php dynamic_sidebar( 'copyright-menu' ); ?>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="social-icon-desktop pt-0 d-flex mt-4 mt-lg-0 justify-content-lg-end">
+                                    <ul>
+                                        <?php if($facebook_url):?><li><a class="facebook" href="<?= $facebook_url; ?>" target="_blank" title="Facebook"></a></li><?php endif;?>
+                                        <?php if($instagram_url):?><li><a class="instagram" href="<?= $instagram_url; ?>" target="_blank" title="Instagram"></a></li><?php endif;?>
+                                        <?php if($youtube_url):?><li><a class="youtube" href="<?= $youtube_url; ?>" target="_blank" title="Youtube"></a></li><?php endif;?>
+                                        <?php if($linkedin_url):?><li><a class="linkedin" href="<?= $linkedin_url; ?>" target="_blank" title="LinkedIN"></a></li><?php endif;?>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

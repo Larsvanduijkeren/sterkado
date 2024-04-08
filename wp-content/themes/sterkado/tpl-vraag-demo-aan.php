@@ -4,16 +4,18 @@
 get_header();
 ?>
 <?php
-$hero_section_title      = get_field('hero_section_title');
-$hero_section_content    = get_field('hero_section_content');
-$hero_section_quote_author_image    = get_field('hero_section_quote_author_image');
-$hero_section_quote_text    = get_field('hero_section_quote_text');
-$hero_quote_author_name    = get_field('hero_quote_author_name');
-$hero_section_form_background_image    = get_field('hero_section_form_background_image');
-$hero_section_form_title    = get_field('hero_section_form_title');
-$hero_section_form_subtitle    = get_field('hero_section_form_subtitle');
-$hero_section_form_shortcode    = get_field('hero_section_form_shortcode');
-$hero_section_form_bottom_text    = get_field('hero_section_form_bottom_text');
+$hero_section_title                     = get_field('hero_section_title');
+$hero_section_content                   = get_field('hero_section_content');
+$hero_section_quote_author_image        = get_field('hero_section_quote_author_image');
+$hero_section_quote_text                = get_field('hero_section_quote_text');
+$hero_quote_author_name                 = get_field('hero_quote_author_name');
+$hero_telephone_text                    = get_field('hero_telephone_text');
+$hero_telephone_number                  = get_field('hero_telephone_number');
+$hero_section_form_background_image     = get_field('hero_section_form_background_image');
+$hero_section_form_title                = get_field('hero_section_form_title');
+$hero_section_form_subtitle             = get_field('hero_section_form_subtitle');
+$hero_section_form_shortcode            = get_field('hero_section_form_shortcode');
+$hero_section_form_bottom_text          = get_field('hero_section_form_bottom_text');
 
 ?> 
 <section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section section-hero_banner_contact">   
@@ -24,11 +26,11 @@ $hero_section_form_bottom_text    = get_field('hero_section_form_bottom_text');
                     <h1><?php echo $hero_section_title; ?></h1>
                 <?php endif; ?>   
                 <?php if(!empty($hero_section_content)): ?>
-                    <div class="hero_section_content"><?php echo $hero_section_content; ?></div>
+                    <div class="hero_section_content demo_hero_section_content"><?php echo $hero_section_content; ?></div>
                 <?php endif; ?>   
                 
                 <?php if($hero_section_quote_author_image || $hero_section_quote_text): ?>
-                <div class="user-text d-flex align-items-center left-to-right-arrow">
+                <div class="user-text demo-user-text d-flex align-items-center left-to-right-arrow">
                     <div class="user-img">
                         <img src="<?php echo $hero_section_quote_author_image; ?>">
                     </div>
@@ -37,7 +39,11 @@ $hero_section_form_bottom_text    = get_field('hero_section_form_bottom_text');
                         <strong><?php echo $hero_quote_author_name; ?></strong>
                     </div>
                 </div>
-                <?php endif; ?>   
+                <?php endif; ?>  
+                <?php if(!empty($hero_telephone_number)): ?> 
+                    <p class="telephone-text"><?php echo $hero_telephone_text ?></p>
+                    <p class="telephone-number">Bel <a href="tel:<?php echo $hero_telephone_number; ?>"><?php echo $hero_telephone_number; ?></a></p>
+                <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="form-box">
@@ -71,12 +77,12 @@ $hero_section_form_bottom_text    = get_field('hero_section_form_bottom_text');
                         
                         //$form_shortcode='[gravityform id="'.$hero_section_form_shortcode.'" title="false" ajax="true" field_values="input_5='.$quote.'"]';
 
-                        gravity_form( $hero_section_form_shortcode, false, false, false, array('quote' => $quote,'product_title'=> $product_title), true, '', true);
+                        // gravity_form( $hero_section_form_shortcode, false, false, false, array('quote' => $quote,'product_title'=> $product_title), true, '', true);
 
                        // echo do_shortcode( $form_shortcode); 
                         endif;
                         ?>
-                        
+                        <iframe aria-label='Offerte aanvragen - Keuze Kado' frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.eu/sterkado/form/Offerteaanvragen/formperma/GO6pN_d2H6O4wWj5ic2wuoBLBKaWGETEAyCHfyNgzjY'></iframe>
                         <div class="rating-text vrag-ratting">
                             <?php if(!empty($hero_section_form_bottom_text)): ?>
                                 <p><?php echo $hero_section_form_bottom_text; ?></p>
@@ -102,6 +108,95 @@ $hero_section_form_bottom_text    = get_field('hero_section_form_bottom_text');
         </div>
     </div>
 </section>
+
+
+<?php
+    $reviews       = get_field('reviews');
+
+    if(!empty($reviews)):
+?> 
+
+<section id="review_section_1" class="w-100 section_2  section-review_section">
+    <div class="section-space">
+        <div class="container client-reviews">
+            <div class="row">
+                <?php foreach ($reviews as $key => $review):?>
+                    <div class="col-sm-4">
+                        <div class="review__card">
+                            <div class="review-text">
+                                "<?php echo $review['review_text']; ?>"
+                            </div>
+                            <div class="reviewer__dtl">
+                                <?php if(!empty($review['logo'])): ?>
+                                    <div class="reviewer__logo">
+                                        <img src="<?php echo $review['logo']['sizes']['medium']; ?>">
+                                    </div>
+                                <?php endif; ?>
+                                <span>
+                                    <?php if(!empty($review['name'])): ?>
+                                        <?php echo $review['name']; ?>
+                                    <?php endif; ?>
+                                    <?php if(!empty($review['info'])): ?>
+                                        <small class="client-info"><?php echo $review['info']; ?></small>
+                                    <?php endif; ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+
+<?php
+    
+    $slider_heading         = get_field('slider_heading');
+    $slider_description     = get_field('slider_description');
+    $carousel_images        = get_field('carousel_images');
+
+
+    if(!empty($carousel_images)):
+?> 
+
+<section id="carousel_3" class="w-100 section_2  section-carousel_slider section-customized_image__video_section">
+    <div class="customize-service arrow-with-text">
+        <div class="service-main">
+            <div class="section-space">
+                <div class="container carousel-slider customized-carousel">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                          <div class="row align-items-center justify-content-between">
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="carousel_slider">
+                                    <?php foreach ($carousel_images as $key => $img): ?>
+                                        <div class="carousel-item">
+                                            <img src="<?php echo $img['url']; ?>">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-5">
+                                <div class="service-top-left">
+                                    <div class="carousel-slider-wrapper">
+                                        <h2><?php echo $slider_heading; ?></h2>
+                                        <p><?php echo $slider_description; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<?php endif; ?>
+
 <?php
   $logo_title       = get_field('logo_title');
   $logos            = get_field('logos');
@@ -119,9 +214,6 @@ $hero_section_form_bottom_text    = get_field('hero_section_form_bottom_text');
                 </div>    
                 <div class="logo-list">
                     <ul>
-                        <!-- <?php if(!empty($logo_title)): ?>
-                            <li><h5><?php echo $logo_title; ?></h5></li>
-                        <?php endif; ?> -->
                         <?php if(!empty($logos)): 
                             foreach ($logos as $key => $logo):
                                 if(!empty($logo['logo'])){
@@ -188,95 +280,32 @@ $promise_title = get_field('promise_title');
         <?php if ($promise_title) : ?> <h2 class="latest_news__title"><?php echo $promise_title; ?></h2> <?php endif; ?> 
         <?php
             if( have_rows('promises') ): ?>
-                <div class="row promises-wrapper">
-                    <?php
-                        while( have_rows('promises') ) : the_row(); ?>
-                        <div class="col-lg-4 col-md-4 col-sm-12"  >
-                            <div class="promises-item" >
-                                <div class="promises-img">
-                                        <img src="<?php the_sub_field('image'); ?>" alt="">
+                <div class="promises__grid">
+                    <div class="row">
+                        <?php
+                            while( have_rows('promises') ) : the_row(); ?>
+                            <div class="col-sm-4"  >
+                                <div class="promises__card" >
+                                    <figure class="promises__thumb">
+                                            <img src="<?php the_sub_field('image'); ?>" alt="">
+                                    </figure>
+                                    <div class="promises__card__cont">
+                                        <h3 class="ttl">
+                                            <?php the_sub_field('title'); ?>
+                                        </h3>
+                                        <div class="desc">
+                                            <?php the_sub_field('content'); ?>
+                                        </div> 
+                                    </div>
                                 </div>
-                                <h3 class="promises-heading">
-                                    <?php the_sub_field('title'); ?>
-                                </h3>
-                                <div class="promises-content">
-                                    <?php the_sub_field('content'); ?>
-                                </div> 
                             </div>
-                        </div>
-                    <?php
-                    endwhile; ?>
-                </div> 
-                <?php
+                        <?php
+                        endwhile; ?>
+                    </div> 
+                </div>
+            <?php
             endif;
         ?>
     </div>
-</section>
-<?php
-$cta_content_alignment = get_field('cta_content_alignment');
-$cta_heading          = get_field('cta_heading');
-$cta_content          = get_field('cta_content');
-$cta_button             = get_field('cta_button');
-$cat_is_background    = get_field('cat_is_background');
-$cta_background_color = get_field('cta_background_color');
-
-$cta_text_after_button            = get_field('cta_text_after_button');
-$cta_image= get_field('cta_image');
-
-if($cta_image){
-    $col='8';
-}else{
-    $col='12';
-}
-?>
-<section id="cta_with_image_5" class="w-100 section_10  section-cta_with_image employee-sec">
-    <div class="section-space">
-        <div class="container link-cases content_align_<?= $cta_content_alignment; ?>">
-            <div class="row cases-box auto-height remove-margin" <?php if($cat_is_background=='1'):?>style="background:<?= $cta_background_color; ?>"<?php endif; ?>>
-                <div class="col-md-<?= $col; ?>">
-                    <div class="case-description">
-                        <?php if(!empty($cta_heading)): ?>
-                            <h2><?php echo $cta_heading; ?></h2>
-                        <?php endif; ?>
-                        <?php if(!empty($cta_content)): ?>
-                            <p class="normal-paragraph-desktop"><?=$cta_content;?></p>
-                        <?php endif; ?>
-                        <?php
-                            $cta_button = get_field('cta_button');
-                            if( $cta_button ): ?>
-                                    <?php 
-                                        $button = $cta_button['button'];
-                                        $button_style=$cta_button['button_style'];
-                                    
-                                        $button_with_arrow=$cta_button['button_with_arrow'];
-                                        if( $button ): 
-                                            $link_url = $button['url'];
-                                            $link_title = $button['title'];
-                                            $link_target = $button['target'] ? $button['target'] : '_self';
-                                            ?>
-                                                <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" >
-                                                <?php echo esc_html( $link_title ); ?>
-                                                <?php if($button_with_arrow=='1'): ?>
-                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M3.75 9H14.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M9 3.75L14.25 9L9 14.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                <?php endif; ?>
-                                            </a>
-                                        <?php endif; ?>
-                        <?php endif; ?>
-                        <?php if(!empty($cta_text_after_button)): ?>
-                            <p class="font-italic normal-paragraph-desktop"><?=$cta_text_after_button;?></p>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <?php if($cta_image): ?>
-                    <div class="col-md-4">
-                        <img class="w-100" src="<?= $cta_image; ?>" />
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>    
 </section>
 <?php get_footer(); ?>

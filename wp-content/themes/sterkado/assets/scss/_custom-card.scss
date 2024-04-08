@@ -1,0 +1,282 @@
+@import 'variables';
+
+.surprise__grid {
+  margin: 140px 0 0;
+
+  .row {
+    @media only screen and (max-width: $small) {
+      row-gap: 130px;
+    }
+  }
+
+  .surprise__col {
+    padding: 230px 60px 40px;
+    border-radius: 20px;
+    background: $green-color-2;
+    width: calc(100% - 40px);
+    position: relative;
+    height: 100%;
+
+    @media only screen and (max-width: $ipadpro) {
+      padding: 200px 30px 30px;
+      width: 100%;
+    }
+
+    @media only screen and (min-width: $large2) and (max-width: $m-large-1600) {
+      padding: 180px 40px 40px;
+    }
+
+    @media only screen and (min-width: $ipad) and (max-width: $ipadpro) {
+      width: calc(100% - 20px);
+    }
+
+    .surprise__thumb {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 120px);
+      display: flex;
+      justify-content: center;
+      height: 270px;
+
+      @media only screen and (max-width: $ipadpro) {
+        width: calc(100% - 80px);
+      }
+
+      @media only screen and (min-width: $large2) and (max-width: $m-large-1600) {
+        width: calc(100% - 80px);
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .chosen__tag {
+        position: absolute;
+        top: -17px;
+        right: -70px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: $secondary-btn;
+        text-align: center;
+        color: $primary;
+        font-size: 26px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (min-width: $large2) and (max-width: $m-large-1600) {
+          width: 110px;
+          height: 110px;
+          font-size: 22px;
+          right: -50px;
+        }
+
+        @media only screen and (min-width: $ipad) and (max-width: $ipadpro) {
+          width: 100px;
+          height: 100px;
+          font-size: 20px;
+          right: -50px;
+        }
+
+        @media only screen and (max-width: $small) {
+          width: 96px;
+          height: 96px;
+          font-size: 18px;
+          right: 30px;
+          top: calc(100% - 50px);
+        }
+      }
+    }
+
+    .feed-description {
+      h3 {
+        font-size: 40px;
+        line-height: 50px;
+
+        @media only screen and (max-width: $ipadpro) {
+          font-size: 28px;
+          line-height: 38px;
+        }
+
+        @media only screen and (min-width: $large2) and (max-width: $m-large-1600) {
+          font-size: 34px;
+          line-height: 44px;
+        }
+      }
+
+      .bullet__list {
+        margin: 16px 0;
+
+        li {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 10px;
+          font-size: 14px;
+
+          &:before {
+            content: '\f00c';
+            position: absolute;
+            display: inline-block;
+            font: normal normal normal 18px / 1 FontAwesome;
+            left: 0;
+            top: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .col-sm-6 {
+    &:last-child,
+    &:nth-child(2n) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.review__card {
+  padding: 40px;
+  border-radius: 15px;
+  background: rgba($color: $green-color, $alpha: 0.1);
+
+  @media only screen and (max-width: $m-large-1600) {
+    padding: 20px;
+  }
+
+  p,
+  .review-text {
+    font-size: 16px;
+    line-height: 28px;
+    color: $black;
+    margin: 0;
+
+    @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  .reviewer__dtl {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .reviewer__logo {
+      width: 60px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+        width: 40px;
+        height: 35px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    span {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 600;
+
+      @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      small {
+        display: block;
+        font-size: 10px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+.promises__grid {
+  margin: 50px 0 0;
+
+  .row {
+    @media (max-width: $small) {
+      row-gap: 30px;
+    }
+  }
+}
+
+.promises__card {
+  background: rgba($color: $green-color, $alpha: 0.1);
+  border-radius: 20px;
+  height: 100%;
+
+  .promises__thumb {
+    width: 100%;
+    // padding-top: 55.33%;
+    height: 285px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    -webkit-mask-image: url(../images/thumb-shape.svg);
+    mask-image: url(../images/thumb-shape.svg);
+    mask-size: calc(100% - 19px);
+
+    @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+      height: 135px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__cont {
+    padding: 55px;
+
+    @media only screen and (max-width: $m-large-1600) {
+      padding: 24px;
+    }
+
+    .ttl {
+      font-size: 40px;
+      line-height: 50px;
+      color: $primary;
+      font-weight: 600;
+
+      @media only screen and (max-width: $m-large-1600) {
+        font-size: 34px;
+        line-height: 44px;
+      }
+
+      @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    .desc {
+      color: $primary;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 20px 0 0;
+
+      @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+        font-size: 14px;
+        line-height: 20px;
+        margin: 10px 0 0;
+      }
+    }
+  }
+}

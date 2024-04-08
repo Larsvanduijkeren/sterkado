@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="257px" height="130px" viewBox="0 0 257 130" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <path d="M0 0L257 0L257 130L0 130L0 0L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="thumb-shape-sm">
+    <g id="Rectangle-156-(1)">
+      <path d="M0 0L257 0L257 130L0 130L0 0L0 0Z" id="Background" fill="none" stroke="none" />
+      <g id="Mask-group">
+        <path d="M0 0L257 0L257 130L0 130L0 0L0 0Z" id="path_1" fill="none" stroke="none" />
+        <g clip-path="url(#mask_1)">
+          <g id="Group" transform="translate(0 -19.259344)">
+            <path d="M0 15.7947C0 7.07152 9.87664 0 22.0601 0L234.94 0C247.124 0 257 7.07152 257 15.7947L257 144.691C257 144.691 210.325 134.412 128.5 144.691C46.6748 154.97 0 144.691 0 144.691L0 15.7947L0 15.7947L0 15.7947Z" id="Shape" fill="#ECF3F3" stroke="none" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

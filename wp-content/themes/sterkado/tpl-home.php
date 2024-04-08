@@ -3,27 +3,28 @@
 get_header();
 ?>
 <?php
-  $hero_title       = get_field('hero_title');
-  $hero_content     = get_field('hero_content');
-  $hero_right_bg_image    = get_field('hero_right_bg_image');
-  $hero_right_image = get_field('hero_right_image');
-  $hero_text_after_button = get_field('hero_text_after_button');
-  $quote_author_image = get_field('quote_author_image');
-  $quote_text = get_field('quote_text');
-  $quote_author_name = get_field('quote_author_name');
-  $hero_section_background_image = get_field('hero_section_background_image');
+  $hero_title                       = get_field('hero_title');
+  $hero_content                     = get_field('hero_content');
+  $hero_right_bg_image              = get_field('hero_right_bg_image');
+  $hero_right_image                 = get_field('hero_right_image');
+  $hero_text_after_button           = get_field('hero_text_after_button');
+  $quote_author_image               = get_field('quote_author_image');
+  $quote_text                       = get_field('quote_text');
+  $quote_author_name                = get_field('quote_author_name');
+  $hero_section_background_image    = get_field('hero_section_background_image');
   $hero_section_mobile_background_image = get_field('hero_section_mobile_background_image');
-  $count_box_1 = get_field('count_box_1');
-  $count_box_2 = get_field('count_box_2');
-  $count_box_3 = get_field('count_box_3');
-  $small_arrow_text = get_field('small_arrow_text');
-  $rank_math_focus_keyword=get_post_meta($post->ID, 'rank_math_focus_keyword', true);
+  $count_box_1                      = get_field('count_box_1');
+  $count_box_2                      = get_field('count_box_2');
+  $count_box_3                      = get_field('count_box_3');
+  $small_arrow_text                 = get_field('small_arrow_text');
+  $rank_math_focus_keyword          = get_post_meta($post->ID, 'rank_math_focus_keyword', true);
     if( strpos($rank_math_focus_keyword, ",") !== false ) {
-        $rank_math_focus_keyword=explode(",",$rank_math_focus_keyword);
-        $rank_math_focus_keyword=$rank_math_focus_keyword[0];
+        $rank_math_focus_keyword    = explode(",",$rank_math_focus_keyword);
+        $rank_math_focus_keyword    = $rank_math_focus_keyword[0];
     }else{
-        $rank_math_focus_keyword=$rank_math_focus_keyword;
+        $rank_math_focus_keyword    = $rank_math_focus_keyword;
     }
+    
     global $post;
 $page_id=$post->ID;
 ?>
@@ -193,6 +194,7 @@ $page_id=$post->ID;
                     <?php } ?>
 
                     <?php if( !empty( $count_box_3['count_number'] ) || $count_box_3['count_text'] ){ ?>
+                    
                     <div class="img-content-box-3 image-content">
                         <?php if(!empty($count_box_3['count_number'])){ ?>
                             <h4><?= $count_box_3['count_number'] ?></h4>
@@ -202,6 +204,7 @@ $page_id=$post->ID;
                             <h6><?= $count_box_3['count_text'] ?></h6>
                         <?php } ?>
                     </div>
+
                     <?php } ?>
 
                 </div>
@@ -227,7 +230,131 @@ $page_id=$post->ID;
         </div>
     </div>
 </section>
+<?php 
+    
+    $surprise_heading   = get_field('surprise_heading');
+    $surprise_box       = get_field('surprise_box');
+    
+?>
+<section class="w-100  section-surprise_section container-1600">
+    <div class="section-space">
+        <div class="container">
+            <?php if(!empty($surprise_heading)): ?>
+                <div class="solution-title text-center">
+                    <h2><?php echo $surprise_heading; ?></h2>
+                </div>
+            <?php endif; ?>
+            <?php if(!empty($surprise_box)): ?>
+                <div class="surprise__grid">
+                    <div class="row justify-content-center">
+                        <?php foreach ($surprise_box as $key => $box): ?>
+                            <div class="col-lg-5 col-sm-6">
+                                <div class="surprise__col">
+                                    <?php if(!empty($box['surprise_banner_image'])): ?>
+                                        <figure class="surprise__thumb">
+                                            <img src="<?php echo $box['surprise_banner_image']['url']; ?>" alt="" />
+                                            <?php if(!empty($box['most_chosen'])): ?>
+                                                <span class="chosen__tag">Meest gekozen</span>
+                                            <?php endif; ?>
+                                        </figure>
+                                    <?php endif; ?>
+                                    <?php if(!empty($box['small_heading'])): ?>
+                                    <div class="surpirse__col__cont">
+                                        <div class="green-button">
+                                            <a href="javascript:void(0)"><?php echo $box['small_heading']; ?></a>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                    <div class="feed-description">
+                                        <?php if(!empty($box['heading'])): ?>
+                                            <h3><?php echo $box['heading']; ?></h3>
+                                        <?php endif; ?>
+                                        <?php echo $box['list_content'] ?>
+                                        <?php if(!empty($box['surpirse_button'])): ?>
+                                            <?php 
+                                            $button             =   $box['surpirse_button']['button'];
+                                            $button_style       =   $box['surpirse_button']['button_style'];
+                                            $button_with_arrow  =   $box['surpirse_button']['button_with_arrow'];
+                                            
+                                            if( $button ): 
+                                                $link_url = $button['url'];
+                                                $link_title = $button['title'];
+                                                $link_target = $button['target'] ? $button['target'] : '_self';
+                                                            ?>
+                                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                                target="<?php echo esc_attr( $link_target ); ?>">
+                                                <?php echo esc_html( $link_title ); ?>
+                                                <?php if($button_with_arrow=='1'): ?>
+                                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
+                                                <?php endif; ?>
+                                            </a>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<!-- <section id="logo_section_0" class="w-100 section_2  section-logo_section container-1600 blank-arrow-section">
+    <div class="section-space">
+        <div class="container our-customers2">
+            <div class="employee-unique no-arrow">
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<?php
+$every_moment_heading  = get_field('every_moment_heading');
+$every_moment_sub_heading  = get_field('every_moment_sub_heading');
+$moments  = get_field('moments');
+?>
+<section id="every_moment_7" class="w-100 section_8  section-every_moment">
+    <div class="section-space">
+        <div class="container every-moments">
+            <?php if(!empty($every_moment_heading)): ?>
+            <div class="moment-title">
+                <h2><?=$every_moment_heading;?></h2>
+            </div>
+            <?php endif; ?>
+            <?php if(!empty($every_moment_sub_heading)): ?>
+            <h6><?php echo $every_moment_sub_heading; ?></h6>
+            <?php endif; ?>
+            <div class="moments-slider">
+                <?php foreach ($moments as $key => $moment): ?>
+                <div class="slide-item">
+                    <div class="slide-item-inn">
+                        <div class="slider-img">
+                            <?php if(!empty($moment['image'])):
+                                 if($moment['image']['alt']){
+                                    $images_alt=$moment['image']['alt']." - ".$rank_math_focus_keyword;
+                                }else{
+                                    $images_alt=$moment['image']['title']." - ".$rank_math_focus_keyword;
+                                } 
+                                ?>
+                            <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'#'; ?>" title="<?php echo $moment['link']['title']; ?>">
+                                <img src="<?php echo $moment['image']['url']; ?>" alt="<?php echo $images_alt; ?>" />
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="slider-head">
+                            <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'' ?>"
+                                title="<?php echo $moment['link']['title']; ?>"><?= ($moment['link']['title'])?$moment['link']['title']:'' ?></a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
 $arrow_title          = get_field('arrow_title');
@@ -237,7 +364,7 @@ $arrow_content          = get_field('arrow_content');
 <section id="logo_section_2" class="w-100 section_2  section-logo_section container-1600">
     <div class="section-space">
         <div class="container our-customers2">
-            <div class="employee-unique">
+            <div class="employee-unique no-arrow">
                 <div class="emp-thought">
                     <?php if(!empty($arrow_title)): ?>
                     <div class="emp-title">
@@ -771,49 +898,7 @@ $customized_3_video  = get_field('customized_3_video');
     </div>
 </section>
 
-<?php
-$every_moment_heading  = get_field('every_moment_heading');
-$every_moment_sub_heading  = get_field('every_moment_sub_heading');
-$moments  = get_field('moments');
-?>
-<section id="every_moment_7" class="w-100 section_8  section-every_moment">
-    <div class="section-space">
-        <div class="container every-moments">
-            <?php if(!empty($every_moment_heading)): ?>
-            <div class="moment-title">
-                <h2><?=$every_moment_heading;?></h2>
-            </div>
-            <?php endif; ?>
-            <?php if(!empty($every_moment_sub_heading)): ?>
-            <h6><?php echo $every_moment_sub_heading; ?></h6>
-            <?php endif; ?>
-            <div class="moments-slider">
-                <?php foreach ($moments as $key => $moment): ?>
-                <div class="slide-item">
-                    <div class="slider-img">
-                        <?php if(!empty($moment['image'])):
-                             if($moment['image']['alt']){
-                                $images_alt=$moment['image']['alt']." - ".$rank_math_focus_keyword;
-                            }else{
-                                $images_alt=$moment['image']['title']." - ".$rank_math_focus_keyword;
-                            } 
-                            ?>
-                        <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'#'; ?>" title="<?php echo $moment['link']['title']; ?>">
-                            <img src="<?php echo $moment['image']['url']; ?>" alt="<?php echo $images_alt; ?>" />
-                        </a>
-                        <?php endif; ?>
-                    </div>
-                    <div class="slider-head primary-ming"
-                        style="background-color: <?php echo $moment['link_bg_color']; ?>;">
-                        <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'' ?>"
-                            title="<?php echo $moment['link']['title']; ?>"><?= ($moment['link']['title'])?$moment['link']['title']:'' ?></a>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <?php
 $latest_news_title = get_field('latest_news_title');
@@ -917,7 +1002,7 @@ $employee_right_section         = get_field('employee_right_section');
                 <div class="case-users">
                     <?php 
                     $i=1;
-					foreach( $employee_left_section as $row ): ?>
+                    foreach( $employee_left_section as $row ): ?>
                         <?php if(!empty($row['profile'])): 
                              if($row['profile']['alt']){
                                 $image_alt=$row['profile']['alt']." - ".$rank_math_focus_keyword;
@@ -934,7 +1019,7 @@ $employee_right_section         = get_field('employee_right_section');
                     
                     <?php 
                     $k=8;
-					foreach( $employee_right_section as $row ): ?>
+                    foreach( $employee_right_section as $row ): ?>
                         <?php if(!empty($row['profile'])): 
                              if($row['profile']['alt']){
                                 $image_alt=$row['profile']['alt']." - ".$rank_math_focus_keyword;

@@ -4,69 +4,92 @@
 get_header();
 ?>
 <?php
-$hero_link      = get_field('hero_link');
-$hero_title      = get_field('hero_section_title');
-$hero_section_content    = get_field('hero_section_content');
-$hero_section_quote_author_image    = get_field('hero_section_quote_author_image');
-$hero_section_background_image    = get_field('hero_section_background_image');
-$hero_section_mobile_background_image = get_field('hero_section_mobile_background_image');
-$banner_logos = get_field('hero_logos');
-$hero_logo_title = get_field('hero_logo_title');
-?> 
-<section id="hero_banner_section_1" class="w-100 section_1 new_sec section-hero_banner_section inner-comm-banner" style=" background-image:url(<?= $hero_section_background_image ?>);">
-     <?php if( !empty( $hero_section_mobile_background_image ) ): ?>
+  $hero_title       = get_field('hero_title');
+  $hero_content     = get_field('hero_content');
+  $hero_right_bg_image    = get_field('hero_right_bg_image');
+  $hero_right_image = get_field('hero_right_image');
+  $hero_text_after_button = get_field('hero_text_after_button');
+  $quote_author_image = get_field('quote_author_image');
+  $quote_text = get_field('quote_text');
+  $quote_author_name = get_field('quote_author_name');
+  $hero_section_background_image = get_field('hero_section_background_image');
+  $hero_section_mobile_background_image = get_field('hero_section_mobile_background_image');
+  $count_box_1 = get_field('count_box_1');
+  $count_box_2 = get_field('count_box_2');
+  $count_box_3 = get_field('count_box_3');
+  $small_arrow_text = get_field('small_arrow_text');
+  $rank_math_focus_keyword=get_post_meta($post->ID, 'rank_math_focus_keyword', true);
+    if( strpos($rank_math_focus_keyword, ",") !== false ) {
+        $rank_math_focus_keyword=explode(",",$rank_math_focus_keyword);
+        $rank_math_focus_keyword=$rank_math_focus_keyword[0];
+    }else{
+        $rank_math_focus_keyword=$rank_math_focus_keyword;
+    }
+    global $post;
+$page_id=$post->ID;
+?>
+<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section inner-comm-banner"
+    <?php if($hero_section_background_image):?>style="background-image:url(<?= $hero_section_background_image;?>);"
+    <?php endif;?>>
+    <?php if( !empty( $hero_section_mobile_background_image ) ): 
+         if($hero_section_mobile_background_image['alt']){
+            $images_alt=$hero_section_mobile_background_image['alt']." - ".$rank_math_focus_keyword;
+        }else{
+            $images_alt=$hero_section_mobile_background_image['title']." - ".$rank_math_focus_keyword;
+        }
+        ?>
         <div class="mobile_bg_img">
-            <img src="<?php echo esc_url($hero_section_mobile_background_image['url']); ?>" alt="<?php echo esc_attr($hero_section_mobile_background_image['alt']); ?>" />
+            <img src="<?php echo esc_url($hero_section_mobile_background_image['url']); ?>" alt="<?php echo $images_alt; ?>" />
         </div>
-        <?php endif;  ?>
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-md-12">
-            <div class="inner-row">
+    <?php endif; ?>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full">
+                <?php if(!empty($hero_title)): ?>
+                <h1><?php echo $hero_title; ?></h1>
+                <?php endif; ?>
                 
-                <?php 
-                if(!empty($hero_link)){ 
-                    $title = $hero_link['title'];
-                    $url = $hero_link['url'];
-                    $target = $hero_link['target']?'_blank':'_self';
-                    ?>
-                   <div class="green-button">
-                      <a target="<?= $target ?>" href="<?= $hero_link['url'] ?>"><?= $hero_link['title'] ?></a>
-                   </div>
-                <?php } ?>
-
-                <?php if(!empty($hero_title)){ ?>
-                <div class="titel">
-                  <h1><?= $hero_title ?></h1>
-                </div>
-                <?php } ?>
-
-               <div class="btns-div">
-                <?php 
-                    $hero_button_1 = get_field('hero_button_1');
-                    if( $hero_button_1 ): 
-                        $button = $hero_button_1['button'];
-                        $button_style=$hero_button_1['button_style'];
-                        $button_with_arrow=$hero_button_1['button_with_arrow'];
+                <?php if(!empty($hero_content)): ?>
+                <div><?php echo $hero_content; ?></div>
+                <?php endif; ?>
                 
-                        if( $button ): 
-                            $link_url = $button['url'];
-                            $link_title = $button['title'];
-                            $link_target = $button['target'] ? $button['target'] : '_self'; ?>
-                        
-                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" >
+                <?php if(!empty($small_arrow_text)): ?>
+                <span class="arrow-text">
+                    <?= $small_arrow_text ?>
+                </span>
+                <?php endif; ?>
+
+                <div class="contact-banner-link text-left   remove-content">
+                    <ul class="d-md-flex">
+                        <?php
+                            $hero_button_1 = get_field('hero_button_1');
+                            if( $hero_button_1 ): ?>
+                        <li>
+                            <?php 
+                            $button = $hero_button_1['button'];
+                            $button_style=$hero_button_1['button_style'];
+                            $button_with_arrow=$hero_button_1['button_with_arrow'];
+                    
+                            if( $button ): 
+                                $link_url = $button['url'];
+                                $link_title = $button['title'];
+                                $link_target = $button['target'] ? $button['target'] : '_self';
+                                            ?>
+                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                target="<?php echo esc_attr( $link_target ); ?>">
                                 <?php echo esc_html( $link_title ); ?>
                                 <?php if($button_with_arrow=='1'): ?>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> 
+                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
                                 <?php endif; ?>
                             </a>
+                            <?php endif; ?>
+                        </li>
                         <?php endif; ?>
-                    <?php endif; ?>
-                    
-                    <?php
-                        $hero_button_2 = get_field('hero_button_2');
-                        if( $hero_button_2 ): ?>
-                            
+                        <?php
+                            $hero_button_2 = get_field('hero_button_2');
+                            if( $hero_button_2 ): ?>
+                        <li>
                             <?php 
                             $button = $hero_button_2['button'];
                             $button_style=$hero_button_2['button_style'];
@@ -77,39 +100,134 @@ $hero_logo_title = get_field('hero_logo_title');
                                 $link_title = $button['title'];
                                 $link_target = $button['target'] ? $button['target'] : '_self';
                                 ?>
-                                <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" >
-                                    <?php echo esc_html( $link_title ); ?>
-                                    <?php if($button_with_arrow=='1'): ?>
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 9H14.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M9 3.75L14.25 9L9 14.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    <?php endif; ?>
-                                </a>
-                            <?php endif; ?>
-                    
-                    <?php endif; ?>
-                            
-               </div>
-               <?php if($banner_logos){ ?> 
-                   <div class="logos">
-                        <?php if($hero_logo_title ){ ?>
-                            <h6><?= $hero_logo_title ?></h6>
-                        <?php } ?>
-                        <?php 
-                        foreach ( $banner_logos as $image ) { ?>
-                            <a href="#">
-                                <img src="<?= $image['logo']['url'] ?>" alt="<?= $image['logo']['alt'] ?>">
+                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                target="<?php echo esc_attr( $link_target ); ?>">
+                                <?php echo esc_html( $link_title ); ?>
+                                <?php if($button_with_arrow=='1'): ?>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.75 9H14.25" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M9 3.75L14.25 9L9 14.25" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <?php endif; ?>
                             </a>
+                            <?php endif; ?>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <?php 
+                $banner_logos = get_field('banner_logos');
+                if(!empty($banner_logos)){
+                ?>
+                <div class="banner-client-section">
+                    <div class="banner-client-inner">
+                        <?php if(!empty($banner_logos['banner_logo_title'])){ ?>
+                            <div class="banner-client-content"> 
+                                <h6 class="dark-subheading"><?= $banner_logos['banner_logo_title'] ?></h6>
+                            </div>
                         <?php } ?>
-                   </div>
+
+                        <?php 
+                        if(!empty($banner_logos['images'])){ 
+                            $banner_images = $banner_logos['images']; ?>
+                            <div class="banner-client-img">
+                                
+                                <?php foreach ( $banner_images as $images ) { 
+                                     if($images['alt']){
+                                        $images_alt=$images['alt']." - ".$rank_math_focus_keyword;
+                                    }else{
+                                        $images_alt=$images['title']." - ".$rank_math_focus_keyword;
+                                    }
+                                    ?>
+                                <div class="img-box">
+                                    <img src="<?= $images['url'] ?>"  alt="<?= $images_alt; ?>" />
+                                </div>  
+                                <?php } ?>
+
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
                 <?php } ?>
             </div>
-         </div>
-      </div>
-   </div>
-</section>
+            <div class="col-lg-7 col-md-12 col-sm-12 md-full  norightpadding text-center">
+                <div class="banner-right-col hide-sm-device">
+                    <?php if(!empty($hero_right_bg_image)){
+                         if($hero_right_bg_image['alt']){
+                            $images_alt=$hero_right_bg_image['alt']." - ".$rank_math_focus_keyword;
+                        }else{
+                            $images_alt=$hero_right_bg_image['title']." - ".$rank_math_focus_keyword;
+                        }
+                        ?>
+                    <figure class="hide-sm-device">
+                        <img class="w-100" src="<?php echo $hero_right_bg_image['url']; ?>" alt="<?= $images_alt; ?>">
+                       
+                    </figure>
+                    <?php } ?>
 
+                    <?php 
+                    if( !empty( $count_box_1['count_number'] ) || $count_box_1['count_text'] ){ ?>
+                    <div class="img-content-box-1 image-content">
+                        <?php if(!empty($count_box_1['count_number'])){ ?>
+                            <h4><?= $count_box_1['count_number'] ?></h4>
+                        <?php } ?>
+
+                        <?php if(!empty($count_box_1['count_text'])){ ?>
+                            <h6><?= $count_box_1['count_text'] ?></h6>
+                        <?php } ?>
+                    </div>
+                    <?php } ?>
+
+                    <?php if( !empty( $count_box_2['count_number'] ) || $count_box_2['count_text'] ){ ?>
+                    <div class="img-content-box-2 image-content">
+                        <?php if(!empty($count_box_2['count_number'])){ ?>
+                            <h4><?= $count_box_2['count_number'] ?></h4>
+                        <?php } ?>
+
+                        <?php if(!empty($count_box_2['count_text'])){ ?>
+                            <h6><?= $count_box_2['count_text'] ?></h6>
+                        <?php } ?>
+                    </div>
+                    <?php } ?>
+
+                    <?php if( !empty( $count_box_3['count_number'] ) || $count_box_3['count_text'] ){ ?>
+                    <div class="img-content-box-3 image-content">
+                        <?php if(!empty($count_box_3['count_number'])){ ?>
+                            <h4><?= $count_box_3['count_number'] ?></h4>
+                        <?php } ?>
+
+                        <?php if(!empty($count_box_3['count_text'])){ ?>
+                            <h6><?= $count_box_3['count_text'] ?></h6>
+                        <?php } ?>
+                    </div>
+                    <?php } ?>
+
+                </div>
+                <?php if($quote_author_image || $quote_text):
+                     if($quote_author_image['alt']){
+                        $images_alt=$quote_author_image['alt']." - ".$rank_math_focus_keyword;
+                    }else{
+                        $images_alt=$quote_author_image['title']." - ".$rank_math_focus_keyword;
+                    } ?>
+                <div class="user-text d-flex align-items-center justify-content-center">
+                    <div class="user-img">
+                        <img src="<?php echo $quote_author_image; ?>" alt="<?= $images_alt; ?>">
+                    </div>
+                    <div class="user-content">
+                        <?php if($quote_text): ?>
+                        <p>"<?php echo $quote_text; ?>"</p>
+                        <?php endif; ?>
+                        <strong><?php echo $quote_author_name; ?></strong>
+                    </div>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php if($hero_section_content){ ?>
 <section class="special_notes w-100">
@@ -133,7 +251,7 @@ $hero_logo_title = get_field('hero_logo_title');
     <div class="section-space arrow-bottom" >
         <div class="container our-customers2" >
             <?php if(!empty($left_title_right_content_heading) && !empty($left_title_right_content_content)): ?>
-            <div class="employee-unique-bottom">
+            <div class="employee-unique">
                 <div class="emp-thought">
                     <?php if(!empty($left_title_right_content_heading)): ?>
                         <div class="emp-title">
@@ -235,6 +353,52 @@ if($get_inspired){ ?>
     </div>
 </section>
 <?php } ?>
+
+
+
+<?php
+
+    $trend_heading          = get_field('trend_heading'); 
+    $trend_description      = get_field('trend_description');
+    $trend_from_id          = get_field('trend_select_cta_form');
+    $trend_list             = get_field('trend_list');
+    $banner_image           = get_field('banner_image');
+    $trend_background_color = get_field('trend_background_color');
+
+?>
+<section id="twi_3" class="w-100 section_10  section-cta_with_image section-trend_with_img">
+    <div class="section-space">
+        <div class="container link-cases content_align_left">
+            <div class="row cases-box" <?php if($trend_background_color!=''):?>style="background:<?= $trend_background_color; ?>"<?php endif; ?>>
+                <div class="col-md-8">
+                    <div class="case-description">
+                        <?php if(!empty($trend_heading)): ?>
+                            <h2><?php echo $trend_heading; ?></h2>
+                        <?php endif; ?>
+                        <?php if(!empty($trend_description)): ?>
+                            <p class="normal-paragraph-desktop"><?=$trend_description;?></p>
+                        <?php endif; ?>
+
+                        <?php if( $trend_from_id != ''){ ?>
+                        <div class="txt text-center form-wrap">
+                            <?= do_shortcode( '[gravityform title="false" ajax="true" id="'.$trend_from_id .'" ]' ) ?>
+                        </div>
+                        <?php } ?>
+                        <div class="trend-list">
+                            <?php echo $trend_list ?>
+                        </div>
+                    </div>
+                </div>
+                <?php if($banner_image): ?>
+                    <div class="col-md-4">
+                        <img class="w-100" src="<?= $banner_image['url']; ?>" />
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>    
+</section>
+
 
 
 <?php
