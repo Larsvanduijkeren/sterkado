@@ -1,3 +1,6 @@
+### 2.2.0 | 2024-03-20
+- Removed the defunct legacy Zoho API class.
+
 ### 2.1.0 | 2023-12-21
 - Added security enhancements.
 - Fixed an issue which causes errors to display on the System Status - Updates page.

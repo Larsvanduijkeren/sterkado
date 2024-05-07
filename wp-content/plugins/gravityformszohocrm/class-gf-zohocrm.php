@@ -516,13 +516,6 @@ class GFZohoCRM extends GFFeedAddOn {
 		// Save plugin settings.
 		$this->update_plugin_settings( $settings );
 
-		if ( $old_authMode !== 'oauth' ) {
-			// Update cached fields.
-			delete_transient( $this->fields_transient_name );
-			// Migrate feed settings.
-			$this->run_api_name_fix();
-		}
-
 		GFCommon::add_message( esc_html__( 'Zoho CRM settings have been updated.', 'gravityformszohocrm' ) );
 
 		// If error is provided, display message.
@@ -811,7 +804,7 @@ class GFZohoCRM extends GFFeedAddOn {
 		}
 
 		if ( ! class_exists( 'GF_ZohoCRM_API' ) ) {
-			require_once 'includes/legacy/class-gf-zohocrm-api.php';
+			require_once 'includes/class-gf-zohocrm-api.php';
 		}
 
 		try {
@@ -2498,11 +2491,7 @@ class GFZohoCRM extends GFFeedAddOn {
 		$auth_mode = $this->get_setting( 'authMode', $this->get_plugin_setting( 'authMode' ) );
 		// Initialize Zoho CRM API library.
 		if ( ! class_exists( 'GF_ZohoCRM_API' ) ) {
-			if ( $auth_mode === 'oauth' ) {
-				require_once 'includes/class-gf-zohocrm-api.php';
-			} else {
-				require_once 'includes/legacy/class-gf-zohocrm-api.php';
-			}
+			require_once 'includes/class-gf-zohocrm-api.php';
 		}
 
 		// Get the authentication token.
@@ -2870,86 +2859,6 @@ class GFZohoCRM extends GFFeedAddOn {
 
 
 	// # UPGRADE ROUTINES ----------------------------------------------------------------------------------------------
-
-	/**
-	 * Checks if a previous version was installed and runs any needed migration processes.
-	 *
-	 * @since  1.7.4  Upgrades for v2 API.
-	 * @since  1.1.5
-	 * @access public
-	 *
-	 * @param string $previous_version The version number of the previously installed version.
-	 *
-	 */
-	public function upgrade( $previous_version ) {
-
-		$previous_is_pre_api_name_fix = ! empty( $previous_version ) && version_compare( $previous_version, '1.7.4', '<' );
-
-		if ( $previous_is_pre_api_name_fix && $this->get_plugin_setting( 'authMode' ) === 'oauth' ) {
-			$this->run_api_name_fix();
-		}
-
-	}
-
-	/**
-	 * Upgrade feeds to use api_name as field keys.
-	 *
-	 * @since 1.7.4
-	 */
-	public function run_api_name_fix() {
-		// Get the Zoho CRM feeds.
-		$feeds = $this->get_feeds();
-
-		foreach ( $feeds as &$feed ) {
-
-			if ( rgars( $feed, 'meta/action' ) === 'contact' ) {
-
-				$contact_fields = $this->get_module_fields( 'Contacts' );
-
-				if ( rgars( $feed, 'meta/contactCustomFields' ) ) {
-
-					foreach ( $contact_fields as $contact_field ) {
-
-						foreach ( $feed['meta']['contactCustomFields'] as &$feed_custom_field ) {
-
-							if ( $feed_custom_field['key'] === $contact_field['label'] || $feed_custom_field['key'] === str_replace( '_', ' ', $contact_field['name'] ) ) {
-								$feed_custom_field['key'] = $contact_field['name'];
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-			if ( rgars( $feed, 'meta/action' ) === 'lead' ) {
-
-				$lead_fields = $this->get_module_fields( 'Leads' );
-
-				if ( rgars( $feed, 'meta/leadCustomFields' ) ) {
-
-					foreach ( $lead_fields as $lead_field ) {
-
-						foreach ( $feed['meta']['leadCustomFields'] as &$feed_custom_field ) {
-
-							if ( $feed_custom_field['key'] === $lead_field['label'] || $feed_custom_field['key'] === str_replace( '_', ' ', $lead_field['name'] ) ) {
-								$feed_custom_field['key'] = $lead_field['name'];
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-			$this->update_feed_meta( $feed['id'], $feed['meta'] );
-
-		}
-	}
 
 	/**
 	 * Revoke token and remove them from Settings.

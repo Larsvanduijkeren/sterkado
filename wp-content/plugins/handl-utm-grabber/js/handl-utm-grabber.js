@@ -11,7 +11,7 @@ jQuery(function($) {
         var curval = Cookies.get(v)
 
         if (curval != undefined) {
-            curval = decodeURIComponent(curval.replace(/[%]/g,' '))
+            curval = decodeURIComponent(curval).replace(/[%]/g,' ')
             if (v == 'username') {
                 //Maybe this should apply to all... We'll see...
                 curval = curval.replace(/\+/g, ' ')
