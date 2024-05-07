@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="270px" height="194px" viewBox="0 0 270 194" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <path d="M0 0L270 0L270 194L0 194L0 0Z" id="path_1" />
+    <path d="M1.80807 178.281L1.80807 32.535C1.80807 22.2672 -3.61531 4.18307 4.32363 4.18307L266.663 0C274.602 0 271.334 22.2673 271.334 32.535L272.516 168.802C211.332 158.004 195.804 166.567 147.016 185.802C107.985 201.189 32.9537 191.75 0.515594 182.302L1.80807 178.281Z" id="path_2" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+    <clipPath id="mask_2">
+      <use xlink:href="#path_2" />
+    </clipPath>
+  </defs>
+  <g id="Mask-group">
+    <path d="M0 0L270 0L270 194L0 194L0 0Z" id="Background" fill="none" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <g id="Mask-group" transform="translate(-2.5155945 -0.3015442)">
+        <path d="M1.80807 178.281L1.80807 32.535C1.80807 22.2672 -3.61531 4.18307 4.32363 4.18307L266.663 0C274.602 0 271.334 22.2673 271.334 32.535L272.516 168.802C211.332 158.004 195.804 166.567 147.016 185.802C107.985 201.189 32.9537 191.75 0.515594 182.302L1.80807 178.281Z" id="Shape" fill="#AEAFBF" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -6,6 +6,7 @@ get_header();
 ?>
 <?php
   $hero_title                               = get_field('hero_title');
+  $tag_line                                 = get_field('tag_line');
   $hero_content                             = get_field('hero_content');
   $hero_right_bg_image                      = get_field('hero_right_bg_image');
   $hero_right_image                         = get_field('hero_right_image');
@@ -15,8 +16,11 @@ get_header();
   $quote_author_name                        = get_field('quote_author_name');
   $hero_section_background_image            = get_field('hero_section_background_image');
   $hero_section_mobile_background_image     = get_field('hero_section_mobile_background_image');
+  $image_section_type                       = get_field('image_section_type');
   $count_box_1                              = get_field('count_box_1');
   $count_box_2                              = get_field('count_box_2');
+  $count_box_2                              = get_field('count_box_2');
+  $count_box_small_image                    = get_field('count_box_small_image');
   
   $small_arrow_text                         = get_field('small_arrow_text');
   $rank_math_focus_keyword                  = get_post_meta($post->ID, 'rank_math_focus_keyword', true);
@@ -30,7 +34,7 @@ get_header();
     $page_id = $post->ID;
 
 ?>
-<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section inner-comm-banner"
+<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section inner-comm-banner hero-type-new <?php echo $image_section_type; ?>"
     <?php if($hero_section_background_image):?>style="background-image:url(<?= $hero_section_background_image;?>);"
     <?php endif;?>>
     <?php if( !empty( $hero_section_mobile_background_image ) ): 
@@ -46,7 +50,12 @@ get_header();
     <?php endif; ?>
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full">
+            <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full left-content">
+                <?php if(!empty($tag_line)): ?>
+                <div class="green-button is-alternate">
+                    <a target="_self" href="#"><?php echo $tag_line; ?></a>
+                </div>
+                <?php endif; ?>
                 <?php if(!empty($hero_title)): ?>
                 <h1><?php echo $hero_title; ?></h1>
                 <?php endif; ?>
@@ -155,7 +164,7 @@ get_header();
                 </div>
                 <?php } ?>
             </div>
-            <div class="col-lg-7 col-md-12 col-sm-12 md-full  norightpadding text-center two-content-box">
+            <div class="col-lg-7 col-md-12 col-sm-12 md-full right-content norightpadding text-center two-content-box  <?php echo $image_section_type; ?>">
                 <div class="banner-right-col hide-sm-device">
                     <?php if(!empty($hero_right_bg_image)){
                          if($hero_right_bg_image['alt']){
@@ -169,31 +178,38 @@ get_header();
                        
                     </figure>
                     <?php } ?>
+                    <?php if($image_section_type == 'type1'): ?>
+                        <?php 
+                        if( !empty( $count_box_1['count_number'] ) || $count_box_1['count_text'] ){ ?>
+                        <div class="img-content-box-1 image-content">
+                            <?php if(!empty($count_box_1['count_number'])){ ?>
+                                <h4><?= $count_box_1['count_number'] ?></h4>
+                            <?php } ?>
 
-                    <?php 
-                    if( !empty( $count_box_1['count_number'] ) || $count_box_1['count_text'] ){ ?>
-                    <div class="img-content-box-1 image-content">
-                        <?php if(!empty($count_box_1['count_number'])){ ?>
-                            <h4><?= $count_box_1['count_number'] ?></h4>
+                            <?php if(!empty($count_box_1['count_text'])){ ?>
+                                <h6><?= $count_box_1['count_text'] ?></h6>
+                            <?php } ?>
+                        </div>
                         <?php } ?>
 
-                        <?php if(!empty($count_box_1['count_text'])){ ?>
-                            <h6><?= $count_box_1['count_text'] ?></h6>
-                        <?php } ?>
-                    </div>
-                    <?php } ?>
+                        <?php if( !empty( $count_box_2['count_number'] ) || $count_box_2['count_text'] ){ ?>
+                        <div class="img-content-box-2 image-content">
+                            <?php if(!empty($count_box_2['count_number'])){ ?>
+                                <h4><?= $count_box_2['count_number'] ?></h4>
+                            <?php } ?>
 
-                    <?php if( !empty( $count_box_2['count_number'] ) || $count_box_2['count_text'] ){ ?>
-                    <div class="img-content-box-2 image-content">
-                        <?php if(!empty($count_box_2['count_number'])){ ?>
-                            <h4><?= $count_box_2['count_number'] ?></h4>
+                            <?php if(!empty($count_box_2['count_text'])){ ?>
+                                <h6><?= $count_box_2['count_text'] ?></h6>
+                            <?php } ?>
+                        </div>
                         <?php } ?>
 
-                        <?php if(!empty($count_box_2['count_text'])){ ?>
-                            <h6><?= $count_box_2['count_text'] ?></h6>
+                        <?php if( !empty( $count_box_small_image) ){ ?>
+                            <div class="img-content-box-3 small-img-box">
+                                <img src="<?php echo $count_box_small_image['url']; ?>" alt="<?php echo $count_box_small_image['alt']; ?>">
+                            </div>
                         <?php } ?>
-                    </div>
-                    <?php } ?>
+                    <?php endif; ?>
 
                 </div>
                 <?php if($quote_author_image || $quote_text):
@@ -799,7 +815,9 @@ if($enable_section):
                     } 
                     ?>
                     <div class="col-md-6">
-                        <img class="w-100" src="<?= $cy_banner['url']; ?>" alt="<?php echo $image_alt; ?>"/>
+                        <div class="cta-thumb">
+                            <img class="w-100" src="<?= $cy_banner['url']; ?>" alt="<?php echo $image_alt; ?>"/>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
@@ -819,6 +837,9 @@ $cta_button             = $cta_section['cta_button'];
 $cat_is_background    = $cta_section['cat_is_background'];
 $cta_background_color = $cta_section['cta_background_color'];
 $cta_button =  $cta_section['cta_button'];
+$cta_enable_section =  $cta_section['cta_enable_section'];
+
+
 
 $cta_text_after_button            = $cta_section['cta_text_after_button'];
 $cta_image= $cta_section['cta_image'];
@@ -828,7 +849,7 @@ if($cta_image){
 }else{
     $col='12';
 }
-if($cta_heading || $cta_content || $cta_button['button'] || $cta_image): 
+if($cta_enable_section): 
 ?>
 <section id="cta_with_image_4" class="w-100 section_10  section-cta_with_image">
     <div class="section-space">

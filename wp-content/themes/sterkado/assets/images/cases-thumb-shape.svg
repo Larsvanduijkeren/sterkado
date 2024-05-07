@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="375px" height="194px" viewBox="0 0 375 194" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <path d="M0 0L375 0L375 194L0 194L0 0Z" id="path_1" />
+    <path d="M2.51562 191.788L2.51562 35C2.51562 23.9543 -5.03009 4.5 6.0156 4.5L371.016 0C382.062 0 377.516 23.9543 377.516 35L377.516 175.089C292.388 163.473 273.674 180.897 205.794 201.589C151.489 218.142 47.6477 201.952 2.51562 191.788L2.51562 191.788Z" id="path_2" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+    <clipPath id="mask_2">
+      <use xlink:href="#path_2" />
+    </clipPath>
+  </defs>
+  <g id="Mask-group">
+    <path d="M0 0L375 0L375 194L0 194L0 0Z" id="Background" fill="none" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <g id="Mask-group" transform="translate(-2.5155945 -15)">
+        <path d="M2.51562 191.788L2.51562 35C2.51562 23.9543 -5.03009 4.5 6.0156 4.5L371.016 0C382.062 0 377.516 23.9543 377.516 35L377.516 175.089C292.388 163.473 273.674 180.897 205.794 201.589C151.489 218.142 47.6477 201.952 2.51562 191.788L2.51562 191.788Z" id="Shape" fill="#AEAFBF" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -3,18 +3,23 @@
 get_header();
 ?>
 <?php
-    $hero_title       = get_field('hero_title');
-    $hero_content     = get_field('hero_content');
-    $hero_right_bg_image    = get_field('hero_right_bg_image');
-    $hero_right_image = get_field('hero_right_image');
-    $hero_text_after_button = get_field('hero_text_after_button');
-    $quote_author_image = get_field('quote_author_image');
-    $quote_text = get_field('quote_text');
-    $quote_author_name = get_field('quote_author_name');
-    $hero_section_background_image = get_field('hero_section_background_image');
-    $hero_section_mobile_background_image = get_field('hero_section_mobile_background_image');
-    $hero_link = get_field('hero_link');
-    $rank_math_focus_keyword=get_post_meta($post->ID, 'rank_math_focus_keyword', true);
+  $hero_title       = get_field('hero_title');
+  $hero_tag       = get_field('hero_tag');
+  $hero_content     = get_field('hero_content');
+  $hero_right_bg_image    = get_field('hero_right_bg_image');
+  $hero_right_image = get_field('hero_right_image');
+  $hero_text_after_button = get_field('hero_text_after_button');
+  $quote_author_image = get_field('quote_author_image');
+  $quote_text = get_field('quote_text');
+  $quote_author_name = get_field('quote_author_name');
+  $hero_section_background_image = get_field('hero_section_background_image');
+  $hero_section_mobile_background_image = get_field('hero_section_mobile_background_image');
+  $image_section_type = get_field('image_section_type');
+  $count_box_1 = get_field('count_box_1');
+  $count_box_2 = get_field('count_box_2');
+  $count_box_small_image = get_field('count_box_small_image');
+  $small_arrow_text = get_field('small_arrow_text');
+  $rank_math_focus_keyword=get_post_meta($post->ID, 'rank_math_focus_keyword', true);
     if( strpos($rank_math_focus_keyword, ",") !== false ) {
         $rank_math_focus_keyword=explode(",",$rank_math_focus_keyword);
         $rank_math_focus_keyword=$rank_math_focus_keyword[0];
@@ -23,94 +28,102 @@ get_header();
     }
     global $post;
     $page_id=$post->ID;
-?> 
-<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section section-hero_banner_style-3 inner-comm-banner" <?php if($hero_section_background_image):?>style="background-image:url(<?= $hero_section_background_image;?>);"<?php endif;?>>   
+?>
+<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section inner-comm-banner hero-type-new <?php echo $image_section_type; ?>"
+    <?php if($hero_section_background_image):?>style="background-image:url(<?= $hero_section_background_image;?>);"
+    <?php endif;?>>
     <?php if( !empty( $hero_section_mobile_background_image ) ): 
          if($hero_section_mobile_background_image['alt']){
             $images_alt=$hero_section_mobile_background_image['alt']." - ".$rank_math_focus_keyword;
         }else{
             $images_alt=$hero_section_mobile_background_image['title']." - ".$rank_math_focus_keyword;
-        } 
+        }
         ?>
         <div class="mobile_bg_img">
             <img src="<?php echo esc_url($hero_section_mobile_background_image['url']); ?>" alt="<?php echo $images_alt; ?>" />
         </div>
     <?php endif; ?>
     <div class="container-fluid">
-        <div class="row align-items-center ">
-            <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full">
-                <?php 
-                if(!empty($hero_link)){ 
-                    $link_url = $hero_link['url'];
-                    $link_title = $hero_link['title'];
-                    $link_target = $hero_link['target'] ? $hero_link['target'] : '_self';
-                    ?>
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full left-content">
+                <?php if(!empty($hero_tag)): ?>
                     <div class="green-button is-alternate">
-                        <a target="<?= $link_target ?>" href="<?= $link_url ?>"> <?= $link_title ?> </a>
+                        <a target="_self" href="javascript:void(0)"><?php echo $hero_tag; ?></a>
                     </div>
-                <?php } ?>
-
+                <?php endif; ?>
                 <?php if(!empty($hero_title)): ?>
-                    <h1><?php echo $hero_title; ?></h1>
-                <?php endif; ?>   
-
-                <?php if(!empty($hero_content)): ?>
-                    <div><?php echo $hero_content; ?></div>
-                <?php endif; ?>   
-
-                <div class="contact-banner-link text-left d-flex">
-                    <?php
-                    $hero_button_1 = get_field('hero_button_1');
-                    if( $hero_button_1 ): 
-                        $button = $hero_button_1['button'];
-                        $button_style=$hero_button_1['button_style'];
-                        $button_with_arrow=$hero_button_1['button_with_arrow'];
+                <h1><?php echo $hero_title; ?></h1>
+                <?php endif; ?>
                 
-                        if( $button ): 
-                            $link_url = $button['url'];
-                            $link_title = $button['title'];
-                            $link_target = $button['target'] ? $button['target'] : '_self';
-                            ?>
-                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" >
+                <?php if(!empty($hero_content)): ?>
+                <div><?php echo $hero_content; ?></div>
+                <?php endif; ?>
+                
+                <?php if(!empty($small_arrow_text)): ?>
+                <span class="arrow-text">
+                    <?= $small_arrow_text ?>
+                </span>
+                <?php endif; ?>
+
+                <div class="contact-banner-link text-left   remove-content">
+                    <ul class="d-md-flex">
+                        <?php
+                            $hero_button_1 = get_field('hero_button_1');
+                            if( $hero_button_1 ): ?>
+                        <li>
+                            <?php 
+                            $button = $hero_button_1['button'];
+                            $button_style=$hero_button_1['button_style'];
+                            $button_with_arrow=$hero_button_1['button_with_arrow'];
+                    
+                            if( $button ): 
+                                $link_url = $button['url'];
+                                $link_title = $button['title'];
+                                $link_target = $button['target'] ? $button['target'] : '_self';
+                                            ?>
+                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                target="<?php echo esc_attr( $link_target ); ?>">
                                 <?php echo esc_html( $link_title ); ?>
                                 <?php if($button_with_arrow=='1'): ?>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
                                 <?php endif; ?>
                             </a>
-                        <?php endif; ?>
-                    <?php endif; ?>
-
-                    <?php
-                    $hero_button_2 = get_field('hero_button_2');
-                    if( $hero_button_2 ): ?>
-                        <?php 
-                        $button = $hero_button_2['button'];
-                        $button_style=$hero_button_2['button_style'];
-                        $button_with_arrow=$hero_button_2['button_with_arrow'];
-                        
-                        if( $button ): 
-                            $link_url = $button['url'];
-                            $link_title = $button['title'];
-                            $link_target = $button['target'] ? $button['target'] : '_self';
-                            ?>
-                        <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
-                            target="<?php echo esc_attr( $link_target ); ?>">
-                            <?php echo esc_html( $link_title ); ?>
-                            <?php if($button_with_arrow=='1'): ?>
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.75 9H14.25" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M9 3.75L14.25 9L9 14.25" stroke="white" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
                             <?php endif; ?>
-                        </a>
-                    <?php endif; ?>
-                    <?php endif; ?>
-
-                </div>  
-
+                        </li>
+                        <?php endif; ?>
+                        <?php
+                            $hero_button_2 = get_field('hero_button_2');
+                            if( $hero_button_2 ): ?>
+                        <li>
+                            <?php 
+                            $button = $hero_button_2['button'];
+                            $button_style=$hero_button_2['button_style'];
+                            $button_with_arrow=$hero_button_2['button_with_arrow'];
+                            
+                            if( $button ): 
+                                $link_url = $button['url'];
+                                $link_title = $button['title'];
+                                $link_target = $button['target'] ? $button['target'] : '_self';
+                                ?>
+                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                target="<?php echo esc_attr( $link_target ); ?>">
+                                <?php echo esc_html( $link_title ); ?>
+                                <?php if($button_with_arrow=='1'): ?>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.75 9H14.25" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M9 3.75L14.25 9L9 14.25" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <?php endif; ?>
+                            </a>
+                            <?php endif; ?>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
                 <?php 
                 $banner_logos = get_field('banner_logos');
                 if(!empty($banner_logos)){
@@ -133,7 +146,7 @@ get_header();
                                         $images_alt=$images['alt']." - ".$rank_math_focus_keyword;
                                     }else{
                                         $images_alt=$images['title']." - ".$rank_math_focus_keyword;
-                                    } 
+                                    }
                                     ?>
                                 <div class="img-box">
                                     <img src="<?= $images['url'] ?>"  alt="<?= $images_alt; ?>" />
@@ -145,61 +158,205 @@ get_header();
                     </div>
                 </div>
                 <?php } ?>
-
             </div>
-            <div class="col-lg-7 col-md-12 col-sm-12 md-full  norightpadding text-center">
-                <?php if(!empty($hero_right_bg_image)){
-                    if($hero_right_bg_image['alt']){
-                        $images_alt=$hero_right_bg_image['alt']." - ".$rank_math_focus_keyword;
-                    }else{
-                        $images_alt=$hero_right_bg_image['title']." - ".$rank_math_focus_keyword;
-                    }
-                    ?>
-                <figure class="hide-sm-device">
-                    <img class="w-100" src="<?php echo $hero_right_bg_image['url']; ?>" alt="<?= $images_alt; ?>">
-                </figure>
-                <?php } ?>
-
-                <?php if($quote_author_image || $quote_text): ?>
-                <div class="user-text d-flex align-items-center justify-content-center">
-                    <?php if(!empty($quote_author_image)){
-                        if($quote_author_image['alt']){
-                            $images_alt=$quote_author_image['alt']." - ".$rank_math_focus_keyword;
+            <div class="col-lg-7 col-md-12 col-sm-12 md-full right-content norightpadding text-center <?php echo $image_section_type; ?>">
+                <div class="banner-right-col hide-sm-device">
+                    <?php if(!empty($hero_right_bg_image)){
+                         if($hero_right_bg_image['alt']){
+                            $images_alt=$hero_right_bg_image['alt']." - ".$rank_math_focus_keyword;
                         }else{
-                            $images_alt=$quote_author_image['title']." - ".$rank_math_focus_keyword;
+                            $images_alt=$hero_right_bg_image['title']." - ".$rank_math_focus_keyword;
                         }
                         ?>
-                    <div class="user-img">
-                        <img src="<?php echo $quote_author_image['url']; ?>" alt="<?= $images_alt; ?>">
-                    </div>
+                    <figure class="hide-sm-device">
+                        <img class="w-100" src="<?php echo $hero_right_bg_image['url']; ?>" alt="<?= $images_alt; ?>">
+                       
+                    </figure>
                     <?php } ?>
+                    <?php if($image_section_type == 'type1'): ?>
+                        <?php 
+                        if( !empty( $count_box_1['count_number'] ) || $count_box_1['count_text'] ){ ?>
+                        <div class="img-content-box-1 image-content">
+                            <?php if(!empty($count_box_1['count_number'])){ ?>
+                                <h4><?= $count_box_1['count_number'] ?></h4>
+                            <?php } ?>
 
+                            <?php if(!empty($count_box_1['count_text'])){ ?>
+                                <h6><?= $count_box_1['count_text'] ?></h6>
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
+
+                        <?php if( !empty( $count_box_2['count_number'] ) || $count_box_2['count_text'] ){ ?>
+                        <div class="img-content-box-2 image-content">
+                            <?php if(!empty($count_box_2['count_number'])){ ?>
+                                <h4><?= $count_box_2['count_number'] ?></h4>
+                            <?php } ?>
+
+                            <?php if(!empty($count_box_2['count_text'])){ ?>
+                                <h6><?= $count_box_2['count_text'] ?></h6>
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
+
+                        <?php if( !empty( $count_box_small_image) ){ ?>
+                        <div class="img-content-box-3 small-img-box">
+                            <img src="<?php echo $count_box_small_image['url']; ?>" alt="<?php echo $count_box_small_image['alt']; ?>">
+                        </div>
+                        <?php } ?>
+                    <?php endif; ?>
+
+                </div>
+                <?php if($quote_author_image || $quote_text):
+                     if($quote_author_image['alt']){
+                        $images_alt=$quote_author_image['alt']." - ".$rank_math_focus_keyword;
+                    }else{
+                        $images_alt=$quote_author_image['title']." - ".$rank_math_focus_keyword;
+                    } ?>
+                <div class="user-text d-flex align-items-center justify-content-center">
+                    <div class="user-img">
+                        <img src="<?php echo $quote_author_image; ?>" alt="<?= $images_alt; ?>">
+                    </div>
                     <div class="user-content">
                         <?php if($quote_text): ?>
-                            <p>"<?php echo $quote_text; ?>"</p>
+                        <p>"<?php echo $quote_text; ?>"</p>
                         <?php endif; ?>
-                        
-                        <?php if(!empty($quote_author_name)){ ?>
-                            <strong><?php echo $quote_author_name; ?></strong>
-                        <?php } ?>
+                        <strong><?php echo $quote_author_name; ?></strong>
                     </div>
                 </div>
-                <?php endif; ?>   
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </section>
 
+<?php 
+    
+    $surprise_heading   = get_field('surprise_heading');
+    $surprise_box       = get_field('surprise_box');
+    
+?>
+<section id="right_gift_2" class="w-100  section-surprise_section container-1600">
+    <div class="section-space">
+        <div class="container">
+            <?php if(!empty($surprise_heading)): ?>
+                <div class="solution-title text-center">
+                    <h2><?php echo $surprise_heading; ?></h2>
+                </div>
+            <?php endif; ?>
+            <?php if(!empty($surprise_box)): ?>
+                <div class="surprise__grid">
+                    <div class="row justify-content-center">
+                        <?php foreach ($surprise_box as $key => $box): ?>
+                            <div class="col-lg-5 col-sm-6">
+                                <div class="surprise__col">
+                                    <?php if(!empty($box['surprise_banner_image'])): ?>
+                                        <figure class="surprise__thumb">
+                                            <img src="<?php echo $box['surprise_banner_image']['url']; ?>" alt="" />
+                                            <?php if(!empty($box['most_chosen'])): ?>
+                                                <span class="chosen__tag">Meest gekozen</span>
+                                            <?php endif; ?>
+                                        </figure>
+                                    <?php endif; ?>
+                                    <?php if(!empty($box['small_heading'])): ?>
+                                    <div class="surpirse__col__cont">
+                                        <div class="green-button">
+                                            <a href="javascript:void(0)"><?php echo $box['small_heading']; ?></a>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                    <div class="feed-description">
+                                        <?php if(!empty($box['heading'])): ?>
+                                            <h3><?php echo $box['heading']; ?></h3>
+                                        <?php endif; ?>
+                                        <?php echo $box['list_content'] ?>
+                                        <?php if(!empty($box['surpirse_button'])): ?>
+                                            <?php 
+                                            $button             =   $box['surpirse_button']['button'];
+                                            $button_style       =   $box['surpirse_button']['button_style'];
+                                            $button_with_arrow  =   $box['surpirse_button']['button_with_arrow'];
+                                            
+                                            if( $button ): 
+                                                $link_url = $button['url'];
+                                                $link_title = $button['title'];
+                                                $link_target = $button['target'] ? $button['target'] : '_self';
+                                                            ?>
+                                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                                target="<?php echo esc_attr( $link_target ); ?>">
+                                                <?php echo esc_html( $link_title ); ?>
+                                                <?php if($button_with_arrow=='1'): ?>
+                                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                                                <?php endif; ?>
+                                            </a>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
 
 <?php
+$every_moment_heading  = get_field('every_moment_heading');
+$every_moment_sub_heading  = get_field('every_moment_sub_heading');
+$moments  = get_field('moments');
+if(!empty($moments)):
+?>
+<section id="every_moment_7" class="w-100 section_8  section-every_moment">
+    <div class="section-space">
+        <div class="container every-moments">
+            <?php if(!empty($every_moment_heading)): ?>
+            <div class="moment-title">
+                <h2><?=$every_moment_heading;?></h2>
+            </div>
+            <?php endif; ?>
+            <?php if(!empty($every_moment_sub_heading)): ?>
+            <h6><?php echo $every_moment_sub_heading; ?></h6>
+            <?php endif; ?>
+            <div class="moments-slider">
+                <?php foreach ($moments as $key => $moment): ?>
+                <div class="slide-item">
+                    <div class="slide-item-inn">
+                        <div class="slider-img">
+                            <?php if(!empty($moment['image'])):
+                                 if($moment['image']['alt']){
+                                    $images_alt=$moment['image']['alt']." - ".$rank_math_focus_keyword;
+                                }else{
+                                    $images_alt=$moment['image']['title']." - ".$rank_math_focus_keyword;
+                                } 
+                                ?>
+                            <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'#'; ?>" title="<?php echo $moment['link']['title']; ?>">
+                                <img src="<?php echo $moment['image']['url']; ?>" alt="<?php echo $images_alt; ?>" />
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="slider-head">
+                            <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'' ?>"
+                                title="<?php echo $moment['link']['title']; ?>"><?= ($moment['link']['title'])?$moment['link']['title']:'' ?></a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+<?php
 $arrow_title          = get_field('arrow_title');
-$arrow_content          = get_field('arrow_content');
+$arrow_content        = get_field('arrow_content');
 ?>
 <?php if(!empty($arrow_title) || !empty($arrow_content)): ?>
-<section id="hero_banner_section_arrow" class="w-100 section_2  section-logo_section container-1600">
+<section id="logo_section_2" class="w-100 section_2  section-logo_section container-1600">
     <div class="section-space">
         <div class="container our-customers2">
-            <div class="employee-unique">
+            <div class="employee-unique no-arrow">
                 <div class="emp-thought">
                     <?php if(!empty($arrow_title)): ?>
                     <div class="emp-title">
@@ -222,78 +379,17 @@ $arrow_content          = get_field('arrow_content');
 
 
 <?php
-  $gift_section_heading       = get_field('gift_section_heading');
-  $gifts         = get_field('gifts');
-
-  $numOfCols = count($gifts);
-  $rowCount = 0;
-  $ColWidth = 12 / $numOfCols;
-?> 
-<section id="right_gift_2" class="w-100 section_3  section-right_gift top-space-sec">
-
-    <div class="section-space">
-    <div class="container our-offers4">
-        <div class="gift-section">
-            <?php if(!empty($gift_section_heading)): ?>
-            <div class="gift-title">
-                <h2><?= $gift_section_heading;?></h2>
-            </div>
-            <?php endif; ?>
-            <div class="gift-listing">
-                <div class="row gift-bg">
-                    <?php foreach ($gifts as $key => $gift ): ?>
-                    <?php if( $gift['image'] || $gift['title'] ||  $gift['short_description'] ): ?>
-                    <div class="col-sm-12 col-md-6 col-xl-3 girf-items">
-                        <div class="inner-col">
-                            <?php if(!empty($gift['image'])):
-                                 if($gift['image']['alt']){
-                                    $images_alt=$gift['image']['alt']." - ".$rank_math_focus_keyword;
-                                }else{
-                                    $images_alt=$gift['image']['title']." - ".$rank_math_focus_keyword;
-                                }
-                                ?>
-                            <div class="gift-profile">
-                                <img src="<?= $gift['image']['url']; ?>" alt="<?= $images_alt; ?>" />
-                            </div>
-                            <?php endif; ?>
-                            <div class="gift-description">
-                                <?php if(!empty($gift['title'])): ?>
-                                    <h3><?= $gift['title'];?></h3>
-                                <?php endif; ?>
-
-                                <?php if(!empty($gift['short_description'])): ?>
-                                    <div class="normal-paragraph-desktop w-100"><?= $gift['short_description'];?></div>
-                                <?php endif; ?>
-
-                                <?php if(!empty($gift['link'])): ?>
-                                    <a class="btn btn-primary" href="<?= $gift['link']['url'];?>" title="<?= $gift['link']['title'];?>"><?= $gift['link']['title'];?></a>
-                                
-                                    <!-- <a href="#" class="btn btn-primary">Ontdek keuze cadeau</a> -->
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-<?php
 //Customized Solution 1
 
 $customized_solution_heading_2                  = get_field('customized_solution_heading_2');
-$customized_solution_image          = get_field('customized_solution_image');
-$customized_solution_profile_image  = get_field('customized_solution_profile_image');
+$customized_solution_image                      = get_field('customized_solution_image');
+$customized_solution_profile_image              = get_field('customized_solution_profile_image');
 $customized_solution_profile_info_2             = get_field('customized_solution_profile_info_2');
 $customized_solution_profile_name_2             = get_field('customized_solution_profile_name_2');
-$customized_solution_title_section          = get_field('customized_solution_title_section');
-$customized_solution_1_subtitle          = get_field('customized_solution_1_subtitle');
-$customized_solution_content_section        = get_field('customized_solution_content_section');
-$customized_solution_button_section         = get_field('customized_solution_button_section');
+$customized_solution_title_section              = get_field('customized_solution_title_section');
+$customized_solution_1_subtitle                 = get_field('customized_solution_1_subtitle');
+$customized_solution_content_section            = get_field('customized_solution_content_section');
+$customized_solution_button_section             = get_field('customized_solution_button_section');
 
 $select_image_or_video_1 = get_field('select_image_or_video_1');
 $video_poster_1 = get_field('video_poster_1');

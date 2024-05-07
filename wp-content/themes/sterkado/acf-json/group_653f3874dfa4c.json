@@ -4033,6 +4033,26 @@
             "esc_html": 0
         },
         {
+            "key": "field_6613b8f78f867",
+            "label": "Enable Section",
+            "name": "enable_section_cwi",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_653f43c9f5e3a",
             "label": "Is Background",
             "name": "ctawi_is_background",
@@ -4380,6 +4400,26 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_6613c3a28ecb1",
+            "label": "Image Tag Text",
+            "name": "trend_image_tag_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_660ff10921414",
             "label": "Background Color",
             "name": "trend_background_color",
@@ -4418,5 +4458,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712320853
+    "modified": 1712572679
 }

@@ -54,11 +54,6 @@ $header_phone_no=get_field('header_phone_no','option');
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-12 col-sm-12">
                     <span class="rating-site">
-                        <!-- <i class="fa fa-star" aria-hidden="true"></i> 
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>  -->
                         <?php echo do_shortcode(get_field('rating_shortcode','option')); ?>
                         <?php echo get_field('rating_text','option'); ?>
                     </span>
@@ -132,26 +127,54 @@ $header_phone_no=get_field('header_phone_no','option');
                     ?>
                         <?php 
                         global $post;
-                        $request_a_gift_button_post = get_field('request_a_gift_button',$post->ID);
-                        $request_a_gift_button_option = get_field('request_a_gift_button','option');
-                        if($request_a_gift_button_post){
-                            $request_a_gift_button=$request_a_gift_button_post;
-                        }else{
-                            $request_a_gift_button=$request_a_gift_button_option;
-                        }
-                        if( $request_a_gift_button ): 
-                            $link_url = $request_a_gift_button['url'];
-                            $link_title = $request_a_gift_button['title'];
-                            $link_target = $request_a_gift_button['target'] ? $link['target'] : '_self';
-                            ?>
+                        
+                        ?>
                         <div class="contact-top-link">
-                            <a class="nav-link btn btn-primary" href="<?php echo esc_url( $link_url ); ?>"
+                            <?php 
+                                $request_a_gift_button_post = get_field('request_a_gift_button',$post->ID);
+                                $request_a_gift_button_option = get_field('request_a_gift_button','option');
+                                
+                                if($request_a_gift_button_post){
+                                    $request_a_gift_button=$request_a_gift_button_post;
+                                }else{
+                                    $request_a_gift_button=$request_a_gift_button_option;
+                                }
+                                if( $request_a_gift_button ): 
+                                    $link_url = $request_a_gift_button['url'];
+                                    $link_title = $request_a_gift_button['title'];
+                                    $link_target = $request_a_gift_button['target'] ? $link['target'] : '_self';
+
+                            ?>
+                            <a class="btn btn-secondary-blue-border" href="<?php echo esc_url( $link_url ); ?>"
                                 target="<?php echo esc_attr( $link_target ); ?>">
                                 <?php echo esc_html( $link_title ); ?>
 
-                            </a>
+                            </a>    
+                            <?php endif; ?>
+
+                            <?php 
+                                $request_a_gift_button_post_2 = get_field('request_a_gift_button_2',$post->ID);
+                                $request_a_gift_button_option_2 = get_field('request_a_gift_button_2','option');
+
+                                if($request_a_gift_button_post_2){
+                                    $request_a_gift_button_2 = $request_a_gift_button_post_2;
+                                }elseif(empty($request_a_gift_button_post)){
+                                    $request_a_gift_button_2 = $request_a_gift_button_option_2;
+                                }
+                                if( $request_a_gift_button_2 ): 
+                                    $link_url_2 = $request_a_gift_button_2['url'];
+                                    $link_title_2 = $request_a_gift_button_2['title'];
+                                    $link_target_2 = $request_a_gift_button_2['target'] ? $link['target'] : '_self';
+                                ?>
+                                <a class="nav-link btn btn-primary" href="<?php echo esc_url( $link_url_2 ); ?>"
+                                    target="<?php echo esc_attr( $link_target_2 ); ?>">
+                                    <?php echo esc_html( $link_title_2 ); ?>
+
+                                </a>    
+                            <?php endif; ?>
                         </div>
-                        <?php endif; ?>
+
+
                         <div class="right-top-menu">
                             <?php
                             wp_nav_menu(array(
@@ -178,62 +201,55 @@ $header_phone_no=get_field('header_phone_no','option');
 
                         <div class="rating-bttn">
                             <span class="rating-site">
-                                <!-- <i class="fa fa-star" aria-hidden="true"></i> 
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>  -->
                                 <?php echo do_shortcode(get_field('rating_shortcode','option')); ?>
                                 <?php echo get_field('rating_text','option'); ?>
                             </span>
 
                         </div>
-                        <!-- <ul id="menu-header-menu" class="navbar-nav ">
-                        <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-286 nav-item">
-                            <a href="#" class="nav-link">Ontdek de concepten</a>
-                        </li>
-                        <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-286 nav-item">
-                            <a href="#" class="nav-link">Thema’s</a>
-                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-286" role="menu">
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345 nav-item"><a title="Vraag Demo Aan" class="dropdown-item">Vraag Demo Aan</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345 nav-item"><a title="Vraag Demo Aan" class="dropdown-item">Vraag Demo Aan</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345 nav-item"><a title="Vraag Demo Aan" class="dropdown-item">Vraag Demo Aan</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345 nav-item"><a title="Vraag Demo Aan" class="dropdown-item">Vraag Demo Aan</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345 nav-item"><a title="Vraag Demo Aan" class="dropdown-item">Vraag Demo Aan</a></li>
-                            </ul>
-                        </li>
-                        <li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-287 nav-item">
-                            <a href="#" class="nav-link">Over Sterkado</a>
-                        </li>
-                    </ul> -->
                     </nav>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <!-- <span class="rating-site hide-ds">
-                    <i class="fa fa-star" aria-hidden="true"></i> 
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i> 
-                    <?php //echo get_field('rating_text','option'); ?>
-                </span> -->
                     <?php 
                     global $post;
-                    $request_a_gift_button_post = get_field('request_a_gift_button',$post->ID);
-                    $request_a_gift_button_option = get_field('request_a_gift_button','option');
-                    if($request_a_gift_button_post){
-                        $request_a_gift_button=$request_a_gift_button_post;
-                    }else{
-                        $request_a_gift_button=$request_a_gift_button_option;
-                    }
-                    if( $request_a_gift_button ): 
-                        $link_url = $request_a_gift_button['url'];
-                        $link_title = $request_a_gift_button['title'];
-                        $link_target = $request_a_gift_button['target'] ? $link['target'] : '_self';
-                        ?>
+                    ?>
                     <div class="contact-top-link text-right">
-                        <a class="nav-link btn btn-primary" href="<?php echo esc_url( $link_url ); ?>"
+                        <?php 
+
+                        $request_a_gift_button_post = get_field('request_a_gift_button',$post->ID);
+                        $request_a_gift_button_option = get_field('request_a_gift_button','option');
+                        if($request_a_gift_button_post){
+                            $request_a_gift_button=$request_a_gift_button_post;
+                        }else{
+                            $request_a_gift_button=$request_a_gift_button_option;
+                        }
+                        if( $request_a_gift_button ): 
+                            $link_url = $request_a_gift_button['url'];
+                            $link_title = $request_a_gift_button['title'];
+                            $link_target = $request_a_gift_button['target'] ? $link['target'] : '_self';
+                        ?>
+                        <a class="btn btn-secondary-blue-border" href="<?php echo esc_url( $link_url ); ?>"
                             target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+
+                        <?php 
+                            $request_a_gift_button_post_2 = get_field('request_a_gift_button_2',$post->ID);
+                            $request_a_gift_button_option_2 = get_field('request_a_gift_button_2','option');
+
+                            if($request_a_gift_button_post_2){
+                                $request_a_gift_button_2 = $request_a_gift_button_post_2;
+                            }elseif(empty($request_a_gift_button_post)){
+                                $request_a_gift_button_2 = $request_a_gift_button_option_2;
+                            }
+                            if( $request_a_gift_button_2 ): 
+                                $link_url_2 = $request_a_gift_button_2['url'];
+                                $link_title_2 = $request_a_gift_button_2['title'];
+                                $link_target_2 = $request_a_gift_button_2['target'] ? $link['target'] : '_self';
+                            ?>
+                            <a class="btn btn-primary" href="<?php echo esc_url( $link_url_2 ); ?>"
+                                target="<?php echo esc_attr( $link_target_2 ); ?>">
+                                <?php echo esc_html( $link_title_2 ); ?>
+
+                            </a>    
+                        <?php endif; ?>
                     </div>
 
                     <?php endif; ?>

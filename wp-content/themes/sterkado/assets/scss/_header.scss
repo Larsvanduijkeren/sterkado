@@ -455,7 +455,7 @@ header {
         overflow: hidden !important;
 
         @media only screen and (min-width: $desktop) and (max-width: $large-1400) {
-          padding: 15px !important;
+          padding: 15px 50px 20px !important;
         }
 
         .title_widget,
@@ -464,8 +464,8 @@ header {
           color: $primary !important;
           font-family: $rajdhani_font !important;
           font-weight: 600 !important;
-          font-size: 22px !important;
-          line-height: 28px;
+          font-size: 28px !important;
+          line-height: 38px;
           margin-bottom: 20px !important;
           text-transform: none !important;
           padding: 0 !important;
@@ -527,12 +527,16 @@ header {
         }
 
         .contact-box {
-          padding-right: 30px !important;
+          padding-right: 60px !important;
           padding-top: 40px !important;
           padding-bottom: 40px !important;
 
           @media only screen and (max-width: $large-1400) {
             padding-top: 20px !important;
+          }
+
+          .textwidget {
+            margin-bottom: 30px;
           }
 
           .social-icons {
@@ -558,9 +562,7 @@ header {
         }
 
         .menu-list-box {
-          padding-right: 30px !important;
-          padding-top: 40px !important;
-          padding-bottom: 10px !important;
+          padding: 40px 10px 40px 40px !important;
 
           @media only screen and (max-width: $large-1400) {
             padding-top: 20px !important;
@@ -1375,6 +1377,23 @@ header {
 body #mega-menu-wrap-primary {
   #mega-menu-primary {
     > .mega-menu-item {
+      &.mega-pipe-line {
+        padding-right: 30px;
+        position: relative;
+        margin-right: 30px !important;
+
+        &:after {
+          content: '';
+          width: 1px;
+          height: 25px;
+          background: $black;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          display: block;
+        }
+      }
       > .mega-sub-menu {
         .mega-menu-row {
           > .mega-sub-menu {
@@ -1389,6 +1408,10 @@ body #mega-menu-wrap-primary {
                   &:first-child {
                     width: 100% !important;
                     padding-bottom: 0 !important;
+
+                    .mega-block-title {
+                      margin-bottom: 0 !important;
+                    }
                   }
 
                   &.widget_sp_image {
@@ -1453,5 +1476,11 @@ body #mega-menu-wrap-primary {
         }
       }
     }
+  }
+}
+
+.contact-top-link {
+  @media only screen and (max-width: $ipad-min) {
+    display: none;
   }
 }

@@ -21,8 +21,13 @@ body {
         }
 
         .slide-item-inn {
-          background: #ecf3f3;
+          background: $opal-light;
           border-radius: 20px;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background: $secondary-lightcream;
+          }
         }
 
         .slider-img {
@@ -44,10 +49,18 @@ body {
               mask-size: 156px;
             }
 
+            @media screen and (min-width: $m-large-1920) {
+              height: calc(190px - 1px);
+            }
+
             img {
               width: 100%;
-              height: calc(100% - 2px);
+              height: calc(100% - 1px);
               object-fit: cover;
+
+              @media only screen and (max-width: $small) {
+                height: calc(100% - 2px);
+              }
             }
           }
           //   .curve {
@@ -61,8 +74,11 @@ body {
         }
 
         .slider-head {
-          padding: 20px;
-          border-radius: 0 0 20px 20px;
+          // padding: 20px;
+          // border-radius: 0 0 20px 20px;
+
+          padding: 0;
+          border-radius: 0;
 
           &.primary-ming {
             background-color: $primary-ming;
@@ -81,9 +97,18 @@ body {
             font-size: 16px;
             line-height: 22px;
             color: $primary;
+            padding: 20px;
+            border-radius: 0 0 20px 20px;
+            width: 100%;
+            display: block;
+
             // @media(max-width: $small){
             //     font-size: 16px;
             // }
+
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }

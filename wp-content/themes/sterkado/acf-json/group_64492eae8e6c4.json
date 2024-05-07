@@ -128,6 +128,26 @@
             "delay": 0
         },
         {
+            "key": "field_6618c2729b6f7",
+            "label": "Tag Line",
+            "name": "tag_line",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_660fa6ce1437f",
             "label": "Small arrow text",
             "name": "small_arrow_text",
@@ -148,6 +168,29 @@
             "append": ""
         },
         {
+            "key": "field_663399d71d31b",
+            "label": "Image Section Type",
+            "name": "image_section_type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "type1": "Type 1",
+                "type2": "Type 2"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_660fa7ccd1eb1",
             "label": "Count Box 1",
             "name": "count_box_1",
@@ -155,7 +198,15 @@
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_663399d71d31b",
+                        "operator": "==",
+                        "value": "type1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -213,7 +264,15 @@
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_663399d71d31b",
+                        "operator": "==",
+                        "value": "type1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -262,6 +321,64 @@
                     "append": ""
                 }
             ]
+        },
+        {
+            "key": "field_66339a141d31c",
+            "label": "Count Box Small Image",
+            "name": "count_box_small_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Size: 400 X 230 PX",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_663399d71d31b",
+                        "operator": "==",
+                        "value": "type1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_660fa7ccd1fc5",
+            "label": "Right Background Image",
+            "name": "hero_right_bg_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Type 1 Size : 660 × 503 PX \r\nType 2 Size : 903 x 611 PX",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_64492eaea0bda",
@@ -426,31 +543,6 @@
                     "ui_off_text": ""
                 }
             ]
-        },
-        {
-            "key": "field_660fa7ccd1fc5",
-            "label": "Right Background Image",
-            "name": "hero_right_bg_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Size : 1005 × 730 px",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
         },
         {
             "key": "field_64492eaea0c6e",
@@ -1973,6 +2065,26 @@
             },
             "layout": "block",
             "sub_fields": [
+                {
+                    "key": "field_6613ca1c66100",
+                    "label": "Enable Section",
+                    "name": "cta_enable_section",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
                 {
                     "key": "field_644a671a34c6c",
                     "label": "Is Background",
@@ -4132,5 +4244,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712489593
+    "modified": 1714746330
 }

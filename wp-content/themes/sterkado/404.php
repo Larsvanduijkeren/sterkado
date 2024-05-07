@@ -90,39 +90,156 @@ get_header(); ?>
         </div>
     </div>
 </section>
-<?php
-$course_every_moment_heading  = get_field('404_every_moment_heading','option');
-$course_moments  = get_field('404_moments','option');
 
-?> 
-<section class="w-100 section_8  section-every_moment">
+<?php 
+    
+    $surprise_heading   = get_field('surprise_heading','option');
+    $surprise_box       = get_field('surprise_box','option');
+    
+    if(!empty($surprise_box)):
+?>
+<section class="w-100  section-surprise_section container-1600 case_surprice_section">
+    <div class="section-space">
+        <div class="container">
+            <?php if(!empty($surprise_heading)): ?>
+                <div class="solution-title text-center">
+                    <h2><?php echo $surprise_heading; ?></h2>
+                </div>
+            <?php endif; ?>
+            <?php if(!empty($surprise_box)): ?>
+                <div class="surprise__grid">
+                    <div class="row justify-content-center">
+                        <?php foreach ($surprise_box as $key => $box): ?>
+                            <div class="col-lg-5 col-sm-6">
+                                <div class="surprise__col">
+                                    <?php if(!empty($box['surprise_banner_image'])): ?>
+                                        <figure class="surprise__thumb">
+                                            <img src="<?php echo $box['surprise_banner_image']['url']; ?>" alt="" />
+                                            <?php if(!empty($box['most_chosen'])): ?>
+                                                <span class="chosen__tag">Meest gekozen</span>
+                                            <?php endif; ?>
+                                        </figure>
+                                    <?php endif; ?>
+                                    <?php if(!empty($box['small_heading'])): ?>
+                                    <div class="surpirse__col__cont">
+                                        <div class="green-button">
+                                            <a href="javascript:void(0)"><?php echo $box['small_heading']; ?></a>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                    <div class="feed-description">
+                                        <?php if(!empty($box['heading'])): ?>
+                                            <h3><?php echo $box['heading']; ?></h3>
+                                        <?php endif; ?>
+                                        <?php echo $box['list_content'] ?>
+                                        <?php if(!empty($box['surpirse_button'])): ?>
+                                            <?php 
+                                            $button             =   $box['surpirse_button']['button'];
+                                            $button_style       =   $box['surpirse_button']['button_style'];
+                                            $button_with_arrow  =   $box['surpirse_button']['button_with_arrow'];
+                                            
+                                            if( $button ): 
+                                                $link_url = $button['url'];
+                                                $link_title = $button['title'];
+                                                $link_target = $button['target'] ? $button['target'] : '_self';
+                                                            ?>
+                                            <a class="btn <?= $button_style;?>-btn" href="<?php echo esc_url( $link_url ); ?>"
+                                                target="<?php echo esc_attr( $link_target ); ?>">
+                                                <?php echo esc_html( $link_title ); ?>
+                                                <?php if($button_with_arrow=='1'): ?>
+                                               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 12L12 19L5 12" stroke="#40434E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+                                                <?php endif; ?>
+                                            </a>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<?php endif; ?>
+
+<?php 
+    $every_moment_heading  = get_field('404_every_moment_heading','option');
+    $moments  = get_field('404_moments','option');
+?>
+<section id="every_moment_7" class="w-100 section_8  section-every_moment">
     <div class="section-space">
         <div class="container every-moments">
-            <?php if(!empty($course_every_moment_heading)): ?>
+            <?php if(!empty($every_moment_heading)): ?>
             <div class="moment-title">
-                <h2><?=$course_every_moment_heading;?></h2>
+                <h2><?=$every_moment_heading;?></h2>
             </div>
             <?php endif; ?>
             <div class="moments-slider">
-                <?php foreach ($course_moments as $key => $moment): ?>
+                <?php foreach ($moments as $key => $moment): ?>
                 <div class="slide-item">
-                    <div class="slider-img">
-                        <?php if(!empty($moment['image'])): ?>
-                        <a href="<?php echo $moment['link']['url']; ?>" title="<?php echo $moment['link']['title']; ?>">
-                            <img src="<?php echo $moment['image']['url']; ?>" alt="<?php echo $moment['image']['alt']; ?>" />
-                        </a>
-                        <?php endif; ?>
-                    </div>
-                    <div class="slider-head primary-ming" style="background-color: <?php echo $moment['link_bg_color']; ?>;">
-                        <a href="<?php echo $moment['link']['url']; ?>" title="<?php echo $moment['link']['title']; ?>"><?php echo $moment['link']['title']; ?></a>
+                    <div class="slide-item-inn">
+                        <div class="slider-img">
+                            <?php if(!empty($moment['image'])):
+                                 if($moment['image']['alt']){
+                                    $images_alt=$moment['image']['alt']." - ".$rank_math_focus_keyword;
+                                }else{
+                                    $images_alt=$moment['image']['title']." - ".$rank_math_focus_keyword;
+                                } 
+                                ?>
+                            <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'#'; ?>" title="<?php echo $moment['link']['title']; ?>">
+                                <img src="<?php echo $moment['image']['url']; ?>" alt="<?php echo $images_alt; ?>" />
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="slider-head">
+                            <a href="<?= ($moment['link']['url'])?$moment['link']['url']:'' ?>"
+                                title="<?php echo $moment['link']['title']; ?>"><?= ($moment['link']['title'])?$moment['link']['title']:'' ?></a>
+                        </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
         </div>
-    </div> 
+    </div>
 </section>
+
 <?php
+$arrow_title          = get_field('arrow_title','option');
+$arrow_content          = get_field('arrow_content','option');
+?>
+<?php if(!empty($arrow_title) || !empty($arrow_content)): ?>
+<section id="logo_section_2" class="w-100 section_2  section-logo_section container-1600">
+    <div class="section-space">
+        <div class="container our-customers2">
+            <div class="employee-unique no-arrow">
+                <div class="emp-thought">
+                    <?php if(!empty($arrow_title)): ?>
+                    <div class="emp-title">
+                        <h2 class="font-h4"><?=$arrow_title;?></h2>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if(!empty($arrow_content)): ?>
+                    <div class="emp-desc">
+                        <p><?= $arrow_content;?></p>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+
+<?php
+
+$enable_section = get_field('404_cat_enable_section','option');
 $cta_content_alignment = get_field('404_cta_content_alignment','option');
 $cta_heading          = get_field('404_cta_heading','option');
 $cta_content          = get_field('404_cta_content','option');
@@ -137,6 +254,8 @@ if($cta_image){
 }else{
     $col='12';
 }
+
+if($enable_section):
 ?>
 <section class="w-100 section_10  section-cta_with_image">
     <div class="section-space">
@@ -165,6 +284,9 @@ if($cta_image){
         </div>
     </div>    
 </section>
+
 <?php
+
+endif;
 get_footer();
 ?>

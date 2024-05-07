@@ -248,11 +248,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_62d52629be3f2",
-            "label": "Select Form",
-            "name": "hero_section_form_shortcode",
+            "key": "field_663218206a889",
+            "label": "Form Code",
+            "name": "hero_section_form_code",
             "aria-label": "",
-            "type": "forms",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -261,9 +261,22 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "choices": {
+                "algemeen_offerte_aanvragen": "Algemeen Offerte aanvragen",
+                "contact_formulier_zakelijk": "Contact Formulier Zakelijk",
+                "faq_veelgestelde_vragen_pagina": "FAQ Form Veelgestelde Vragen Pagina",
+                "kerstpakketten_offerte_aanvragen": "Kerstpakketten Offerte Aanvragen",
+                "keuzeKado_offerte_aanvragen": "KeuzeKado Offerte Aanvragen",
+                "solliciteer_direct": "Solliciteer Direct",
+                "test_webshop_aanvragen": "Test Webshop Aanvragen"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
             "allow_null": 0,
-            "multiple": 0
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_62d52629be3f3",
@@ -965,5 +978,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712380050
+    "modified": 1714559039
 }

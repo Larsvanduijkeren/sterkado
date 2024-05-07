@@ -7118,3 +7118,24 @@ body .every-moments .moments-slider .slick-next:hover {
     width:126px;
     height:auto;
 }
+
+.assort-moment-nav .assort-moment-card.active .slider-head a {background: #fdebc6!important;}
+/*
+body.page-template-tpl-vraag-demo-aan .main-header-bar {display: none;}
+body.page-template-tpl-vraag-demo-aan header.fixed-header .main-header-bar {display: flex;}
+ 
+body.page-template-tpl-vraag-demo-aan .section-hero_banner_section{padding-top: 150px!important}*/
+
+.single-job .post_detail_content .hero-contact-form-section.form-new-design .row {
+  column-gap:normal;
+}
+
+.section-latest_news.get_inspired .latest-news-wrapper .news-item .news-img {
+  height: auto;
+  max-height:330px;
+}
+.section-hero_banner_section.hero-type-new .type1 .banner-right-col figure img {
+  object-position:left;
+}
+
+.hero-contact-form-section.form-new-design label.error {color: red;}

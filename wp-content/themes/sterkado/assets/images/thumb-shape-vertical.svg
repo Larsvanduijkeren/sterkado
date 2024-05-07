@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="173px" height="153px" viewBox="0 0 173 153" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <path d="M0 0L173 0L173 153L0 153L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="Rectangle-60">
+    <path d="M0 0L173 0L173 153L0 153L0 0Z" id="Background" fill="none" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <path d="M0 20C0 8.9543 8.95431 0 20 0L167.022 0C167.022 0 179.303 30.7635 167.022 76.5C154.741 122.236 167.022 153 167.022 153L83.5109 153L20 153C8.95428 153 0 144.046 0 133L0 20L0 20Z" id="Shape" fill="#808080" stroke="none" />
+    </g>
+  </g>
+</svg>

@@ -45,6 +45,9 @@ $page_id=$post->ID;
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-5 col-md-12 col-sm-12 pd-100 md-full">
+                <div class="green-button is-alternate">
+                    <a target="_self" href="#">Kerstpakketten</a>
+                </div>
                 <?php if(!empty($hero_title)): ?>
                 <h1><?php echo $hero_title; ?></h1>
                 <?php endif; ?>
@@ -230,7 +233,7 @@ $page_id=$post->ID;
 </section>
 
 <?php if($hero_section_content){ ?>
-<section class="special_notes w-100">
+<section id="right_gift_2" class="special_notes w-100">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -356,52 +359,11 @@ if($get_inspired){ ?>
 
 
 
-<?php
-
-    $trend_heading          = get_field('trend_heading'); 
-    $trend_description      = get_field('trend_description');
-    $trend_from_id          = get_field('trend_select_cta_form');
-    $trend_list             = get_field('trend_list');
-    $banner_image           = get_field('banner_image');
-    $trend_background_color = get_field('trend_background_color');
-
-?>
-<section id="twi_3" class="w-100 section_10  section-cta_with_image section-trend_with_img">
-    <div class="section-space">
-        <div class="container link-cases content_align_left">
-            <div class="row cases-box" <?php if($trend_background_color!=''):?>style="background:<?= $trend_background_color; ?>"<?php endif; ?>>
-                <div class="col-md-8">
-                    <div class="case-description">
-                        <?php if(!empty($trend_heading)): ?>
-                            <h2><?php echo $trend_heading; ?></h2>
-                        <?php endif; ?>
-                        <?php if(!empty($trend_description)): ?>
-                            <p class="normal-paragraph-desktop"><?=$trend_description;?></p>
-                        <?php endif; ?>
-
-                        <?php if( $trend_from_id != ''){ ?>
-                        <div class="txt text-center form-wrap">
-                            <?= do_shortcode( '[gravityform title="false" ajax="true" id="'.$trend_from_id .'" ]' ) ?>
-                        </div>
-                        <?php } ?>
-                        <div class="trend-list">
-                            <?php echo $trend_list ?>
-                        </div>
-                    </div>
-                </div>
-                <?php if($banner_image): ?>
-                    <div class="col-md-4">
-                        <img class="w-100" src="<?= $banner_image['url']; ?>" />
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>    
-</section>
-
 
 
 <?php
+
+$enable_section_cwi     = get_field('enable_section_cwi'); 
 $cta_content_alignment = get_field('ctawi_content_alignment'); 
 $cta_heading          = get_field('ctawi_heading');
 $cta_content          = get_field('ctawi_content');
@@ -418,6 +380,8 @@ if($cta_image){
 }else{
     $col='12';
 }
+
+if($enable_section_cwi):
 ?>
 <section id="cta_with_image_4" class="w-100 section_10  section-cta_with_image">
     <div class="section-space">
@@ -448,6 +412,7 @@ if($cta_image){
         </div>
     </div>    
 </section>
+<?php endif; ?>
 
 <?php 
 $partner_customiz = get_field('partner_customization');
@@ -542,6 +507,58 @@ $gift_card_gallery_description     = get_field('gift_card_gallery_description');
         </div>
     </div>
 </section>
+
+
+<?php
+
+    $trend_heading          = get_field('trend_heading'); 
+    $trend_description      = get_field('trend_description');
+    $trend_from_id          = get_field('trend_select_cta_form');
+    $trend_list             = get_field('trend_list');
+    $banner_image           = get_field('banner_image');
+    $trend_background_color = get_field('trend_background_color');
+    $trend_image_tag_text   = get_field('trend_image_tag_text');
+
+
+?>
+<section id="twi_3" class="w-100 section_10  section-cta_with_image section-trend_with_img">
+    <div class="section-space">
+        <div class="container link-cases content_align_left">
+            <div class="row cases-box" <?php if($trend_background_color!=''):?>style="background:<?= $trend_background_color; ?>"<?php endif; ?>>
+                <div class="col-md-6 col-sm-12">
+                    <div class="case-description">
+                        <?php if(!empty($trend_heading)): ?>
+                            <h2><?php echo $trend_heading; ?></h2>
+                        <?php endif; ?>
+                        <?php if(!empty($trend_description)): ?>
+                            <p class="normal-paragraph-desktop"><?=$trend_description;?></p>
+                        <?php endif; ?>
+
+                        <?php if( $trend_from_id != ''){ ?>
+                        <div class="txt text-center form-wrap">
+                            <?= do_shortcode( '[gravityform title="false" ajax="true" id="'.$trend_from_id .'" ]' ) ?>
+                        </div>
+                        <?php } ?>
+                        <div class="trend-list">
+                            <?php echo $trend_list ?>
+                        </div>
+                    </div>
+                </div>
+                <?php if($banner_image): ?>
+                    <div class="col-md-4">
+                        <div class="trend-thumb">
+                            <img class="w-100" src="<?= $banner_image['url']; ?>" />
+                            <?php if(!empty($trend_image_tag_text)): ?>
+                                <span class="trend-banner-tag"><?php echo $trend_image_tag_text; ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>    
+</section>
+
 
 <?php
   $logo_title       = get_field('logo_title');

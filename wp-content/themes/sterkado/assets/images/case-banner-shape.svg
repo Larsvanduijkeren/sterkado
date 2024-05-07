@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1920px" height="615px" viewBox="0 0 1920 615" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <defs>
+    <path d="M912.233 0L1920 0L1920 513.84C1920 513.84 1491.88 501.156 1124 572.429C494.5 694.387 0 513.84 0 513.84L0 0L912.233 0L912.233 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <path d="M912.233 0L1920 0L1920 513.84C1920 513.84 1491.88 501.156 1124 572.429C494.5 694.387 0 513.84 0 513.84L0 0L912.233 0L912.233 0Z" id="Shape" fill="#BFC3D8" stroke="none" />
+</svg>

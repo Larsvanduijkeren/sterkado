@@ -26,6 +26,9 @@ if(!function_exists('brightness_add_custom_scripts')){
 		wp_enqueue_script('slick', get_stylesheet_directory_uri() . '/assets/js/slick.min.js',array('jquery'),'1.0', 'true');
 		wp_enqueue_script('slick-lightbox', get_stylesheet_directory_uri() . '/assets/js/slick-lightbox.min.js',array('jquery'),'1.0', 'true');
 		wp_enqueue_script('mmenu-light', get_stylesheet_directory_uri() . '/assets/js/mmenu-light.js',array('jquery'),'1.0', 'true');
+		wp_enqueue_script('validation-js', get_stylesheet_directory_uri() . '/assets/js/jquery.validate.min.js',array('jquery'),'1.0', 'true');
+		wp_enqueue_script('validation-method', get_stylesheet_directory_uri() . '/assets/js/additional-methods.min.js',array('jquery'),'1.0', 'true');
+		wp_enqueue_script('zoho-validation', get_stylesheet_directory_uri() . '/assets/js/zoho-validation.js',array('jquery'),'1.0', 'true');
 		wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js');
 		wp_localize_script( 'custom-js', 'custom_params', array(
 			'lang' => apply_filters( 'wpml_current_language', NULL ), // WordPress AJAX
@@ -670,9 +673,7 @@ function product_details_popup_callback(){
 										
 										?>
 										<div class="slide-item">
-											<?php if($product_url):?><a href="<?= $product_url; ?>"><?php endif; ?>
 											<img class="w-100" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $images_alt; ?>" />
-											<?php if($product_url):?></a><?php endif; ?>
 										</div>
 									<?php endforeach; ?>
 								</div>

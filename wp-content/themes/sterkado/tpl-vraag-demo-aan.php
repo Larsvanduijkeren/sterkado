@@ -1,9 +1,11 @@
 	
 <?php 
 /* Template Name: Vraag Demo Aan */ 
-get_header();
+get_header('demo');
+
 ?>
 <?php
+
 $hero_section_title                     = get_field('hero_section_title');
 $hero_section_content                   = get_field('hero_section_content');
 $hero_section_quote_author_image        = get_field('hero_section_quote_author_image');
@@ -15,10 +17,16 @@ $hero_section_form_background_image     = get_field('hero_section_form_backgroun
 $hero_section_form_title                = get_field('hero_section_form_title');
 $hero_section_form_subtitle             = get_field('hero_section_form_subtitle');
 $hero_section_form_shortcode            = get_field('hero_section_form_shortcode');
+$hero_section_form_code                 = get_field('hero_section_form_code');
 $hero_section_form_bottom_text          = get_field('hero_section_form_bottom_text');
 
 ?> 
-<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section section-hero_banner_contact">   
+<section id="hero_banner_section_1" class="w-100 section_1  section-hero_banner_section section-hero_banner_contact ">   
+    <div class="form-floater">
+        <a href="javascript:void(0)" id="vraagform">
+            Vraag vrijblijvend jouw demo webshop aan
+        </a>
+    </div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12  norightpadding text-left">
@@ -45,67 +53,50 @@ $hero_section_form_bottom_text          = get_field('hero_section_form_bottom_te
                     <p class="telephone-number">Bel <a href="tel:<?php echo $hero_telephone_number; ?>"><?php echo $hero_telephone_number; ?></a></p>
                 <?php endif; ?>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="form-box">
-                    <div class="form-img">
-                        <img src="<?php echo $hero_section_form_background_image; ?>">
-                    </div>
-                    <div class="hero-contact-form-section form-new-design" style="background:url('<?php echo $hero_section_form_background_image; ?>');">
-                        <?php if(!empty($hero_section_form_title)): ?>
-                            <h3><?php echo $hero_section_form_title; ?></h3>
-                        <?php endif; ?> 
-                        <?php if(!empty($hero_section_form_subtitle)): ?>
-                            <p><?php echo $hero_section_form_subtitle; ?></p>
-                        <?php endif; ?>  
+            <?php if(!empty($hero_section_form_code)): ?>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="form-box">
+                    <div class="form-box">
+                        <?php if(!empty($hero_section_form_background_image)): ?>
+                            <div class="form-img">
+                                <img src="<?php echo $hero_section_form_background_image; ?>">
+                            </div>
+                        <?php endif; ?>
+                        <div class="hero-contact-form-section form-new-design">
+                            <?php if(!empty($hero_section_form_title)): ?>
+                                <h3><?php echo $hero_section_form_title; ?></h3>
+                            <?php endif; ?> 
+                            <?php if(!empty($hero_section_form_subtitle)): ?>
+                                <p><?php echo $hero_section_form_subtitle; ?></p>
+                            <?php endif; ?>  
 
 
-                        <?php 
-                        $hero_section_form_shortcode=get_field('hero_section_form_shortcode'); 
-                        if($_GET['quote']){
-                            $quote=$_GET['quote'];
-                        }
-                        if($_GET['p_id']){
-                            $product_id=$_GET['p_id'];
-                            if(is_numeric($product_id)){
-                                $product_title=get_the_title($product_id);
-                            }else{
-                                $product_title=$_GET['p_id'];
-                            }
-                        }
-                        if($hero_section_form_shortcode):
-
-                        
-                        //$form_shortcode='[gravityform id="'.$hero_section_form_shortcode.'" title="false" ajax="true" field_values="input_5='.$quote.'"]';
-
-                        // gravity_form( $hero_section_form_shortcode, false, false, false, array('quote' => $quote,'product_title'=> $product_title), true, '', true);
-
-                       // echo do_shortcode( $form_shortcode); 
-                        endif;
-                        ?>
-                        <iframe aria-label='Offerte aanvragen - Keuze Kado' frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.eu/sterkado/form/Offerteaanvragen/formperma/GO6pN_d2H6O4wWj5ic2wuoBLBKaWGETEAyCHfyNgzjY'></iframe>
-                        <div class="rating-text vrag-ratting">
-                            <?php if(!empty($hero_section_form_bottom_text)): ?>
-                                <p><?php echo $hero_section_form_bottom_text; ?></p>
-                            <?php endif; ?>
+                            <?php 
+                                echo get_template_part( 'components/zoho/form',$hero_section_form_code);
+                            ?>
+                            
+                            <div class="rating-text vrag-ratting">
+                                <?php if(!empty($hero_section_form_bottom_text)): ?>
+                                    <p><?php echo $hero_section_form_bottom_text; ?></p>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <?php if($hero_section_quote_author_image || $hero_section_quote_text): ?>
-                <div class="user-text d-flex align-items-center left-to-right-arrow mobile-view">
-                    <div class="user-img">
-                        <img src="<?php echo $hero_section_quote_author_image; ?>">
+                    <?php if($hero_section_quote_author_image || $hero_section_quote_text): ?>
+                    <div class="user-text d-flex align-items-center left-to-right-arrow mobile-view">
+                        <div class="user-img">
+                            <img src="<?php echo $hero_section_quote_author_image; ?>">
+                        </div>
+                        <div class="user-content">
+                            <?php if($hero_section_quote_text): ?>
+                                <p>"<?php echo $hero_section_quote_text; ?>"</p>
+                            <?php endif; ?>
+                            <strong><?php echo $hero_quote_author_name; ?></strong>
+                        </div>
                     </div>
-                    <div class="user-content">
-                        <?php if($hero_section_quote_text): ?>
-                            <p>"<?php echo $hero_section_quote_text; ?>"</p>
-                        <?php endif; ?>
-                        <strong><?php echo $hero_quote_author_name; ?></strong>
-                    </div>
+                    <?php endif; ?> 
                 </div>
-                <?php endif; ?> 
-
-        </div>
+            <?php endif; ?>
     </div>
 </section>
 
@@ -119,9 +110,9 @@ $hero_section_form_bottom_text          = get_field('hero_section_form_bottom_te
 <section id="review_section_1" class="w-100 section_2  section-review_section">
     <div class="section-space">
         <div class="container client-reviews">
-            <div class="row">
+            <div class="row" id="client-reviews-carousel">
                 <?php foreach ($reviews as $key => $review):?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 slide-item">
                         <div class="review__card">
                             <div class="review-text">
                                 "<?php echo $review['review_text']; ?>"
@@ -172,7 +163,7 @@ $hero_section_form_bottom_text          = get_field('hero_section_form_bottom_te
                             <div class="col-sm-12 col-lg-6">
                                 <div class="carousel_slider">
                                     <?php foreach ($carousel_images as $key => $img): ?>
-                                        <div class="carousel-item">
+                                        <div class="carousel-custom-item">
                                             <img src="<?php echo $img['url']; ?>">
                                         </div>
                                     <?php endforeach; ?>
@@ -287,7 +278,9 @@ $promise_title = get_field('promise_title');
                             <div class="col-sm-4"  >
                                 <div class="promises__card" >
                                     <figure class="promises__thumb">
+                                        <?php if(!empty(get_sub_field('image'))): ?>
                                             <img src="<?php the_sub_field('image'); ?>" alt="">
+                                        <?php endif; ?>
                                     </figure>
                                     <div class="promises__card__cont">
                                         <h3 class="ttl">

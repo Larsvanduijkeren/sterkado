@@ -109,7 +109,7 @@
             "label": "Form Shortcode",
             "name": "job_form_shortcode",
             "aria-label": "",
-            "type": "text",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -118,11 +118,22 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "choices": {
+                "algemeen_offerte_aanvragen": "Algemeen Offerte aanvragen",
+                "contact_formulier_zakelijk": "Contact Formulier Zakelijk",
+                "faq_veelgestelde_vragen_pagina": "FAQ Form Veelgestelde Vragen Pagina",
+                "kerstpakketten_offerte_aanvragen": "Kerstpakketten Offerte Aanvragen",
+                "keuzeKado_offerte_aanvragen": "KeuzeKado Offerte Aanvragen",
+                "solliciteer_direct": "Solliciteer Direct",
+                "test_webshop_aanvragen": "Test Webshop Aanvragen"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_63367b09bb2ff",
@@ -236,5 +247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712299023
+    "modified": 1714589284
 }

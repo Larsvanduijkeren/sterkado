@@ -79,8 +79,8 @@
             "sub_fields": [
                 {
                     "key": "field_62ecf0bcd4a8e",
-                    "label": "Title",
-                    "name": "title",
+                    "label": "Company Name",
+                    "name": "company_name",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -92,31 +92,10 @@
                         "id": ""
                     },
                     "default_value": "",
+                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_62ecf0a1d4a8d"
-                },
-                {
-                    "key": "field_62ecf0cdd4a8f",
-                    "label": "SubTitle",
-                    "name": "subtitle",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
                     "parent_repeater": "field_62ecf0a1d4a8d"
                 }
             ]
@@ -140,5 +119,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712298939
+    "modified": 1713158371
 }

@@ -25,7 +25,7 @@
 
       .row {
         @media only screen and (max-width: $ipad) and (max-width: $large1) {
-          row-gap: 24px;
+          row-gap: 16px;
           flex-direction: column;
         }
 
@@ -245,6 +245,12 @@
     .footer-bottom {
       border-top: 1px solid rgba(64, 67, 78, 0.1);
       padding-top: 46px;
+
+      @media only screen and (max-width: $small) {
+        border-top: none;
+        padding-top: 24px;
+      }
+
       h6 {
         font-size: 16px;
         line-height: 22px;
@@ -259,12 +265,24 @@
         }
         @media only screen and (max-width: $small) {
           min-height: auto;
+          font-size: 16px !important;
+          padding-bottom: 5px;
         }
       }
 
       ul {
         li {
           padding-bottom: 15px;
+
+          @media only screen and (max-width: $small) {
+            padding-bottom: 7px !important;
+          }
+
+          &:last-child {
+            @media only screen and (max-width: $small) {
+              padding-bottom: 0 !important;
+            }
+          }
 
           a {
             color: $primary;
@@ -280,6 +298,10 @@
             // @media only screen and (max-width: $small-laptop) {
             //     font-size: 13px;
             // }
+
+            @media only screen and (max-width: $small) {
+              font-size: 11px;
+            }
           }
 
           &:last-child {
@@ -295,6 +317,20 @@
 
         @media only screen and (max-width: $small) {
           padding-bottom: 0px !important;
+        }
+
+        .row {
+          @media only screen and (max-width: $small) {
+            row-gap: 30px;
+          }
+        }
+
+        .col {
+          @media only screen and (max-width: $small) {
+            max-width: 50%;
+            width: 50%;
+            flex: 0 1 50%;
+          }
         }
       }
     }
@@ -576,8 +612,6 @@
       border-radius: 20px;
 
       .footer-top {
-        padding-bottom: 10px;
-
         h4 {
           text-align: left;
 
@@ -746,8 +780,8 @@
 
       .footer-bottom {
         h6 {
-          font-size: 20px;
-          padding: 40px 0 20px !important;
+          font-size: 16px;
+          padding: 0 0 5px !important;
           line-height: 25.5px;
         }
 
@@ -804,7 +838,7 @@
 
       .footer-logo-mobile {
         display: block;
-        padding: 45px 0 13px;
+        padding: 15px 0 30px;
         width: 100%;
         border-bottom: 1px solid $primary;
 
@@ -843,4 +877,14 @@
 
 .widget_contactinformation_widget {
   margin-bottom: 0 !important;
+}
+
+.footer-contact-box {
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: $small) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

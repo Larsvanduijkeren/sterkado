@@ -659,6 +659,24 @@
             "endpoint": 0
         },
         {
+            "key": "field_66307a6bb5a09",
+            "label": "Section ID",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "ID : surprise__grid",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_660f9ea596a4f",
             "label": "Heading",
             "name": "surprise_heading",
@@ -1092,169 +1110,6 @@
             "rows": 4,
             "placeholder": "",
             "new_lines": "br"
-        },
-        {
-            "key": "field_62cfa0df7f3cd",
-            "label": "Right Gift Section",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_6321771b0c581",
-            "label": "Section ID",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "ID : right_gift_section_2",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_62cfa0fb7f3ce",
-            "label": "Heading",
-            "name": "gift_section_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_62cfa10e7f3cf",
-            "label": "Gifts",
-            "name": "gifts",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "row",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_62cfa11e7f3d0",
-                    "label": "Image",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "Size : 252 × 234 px",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_62cfa10e7f3cf"
-                },
-                {
-                    "key": "field_62cfa12e7f3d1",
-                    "label": "Title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_62cfa10e7f3cf"
-                },
-                {
-                    "key": "field_62cfa1357f3d2",
-                    "label": "Short Description",
-                    "name": "short_description",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "delay": 0,
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "parent_repeater": "field_62cfa10e7f3cf"
-                },
-                {
-                    "key": "field_62cfa14d7f3d3",
-                    "label": "Link",
-                    "name": "link",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "parent_repeater": "field_62cfa10e7f3cf"
-                }
-            ]
         },
         {
             "key": "field_62cf9e94b45d0",
@@ -2841,5 +2696,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712462463
+    "modified": 1714453136
 }

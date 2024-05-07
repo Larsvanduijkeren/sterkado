@@ -116,7 +116,7 @@ get_header();
    </div>
 </section>
 <?php if($hero_content){ ?>
-<section class="special_notes w-100">
+<section id="right_gift_2" class="special_notes w-100">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

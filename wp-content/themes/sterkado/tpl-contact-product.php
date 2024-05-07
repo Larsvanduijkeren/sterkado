@@ -81,6 +81,7 @@ $contact_form_background_image = get_field('contact_form_background_image');
 $contact_form_title = get_field('contact_form_title');
 $contact_text = get_field('contact_text');
 $contact_form_subtitle = get_field('contact_form_subtitle');
+$contact_form_shortcode = get_field('contact_form_shortcode');
 $contact_form_after_form_text = get_field('contact_form_after_form_text');
 $contact_form_right_side_title = get_field('contact_form_right_side_title');
 $contact_phone_no = get_field('contact_phone_no');
@@ -309,13 +310,13 @@ $frequently_asked_questions_content = get_field('frequently_asked_questions_cont
                     </div>
                 </div>
             </div>
-
+            <?php if(!empty($contact_form_shortcode)): ?>
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="form-box">
                     <div class="form-img">
                         <img src="<?php echo $contact_form_background_image; ?>">
                     </div>
-                    <div class="hero-contact-form-section" style="background:url('');">
+                    <div class="hero-contact-form-section form-new-design">
 
                         <?php if (!empty($contact_form_title)) : ?>
                             <h3><?php echo $contact_form_title; ?></h3>
@@ -323,9 +324,13 @@ $frequently_asked_questions_content = get_field('frequently_asked_questions_cont
                         <?php if (!empty($contact_form_subtitle)) : ?>
                             <p><?php echo $contact_form_subtitle; ?></p>
                         <?php endif; ?>
-                        <?php echo do_shortcode(get_field('contact_form_shortcode')); ?>
+                        
+                            <?php 
+                                echo get_template_part( 'components/zoho/form',$contact_form_shortcode);
+                            ?>
+                        
 
-                        <div class="text-md-right text-center">
+                        <div class="text-md-right">
                             <?php if (!empty($contact_form_after_form_text)) : ?>
                                 <p><?php echo $contact_form_after_form_text; ?></p>
                             <?php endif; ?>
@@ -333,7 +338,7 @@ $frequently_asked_questions_content = get_field('frequently_asked_questions_cont
                     </div>
                 </div>
             </div>
-            
+            <?php endif; ?>
         </div>
     </div>
 </section>

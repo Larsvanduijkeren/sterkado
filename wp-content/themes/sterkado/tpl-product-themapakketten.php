@@ -133,7 +133,7 @@ $page_id=$post->ID;
 
 
 <?php if($hero_section_content){ ?>
-<section class="special_notes w-100">
+<section id="right_gift_2" class="special_notes w-100">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

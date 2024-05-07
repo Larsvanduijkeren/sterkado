@@ -75,7 +75,7 @@ $post = get_post($post->ID);
                             <img src="<?php echo $contact_form_background_image['url']; ?>">
                         </div>
                         <?php } ?>
-                        <div class="hero-contact-form-section" style="background:url('');">
+                        <div class="hero-contact-form-section form-new-design">
 
                             <?php if (!empty($contact_form_title)) : ?>
                                 <h3><?php echo $contact_form_title; ?></h3>
@@ -84,8 +84,9 @@ $post = get_post($post->ID);
                                 <p><?php echo $contact_form_subtitle; ?></p>
                             <?php endif; ?>
                             
-                            <?php echo do_shortcode('[gravityform ajax="true" id="'.$contact_form.'" title="false" ]'); ?>
-
+                            <?php 
+                                echo get_template_part( 'components/zoho/form',$contact_form);
+                            ?>
                             <div class="text-md-right text-center">
                                 <?php if (!empty($contact_form_after_form_text)) : ?>
                                     <p><?php echo $contact_form_after_form_text; ?></p>

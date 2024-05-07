@@ -69,12 +69,12 @@ body {
       .emp-thought {
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
 
         .emp-title {
           padding: 0 20px;
           @media (max-width: 1440px) {
-            max-width: 350px;
+            max-width: 440px;
           }
           @media (max-width: 767px) {
             max-width: 100%;
@@ -98,6 +98,7 @@ body {
 
             font-size: 34px;
             line-height: 43px;
+            max-width: 480px;
 
             @media only screen and (max-width: $m-large-1920) {
               font-size: 25px;
@@ -107,6 +108,10 @@ body {
             @media only screen and (max-width: $small) {
               font-size: 26px;
               line-height: 31px;
+            }
+
+            @media only screen and (min-width: $mm-large-1922) {
+              max-width: 440px;
             }
           }
         }

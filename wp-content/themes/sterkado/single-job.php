@@ -112,7 +112,7 @@ if($job_content){  ?>
                 </div>
             </div>
             <?php } ?>
-
+            <?php if(!empty($job_form_shortcode)): ?>
             <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12"> 
                 <div class="form-box single-new-form">
                     <div class="form-img">
@@ -128,7 +128,9 @@ if($job_content){  ?>
                         <?php if(!empty($job_form_content)): ?>
                             <p><?php echo $job_form_content; ?></p>
                         <?php endif; ?> 
-                        <?php echo do_shortcode(get_field('job_form_shortcode','option')); ?>
+                        <?php 
+                            echo get_template_part( 'components/zoho/form',$job_form_shortcode);
+                        ?>
                         <div class="chat_content">
                             <?php if(!empty($job_chat_content)): ?>
                                 <?php echo $job_chat_content; ?>
@@ -143,15 +145,16 @@ if($job_content){  ?>
                                 ?>
                                 <a class="news_chat_button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                         <?php endif; ?>
-                        <?php if(!empty($job_rating_text)): ?>
-                        <div class="rating-text">
+                        <div class="text-md-right">
+                            <?php if (!empty($job_rating_text)) : ?>
                                 <p><?php echo $job_rating_text; ?></p>
+                            <?php endif; ?>
                         </div>
-                        <?php endif; ?>
                     </div>
                 </div>
                
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>

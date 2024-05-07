@@ -54,13 +54,13 @@ global $wp;
         </div>
     </div>
 </section>
-<section  class="w-100 section_12  section-latest_news">
+<section id="latest_news_2" class="w-100 section_12  section-latest_news">
     <div class="container">
             <?php
            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                 if(isset($_GET['cat'])){
-                        $cat=$_GET['cat'];
-                        if($cat=="all"){
+                        $cat = $_GET['cat'];
+                        if($cat == "all"){
                             
                             $args = array(  
                                 'post_type' => $posttype,

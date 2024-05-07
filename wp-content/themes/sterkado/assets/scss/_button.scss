@@ -191,6 +191,18 @@ a {
     }
   }
 
+  &.btn-secondary-blue-border {
+    background-color: $white !important;
+    border: 1px solid $green-color !important;
+    color: $green-color !important;
+
+    &:hover {
+      background-color: $green-color !important;
+      color: $white !important;
+      border-color: $green-color !important;
+    }
+  }
+
   &.ghost-btn {
     background-color: transparent !important;
     border: 1px solid $primary !important;
@@ -206,6 +218,32 @@ a {
       background-color: $primary !important;
       color: $white !important;
       border-color: $primary !important;
+      transition: all 0.3s ease-in-out 0s !important;
+
+      svg {
+        path {
+          stroke: $white !important;
+          transition: all 0.3s ease-in-out 0s !important;
+        }
+      }
+    }
+  }
+
+  &.ghost-red-btn {
+    background-color: transparent !important;
+    border: 1px solid $danger !important;
+    color: $danger !important;
+
+    svg {
+      path {
+        stroke: $danger !important;
+      }
+    }
+
+    &:hover {
+      background-color: $danger !important;
+      color: $white !important;
+      border-color: $danger !important;
       transition: all 0.3s ease-in-out 0s !important;
 
       svg {
@@ -255,19 +293,19 @@ a {
     }
   }
 }
-a {
-  &.btn {
-    &.ghost-red-btn {
-      background: transparent !important;
-      color: #eb5e55 !important;
-      border: 2px solid #eb5e55 !important;
-      border-radius: 30px !important;
-      padding: 13px 20px !important;
-      font-weight: 700 !important;
-      &:hover {
-        background-color: #eb5e55 !important;
-        color: #ffffff !important;
-      }
-    }
-  }
-}
+// a {
+//   &.btn {
+//     &.ghost-red-btn {
+//       background: transparent !important;
+//       color: #eb5e55 !important;
+//       border: 2px solid #eb5e55 !important;
+//       border-radius: 30px !important;
+//       padding: 13px 20px !important;
+//       font-weight: 700 !important;
+//       &:hover {
+//         background-color: #eb5e55 !important;
+//         color: #ffffff !important;
+//       }
+//     }
+//   }
+// }

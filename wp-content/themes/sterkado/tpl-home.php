@@ -236,7 +236,7 @@ $page_id=$post->ID;
     $surprise_box       = get_field('surprise_box');
     
 ?>
-<section class="w-100  section-surprise_section container-1600">
+<section class="w-100  section-surprise_section container-1600" id="surprise__grid">
     <div class="section-space">
         <div class="container">
             <?php if(!empty($surprise_heading)): ?>
@@ -384,66 +384,6 @@ $arrow_content          = get_field('arrow_content');
     </div>
 </section>
 <?php endif; ?>
-
-<?php
-  $gift_section_heading       = get_field('gift_section_heading');
-  $gifts         = get_field('gifts');
-
-  $numOfCols = count($gifts);
-  $rowCount = 0;
-  $ColWidth = 12 / $numOfCols;
-?>
-<section id="right_gift_section_2" class="w-100 section_3  section-right_gift">
-
-    <div class="section-space">
-        <div class="container our-offers4">
-            <div class="gift-section">
-                
-                <?php if(!empty($gift_section_heading)): ?>
-                <div class="gift-title">
-                    <h2><?= $gift_section_heading;?></h2>
-                </div>
-                <?php endif; ?>
-
-                <div class="gift-listing">
-                    <div class="row gift-bg">
-                        <?php foreach ($gifts as $key => $gift): ?>
-                        <div class="col-sm-12 col-md-6 col-xl-3 girf-items">
-                            <div class="inner-col">
-                                <?php if(!empty($gift['image'])): 
-                                    if($gift['image']['alt']){
-                                        $images_alt=$gift['image']['alt']." - ".$rank_math_focus_keyword;
-                                    }else{
-                                        $images_alt=$gift['image']['title']." - ".$rank_math_focus_keyword;
-                                    }
-                                    ?>
-                                <div class="gift-profile">
-                                    <img src="<?= $gift['image']['url']; ?>" alt="<?= $images_alt; ?>" />
-                                </div>
-                                <?php endif; ?>
-                                <div class="gift-description">
-                                    <?php if(!empty($gift['title'])): ?>
-                                        <h3><?= $gift['title'];?></h3>
-                                    <?php endif; ?>
-
-                                    <?php if(!empty($gift['short_description'])): ?>
-                                    <p class="normal-paragraph-desktop w-100"><?= $gift['short_description'];?></p>
-                                    <?php endif; ?>
-
-                                    <?php if(!empty($gift['link'])): ?>
-                                        <a class="btn btn-primary" href="<?= $gift['link']['url'];?>" title="<?= $gift['link']['title'];?>"><?= $gift['link']['title'];?></a>
-                                    
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <?php

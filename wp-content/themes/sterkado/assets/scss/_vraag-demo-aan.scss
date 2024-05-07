@@ -1,1291 +1,1268 @@
-.section-hero_banner_contact{
-    padding: 230px 12% 100px;
-    @media only screen and (max-width: 1700px){
-        padding: 230px 20% 100px;
-    }
-    @media only screen and (max-width: 1450px){
-        padding: 200px 0% 100px;
-    }
-    @media only screen and (max-width: $large){
-        padding: 230px 0% 100px;
-    }
-    @media only screen and (max-width: $large2){
-        padding: 200px 0 100px;
-    }
-    @media only screen and (min-width: $ipad) and (max-width: $medium) {
-        padding: 150px 0 50px;
-    }
+.section-hero_banner_contact {
+  padding: 230px 12% 100px;
+  @media only screen and (max-width: 1700px) {
+    padding: 230px 20% 100px;
+  }
+  @media only screen and (max-width: 1450px) {
+    padding: 200px 0% 100px;
+  }
+  @media only screen and (max-width: $large) {
+    padding: 230px 0% 100px;
+  }
+  @media only screen and (max-width: $large2) {
+    padding: 200px 0 100px;
+  }
+  @media only screen and (min-width: $ipad) and (max-width: $medium) {
+    padding: 150px 0 50px;
+  }
+  @media only screen and (max-width: $small) {
+    padding: 120px 0 50px;
+  }
+  // .container{
+  //     @media only screen and (min-width: 1300px) {
+  //         max-width: 1400px;
+  //         margin: 0 auto;
+  //     }
+  // }
+  h1 {
+    margin-bottom: 15px;
+  }
+  .user-text {
+    margin-top: 70px;
+  }
+  .user-text {
     @media only screen and (max-width: $small) {
-        padding: 120px 0 50px;
-    }  
-    // .container{
-    //     @media only screen and (min-width: 1300px) {
-    //         max-width: 1400px;
-    //         margin: 0 auto;
-    //     }  
-    // }
-    h1{
-        margin-bottom: 15px;
+      margin-top: 0;
     }
-    .user-text{
-        margin-top: 70px;
+    .user-img {
+      @media only screen and (min-width: $ipad) and (max-width: $medium) {
+        height: 78px;
+        width: 100px;
+      }
     }
-    .user-text{
-       
-        @media only screen and (max-width: $small) {
-            margin-top: 0;
-        } 
-        .user-img{
-            @media only screen and (min-width: $ipad) and (max-width: $medium) {
-                height: 78px;
-                width: 100px;
-            }
+    .user-content {
+      @media only screen and (max-width: $small) {
+        margin-top: 0;
+      }
+      p {
+        font-family: $montserrat_font;
+        font-style: normal;
+      }
+      strong {
+        font-family: $montserrat_font;
+        font-style: normal;
+      }
+    }
+    &.left-to-right-arrow {
+      flex-wrap: wrap;
+      .user-img {
+        width: 20%;
+        @media only screen and (max-width: $medium) {
+          width: 25%;
         }
-        .user-content{
+        @media only screen and (max-width: $small) {
+          width: 16%;
+        }
+        @media only screen and (max-width: $x-small) {
+          width: 18%;
+        }
+        img {
+          @media only screen and (max-width: 1700px) {
+            height: 110px;
+          }
+          @media only screen and (max-width: $small) {
+            height: 100px;
+          }
+          @media only screen and (max-width: $x-small) {
+            height: 80px;
+          }
+        }
+      }
+      .user-content {
+        width: 65%;
+        @media only screen and (max-width: 1700px) {
+          padding: 37px 40px 37px 58px !important;
+        }
+        @media only screen and (max-width: $m-large-1600) {
+          padding: 37px 40px 37px 48px !important;
+        }
+        @media only screen and (max-width: $medium) {
+          padding: 37px 30px 37px 38px !important;
+          width: 60%;
+        }
+        @media only screen and (max-width: $small) {
+          width: 82%;
+          padding: 37px 40px 37px 78px !important;
+        }
+        @media only screen and (max-width: $x-small) {
+          padding: 37px 35px 37px 58px !important;
+        }
+      }
+      &::after {
+        position: absolute;
+        right: -40px;
+        background-size: 100% 100%;
+        @media only screen and (max-width: 1700px) {
+          right: -10px;
+          width: 70px;
+        }
+        @media only screen and (max-width: $medium) {
+          width: 60px;
+        }
+      }
+    }
+  }
+
+  &.section-hero_banner_section {
+    .row {
+      align-items: flex-start !important;
+      // .norightpadding{
+      //     padding-top: 80px;
+      // }
+    }
+  }
+}
+
+.left-to-right-arrow {
+  position: relative;
+  &::after {
+    content: '';
+    background: url(../images/bottom-to-top-line.svg) no-repeat;
+    width: 120px;
+    height: 37px;
+    margin-left: 25px;
+    margin-top: -40px;
+    background-size: contain;
+    @media only screen and (max-width: $small) {
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      transform: rotate(110deg);
+      bottom: -55px;
+      width: 80px;
+      height: 37px;
+      background-size: 69px;
+    }
+  }
+}
+
+.section-faq_section {
+  .faq_wrapper {
+    max-width: 700px;
+    @media only screen and (max-width: $ipad) {
+      max-width: 640px;
+    }
+    @media only screen and (max-width: 700px) {
+      max-width: 540px;
+    }
+    @media only screen and (max-width: 567px) {
+      max-width: 100%;
+    }
+    .slide-title {
+      margin-bottom: 15px;
+    }
+    .slide-title {
+      h2 {
+        @media only screen and (max-width: $small) {
+          text-align: left;
+        }
+        br {
+          @media only screen and (max-width: $small) {
+            display: none;
+          }
+        }
+      }
+    }
+    .accordion-list {
+      .card {
+        background: $white;
+        border: 1px solid $primary;
+        border-radius: 10px;
+        margin-top: 15px;
+        .card-header {
+          background: transparent;
+          border: 0;
+          padding: 20px 30px;
+          @media only screen and (max-width: $small) {
+            padding: 20px 40px 20px 20px;
+          }
+          .faq-title {
+            font-family: $montserrat_font;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: $primary;
             @media only screen and (max-width: $small) {
-                margin-top: 0;
+              font-size: 14px;
+              line-height: 21px;
             }
-            p{
-                font-family: $montserrat_font;
-                font-style: normal;
-            }
-            strong{
-                font-family: $montserrat_font;
-                font-style: normal; 
-            }
-        }
-        &.left-to-right-arrow{
-            flex-wrap: wrap;
-            .user-img{
-                width: 20%;
-                @media only screen and (max-width: $medium){
-                    width: 25%;
-                }
-                @media only screen and (max-width: $small){
-                    width: 16%;
-                }
-                @media only screen and (max-width: $x-small){
-                    width: 18%;
-                }
-                img{
-                    @media only screen and (max-width: 1700px){
-                        height: 110px;
-                    }
-                    @media only screen and (max-width: $small){
-                        height: 100px;
-                    }
-                    @media only screen and (max-width: $x-small){
-                        height: 80px;
-                    }
-                }
-            }
-            .user-content{
-                width: 65%;
-                @media only screen and (max-width: 1700px){
-                    padding: 37px 40px 37px 58px !important;
-                }
-                @media only screen and (max-width: $m-large-1600){
-                    padding: 37px 40px 37px 48px !important;
-                }
-                @media only screen and (max-width: $medium){
-                    padding: 37px 30px 37px 38px !important;
-                    width: 60%;
-                }
-                @media only screen and (max-width: $small){
-                    width: 82%;
-                    padding: 37px 40px 37px 78px !important;
-                }
-                @media only screen and (max-width: $x-small){
-                    padding: 37px 35px 37px 58px !important;
-                }
-            }
-            &::after{
-                position: absolute;
-                right: -40px;
-                background-size: 100% 100%;
-                @media only screen and (max-width: 1700px){
-                    right: -10px;
-                    width: 70px;
-                }
-                @media only screen and (max-width: $medium){
-                    width: 60px;
-                }
-            }
-        }
-    }
-
-    &.section-hero_banner_section{
-        .row{
-            align-items: flex-start!important;
-            // .norightpadding{
-            //     padding-top: 80px;
-            // }
-        }
-    }
-}
-
-.left-to-right-arrow{
-    position: relative;
-    &::after{
-        content: "";
-        background: url(../images/bottom-to-top-line.svg) no-repeat;
-        width: 120px;
-        height: 37px;
-        margin-left: 25px;
-        margin-top: -40px;
-        background-size: contain;
-        @media only screen and (max-width: $small) {
-            position: absolute;
-            right: 0;
-            left: 0;
-            margin: 0 auto;
-            transform: rotate(110deg);
-            bottom: -55px;
-            width: 80px;
-            height: 37px;
-            background-size: 69px;
-        } 
-    }
-}
-
-.section-faq_section{
-    .faq_wrapper {
-        max-width: 700px;
-        @media only screen and (max-width: $ipad){
-            max-width: 640px;
-        }
-        @media only screen and (max-width: 700px){
-            max-width: 540px;
-        }
-        @media only screen and (max-width: 567px){
-            max-width: 100%;
-        }
-        .slide-title{
-            margin-bottom: 15px;
-        }
-        .slide-title{
-            h2{
-                @media only screen and (max-width: $small){
-                    text-align: left;
-                }
-                br{
-                    @media only screen and (max-width: $small){
-                        display: none;
-                    }
-                }
-            }
-        }
-        .accordion-list{
-            .card{
-                background: $white;
-                border: 1px solid $primary;
-                border-radius: 10px;
-                margin-top: 15px;
-                .card-header{
-                    background: transparent;
-                    border: 0;
-                    padding: 20px 30px;
-                    @media only screen and (max-width: $small) {
-                        padding: 20px 40px 20px 20px;
-                    }
-                    .faq-title{
-                        font-family: $montserrat_font;
-                        font-weight: 600;
-                        font-size: 16px;
-                        line-height: 24px;
-                        color: $primary;
-                        @media only screen and (max-width: $small) {
-                            font-size: 14px;
-                            line-height: 21px;
-                        }
-                        .faq_question {
-                            cursor: pointer;
-                            color: $primary-ming;   
-                            text-decoration: none;
-                            display: block;
-                            &:after{
-                                content: "\f106";
-                                display: inline-block;
-                                font: normal normal normal 24px/24px FontAwesome;
-                                float: right;
-                                transform: rotate(0deg);
-                                @media only screen and (max-width: $small) {
-                                    position: absolute;
-                                    right: 18px;
-                                    top: 20px;
-                                }
-                            }
-                            &.collapsed{
-                                color: $primary; 
-                                &:after{
-                                    transform: rotate(180deg);
-                                }
-                            }
-                        }
-                    }
-                }
-                .card-body{
-                    font-family: $montserrat_font;
-                    font-weight: 400;
-                    // font-size: 16px;
-                    // line-height: 24px;
-                    color: $primary;
-                    padding: 0 30px 20px;
-                    // @media only screen and (max-width: $small) {
-                    //     font-size: 14px;
-                    //     line-height: 21px;
-                    // }
-                    a{
-                        font-size: 14px;
-                        line-height: 22px;
-                        color: #005dc1;
-                    }
-                }
-            }
-        }
-    }
-}
-.employee-sec{
-    .link-cases{
-        .cases-box {
-            &.auto-height{
-                min-height: auto !important;
-                @media(max-width:767px){
-                    padding-top: 30px;
-                    padding-bottom: 30px;                
-                }
-                
-            }
-            .case-description{
+            .faq_question {
+              cursor: pointer;
+              color: $primary-ming;
+              text-decoration: none;
+              display: block;
+              &:after {
+                content: '\f106';
+                display: inline-block;
+                font: normal normal normal 24px/24px FontAwesome;
+                float: right;
+                transform: rotate(0deg);
                 @media only screen and (max-width: $small) {
-                    padding: 0 !important;
+                  position: absolute;
+                  right: 18px;
+                  top: 20px;
                 }
-                p{
-                    @media only screen and (max-width: $small) {
-                        font-style: normal !important;
-                        margin-top: 20px !important;
-                    }
+              }
+              &.collapsed {
+                color: $primary;
+                &:after {
+                  transform: rotate(180deg);
                 }
+              }
             }
+          }
         }
+        .card-body {
+          font-family: $montserrat_font;
+          font-weight: 400;
+          // font-size: 16px;
+          // line-height: 24px;
+          color: $primary;
+          padding: 0 30px 20px;
+          // @media only screen and (max-width: $small) {
+          //     font-size: 14px;
+          //     line-height: 21px;
+          // }
+          a {
+            font-size: 14px;
+            line-height: 22px;
+            color: #005dc1;
+          }
+        }
+      }
     }
+  }
+}
+.employee-sec {
+  .link-cases {
+    .cases-box {
+      &.auto-height {
+        min-height: auto !important;
+        @media (max-width: 767px) {
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+      }
+      .case-description {
+        @media only screen and (max-width: $small) {
+          padding: 0 !important;
+        }
+        p {
+          @media only screen and (max-width: $small) {
+            font-style: normal !important;
+            margin-top: 20px !important;
+          }
+        }
+      }
+    }
+  }
 }
 
-.page-template-tpl-vraag-demo-aan{
-    .section-hero_banner_section{
-        &.section-hero_banner_contact{
-            padding: 200px 12% 100px;
-            @media only screen and (max-width: 1700px){
-                padding: 200px 14% 100px;
-            }
-       
-            @media only screen and (max-width: 1450px){
-                padding: 200px 0% 100px;
-            }
-            @media only screen and (max-width: $large){
-                padding: 230px 0% 100px;
-            }
-            @media only screen and (max-width: $large2){
-                padding: 150px 0 100px;
-            }
-            @media only screen and (max-width:1022px){
-                padding: 90px 0;
-            }
-            @media only screen and (max-width:$small){
-                padding: 60px 0 25px;
-            }
-            h1,
-            .hero_section_content{
-                @media only screen and (max-width: 1700px){
-                    padding: 0 20px;
-                }
-                @media only screen and (max-width: $small){
-                    padding: 0;
-                }
-            }
-            .user-text{
-                @media only screen and (max-width: $small){
-                    display: none !important;
-                }
-                &.mobile-view{
-                    display: none !important;
-                    @media only screen and (max-width:$small){
-                        display: flex !important;
-                        padding-top: 30px;
-                        flex-flow: column;
-                        right: 0;
-                        .user-img{
-                            width: 100%;
-                        }
-                        .user-content {
-                            width: 100%;
-                            background-image: none !important;
-                            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-                            padding: 15px !important;
-                            position: relative;
-                            background: #F9F9F9;
-                            margin-top: 25px;
-                            &:after{
-                                border-left: solid transparent 10px;
-                                border-right: solid transparent 10px;
-                                border-bottom: solid #f9f9f9 20px;
-                                top: -20px;
-                                content: " ";
-                                height: 0;
-                                left: 35px;
-                                margin-left: -13px;
-                                position: absolute;
-                                width: 0;
-                            }
-                        }
-                    }
-                    &:after{
-                        @media only screen and (max-width:$small){
-                            display: none;
-                        }
-                    }
-                }
-            }
-            .form-box{
-                .hero-contact-form-section{
-                    margin-top: 85px !important;
-                    max-width: 80%;
-                    @media only screen and (max-width:1700px){
-                        max-width: 100%;
-                    }
-                }
-            }
-            .norightpadding{
-                @media only screen and (max-width:$small){
-                    padding-top: 20px;
-                }
-            }
-        }   
-    }
+.page-template-tpl-vraag-demo-aan {
+  .section-hero_banner_section {
+    &.section-hero_banner_contact {
+      padding: 200px 12% 100px;
+      @media only screen and (max-width: 1700px) {
+        padding: 200px 14% 100px;
+      }
 
-    .section-logo_section{
-        .section-space{
-            .our-customers2{
-                .believe-us{
-                    .logo-head{
-                        width: 24%;
-                        @media only screen and (max-width:$m-large-1600){
-                            width: 20%;
-                        }
-                        @media only screen and (max-width:1500px){
-                            width: 20%;
-                        }
-                        @media only screen and (max-width:$large){
-                            width: 20%;
-                        }
-                        @media only screen and (max-width:$touch-laptop){
-                            width: 20%;
-                        }
-                        @media only screen and (max-width:$large1){
-                            width: 20%;
-                        }
-                        @media only screen and (max-width:$medium){
-                            width: 100%;
-                        }
-                    }
-                    .logo-list{
-                        ul{
-                            li{
-                                @media only screen and (max-width:$small){
-                                    text-align: center;
-                                }
-                            }
-                        }
-                    }
-                }
+      @media only screen and (max-width: 1450px) {
+        padding: 200px 0% 100px;
+      }
+      @media only screen and (max-width: $large) {
+        padding: 230px 0% 100px;
+      }
+      @media only screen and (max-width: $large2) {
+        padding: 150px 0 100px;
+      }
+      @media only screen and (max-width: 1022px) {
+        padding: 90px 0;
+      }
+      @media only screen and (max-width: $small) {
+        padding: 60px 0 25px;
+      }
+      h1,
+      .hero_section_content {
+        @media only screen and (max-width: 1700px) {
+          padding: 0 20px;
+        }
+        @media only screen and (max-width: $small) {
+          padding: 0;
+        }
+      }
+      .user-text {
+        @media only screen and (max-width: $small) {
+          display: none !important;
+        }
+        &.mobile-view {
+          display: none !important;
+          @media only screen and (max-width: $small) {
+            display: flex !important;
+            padding-top: 30px;
+            flex-flow: column;
+            right: 0;
+            .user-img {
+              width: 100%;
             }
-        }
-    }
-
-    .section-faq_section{
-        @media only screen and (max-width:$small){
-            padding: 40px 0;
-        }
-    }
-
-    .section-promises_section{
-        .promises-wrapper{
-            .promises-item{
-                .promises-content{
-                    @media only screen and (max-width:$small){
-                        min-height: 80px;
-                    }
-                }
+            .user-content {
+              width: 100%;
+              background-image: none !important;
+              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+              padding: 15px !important;
+              position: relative;
+              background: #f9f9f9;
+              margin-top: 25px;
+              &:after {
+                border-left: solid transparent 10px;
+                border-right: solid transparent 10px;
+                border-bottom: solid #f9f9f9 20px;
+                top: -20px;
+                content: ' ';
+                height: 0;
+                left: 35px;
+                margin-left: -13px;
+                position: absolute;
+                width: 0;
+              }
             }
-        }
-    }
-
-    .section-cta_with_image{
-        .section-space{
-            .case-description{
-                p{
-                    &.font-italic{
-                        padding-top: 10px;
-                    }
-                }
+          }
+          &:after {
+            @media only screen and (max-width: $small) {
+              display: none;
             }
+          }
         }
+      }
+      .form-box {
+        .hero-contact-form-section {
+          // margin-top: 85px !important;
+          max-width: 80%;
+          @media only screen and (max-width: 1700px) {
+            max-width: 100%;
+          }
+        }
+      }
+      .norightpadding {
+        @media only screen and (max-width: $small) {
+          padding-top: 20px;
+        }
+      }
     }
+  }
+
+  .section-logo_section {
+    .section-space {
+      .our-customers2 {
+        .believe-us {
+          .logo-head {
+            width: 24%;
+            @media only screen and (max-width: $m-large-1600) {
+              width: 20%;
+            }
+            @media only screen and (max-width: 1500px) {
+              width: 20%;
+            }
+            @media only screen and (max-width: $large) {
+              width: 20%;
+            }
+            @media only screen and (max-width: $touch-laptop) {
+              width: 20%;
+            }
+            @media only screen and (max-width: $large1) {
+              width: 20%;
+            }
+            @media only screen and (max-width: $medium) {
+              width: 100%;
+            }
+          }
+          .logo-list {
+            ul {
+              li {
+                @media only screen and (max-width: $small) {
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-faq_section {
+    @media only screen and (max-width: $small) {
+      padding: 40px 0;
+    }
+  }
+
+  .section-promises_section {
+    .promises-wrapper {
+      .promises-item {
+        .promises-content {
+          @media only screen and (max-width: $small) {
+            min-height: 80px;
+          }
+        }
+      }
+    }
+  }
+
+  .section-cta_with_image {
+    .section-space {
+      .case-description {
+        p {
+          &.font-italic {
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
 }
-
 
 .form-box {
-    .hero-contact-form-section {
-        .demo_aanvraag_form{
-            .gf_page_steps{
-                justify-content: left;
-                .gf_step{
-                    @media only screen and (max-width:$m-large-1600){
-                        justify-content: left;
-                    }
-                    
-                }
-            }
-            .gform-body{
-                .gform_page {
-                    .gform_page_fields {
-                        h2{
-                            text-align: left;
-                        }
-                        p{
-                            text-align: left;
-                            font-size: 16px;
-                            list-style-type: 24px;
-                            font-family: $montserrat_font;
-                            padding: 8px 0;
-                            @media only screen and (max-width:$m-large-1600){
-                                font-size: 14px;
-                                line-height: 20px;
-                            }
-                        }
-                        ul{
-                            padding-left: 20px;
-                            li{
-                                text-align: left !important;
-                            }
-                        }
-                        .gfield{
-                            > h3{
-                                text-align: left;
-                            }
-                        }
-                        .gform_fields{
-                            .validation_message{
-                                position: absolute;
-                                width: fit-content;
-                                border: 0;
-                                background-color: transparent;
-                                font-size: 9px;
-                                line-height: 22px;
-                            }
-                        }
-                    }
-                    // &.demo_aanvraag_step_2{
-                    //     .gform_fields{
-                    //         .gfield{
-                    //             h2,
-                    //             p{
-                    //                 text-align: center;
-                    //             }
-                    //         }
-                    //     }
-                    // }
-                }
-            }
+  .hero-contact-form-section {
+    .demo_aanvraag_form {
+      .gf_page_steps {
+        justify-content: left;
+        .gf_step {
+          @media only screen and (max-width: $m-large-1600) {
+            justify-content: left;
+          }
         }
+      }
+      .gform-body {
+        .gform_page {
+          .gform_page_fields {
+            h2 {
+              text-align: left;
+            }
+            p {
+              text-align: left;
+              font-size: 16px;
+              list-style-type: 24px;
+              font-family: $montserrat_font;
+              padding: 8px 0;
+              @media only screen and (max-width: $m-large-1600) {
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+            ul {
+              padding-left: 20px;
+              li {
+                text-align: left !important;
+              }
+            }
+            .gfield {
+              > h3 {
+                text-align: left;
+              }
+            }
+            .gform_fields {
+              .validation_message {
+                position: absolute;
+                width: fit-content;
+                border: 0;
+                background-color: transparent;
+                font-size: 9px;
+                line-height: 22px;
+              }
+            }
+          }
+          // &.demo_aanvraag_step_2{
+          //     .gform_fields{
+          //         .gfield{
+          //             h2,
+          //             p{
+          //                 text-align: center;
+          //             }
+          //         }
+          //     }
+          // }
+        }
+      }
     }
+  }
 }
 
-
-
-.section-hero_banner_section{
-    h1{
-        br{
-            @media only screen and (max-width:$small){
-                display: none;
-            }
-        }
+.section-hero_banner_section {
+  h1 {
+    br {
+      @media only screen and (max-width: $small) {
+        display: none;
+      }
     }
+  }
 }
 
 // new form design
 
-.form-box{
-    .hero-contact-form-section{
-        // margin-top: 130px !important;
-        // margin-left: 11%;
-        padding: 40px 40px;
-        margin-left: auto;
-        margin-right: auto;
+.form-box {
+  .hero-contact-form-section {
+    // margin-top: 130px !important;
+    // margin-left: 11%;
+    padding: 40px 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @media only screen and (max-width: 1700px) {
+      padding: 34px 26px;
+    }
+    @media only screen and (max-width: 1500px) {
+      padding: 40px 30px !important;
+    }
+
+    > h3 {
+      display: none;
+    }
+    > p {
+      display: none;
+    }
+    form {
+      @media only screen and (max-width: $medium) {
+        margin-top: 0;
+      }
+      .gf_page_steps {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
-        @media only screen and (max-width: 1700px){
-            padding: 34px 26px;
-    
+        justify-content: center;
+        border-bottom: 0;
+        @media only screen and (max-width: $small) {
+          display: none;
         }
-        @media only screen and (max-width: 1500px){
-            padding: 40px 22px !important;
-        }
-     
-        > h3{
-      
-            display: none;
-        }
-        > p{
-            display: none;
-
-        }
-        form{
-            @media only screen and (max-width: $medium){
-                margin-top: 0;
+        .gf_step {
+          display: flex;
+          align-items: center;
+          margin: 0 0 7px;
+          position: initial;
+          &:first-child {
+            @media only screen and (max-width: $m-large-1600) {
+              padding: 0 5px 0px 0;
             }
-            .gf_page_steps{
+          }
+          @media only screen and (max-width: $m-large-1600) {
+            justify-content: center;
+            width: fit-content;
+            padding: 0 5px;
+            margin-bottom: 5px;
+          }
+          // @media only screen and (max-width: 1365px){
+          //     width: 48%;
+          // }
+          // @media only screen and (max-width: $small){
+          //     width: 50%;
+          // }
+
+          &::after {
+            content: '';
+            background: #16d0c5;
+            width: 16px;
+            height: 1px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 10px;
+
+            @media only screen and (max-width: 1850px) {
+              width: 16px;
+            }
+            @media only screen and (max-width: 1800px) {
+              width: 12px;
+            }
+            @media only screen and (max-width: 1700px) {
+              width: 12px;
+            }
+            @media only screen and (max-width: 1650px) {
+              width: 12px;
+            }
+            @media only screen and (max-width: $m-large-1600) {
+              margin-top: 3px;
+            }
+            @media only screen and (max-width: $ipad-min) {
+            }
+          }
+
+          &:last-child {
+            &::after {
+              display: none;
+              @media only screen and (max-width: $m-large-1600) {
+                display: inline-block;
+              }
+            }
+          }
+
+          .gf_step_number {
+            font-size: 0;
+            background-image: url('../images/un-active-icon.svg');
+            background-size: 12px 12px;
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 12px;
+            background-color: transparent;
+            border: 0;
+            @media only screen and (max-width: 1800px) {
+              background-size: 10px 10px;
+              width: 10px;
+              height: 10px;
+            }
+            @media only screen and (max-width: 1700px) {
+              background-size: 12px 12px;
+              width: 12px;
+              height: 12px;
+            }
+            &::before {
+              display: none;
+            }
+            &::after {
+              display: none;
+            }
+          }
+          .gf_step_label {
+            font-size: 11px;
+            line-height: 11px;
+            font-family: $rajdhani_font;
+            font-weight: 600;
+            padding-left: 5px;
+            color: $opal;
+            position: relative;
+            @media only screen and (max-width: 1700px) {
+              font-size: 10px;
+              line-height: 9px;
+              padding-top: 2px;
+              padding-left: 2px;
+            }
+            @media only screen and (max-width: 1650px) {
+              padding-left: 1px;
+              padding-top: 1px;
+            }
+            @media only screen and (max-width: $m-large-1600) {
+              padding-top: 3px;
+              padding-left: 5px;
+              font-size: 11px;
+              line-height: 11px;
+            }
+            @media only screen and (max-width: $medium) {
+              font-size: 8px;
+            }
+            @media only screen and (max-width: $small) {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+      .gf_step_active {
+        &.gf_step {
+          &::after {
+            background-color: $primary;
+            @media only screen and (max-width: $m-large-1600) {
+              margin-top: 2px;
+            }
+          }
+        }
+        .gf_step_label {
+          color: $primary !important;
+        }
+        .gf_step_number {
+          background-image: url('../images/active-icon.svg') !important;
+        }
+      }
+      .gf_step_previous {
+        &.gf_step {
+          &::after {
+            background-color: $primary;
+            @media only screen and (max-width: $m-large-1600) {
+              background-color: #16d0c5;
+            }
+          }
+        }
+      }
+      .gform-body {
+        .gform_page {
+          .gform_page_fields {
+            h2 {
+              font-size: 35px;
+              line-height: 42px;
+              text-align: center;
+              @media only screen and (max-width: $large) {
+                font-size: 28px;
+                line-height: 34px;
+              }
+              @media only screen and (max-width: $small) {
+                font-size: 20px;
+                line-height: 24px;
+              }
+            }
+            p {
+              // order: 4;
+              font-size: 14px;
+              line-height: 24px;
+              font-weight: 500;
+              font-family: $rajdhani_font;
+              text-align: center;
+              padding: 5px 0;
+              @media only screen and (max-width: $small) {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+            fieldset {
+              legend {
+                font-weight: 600;
+                font-family: $rajdhani_font;
+                text-align: center;
+              }
+              .gfield_radio {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
-                border-bottom: 0;
-                @media only screen and (max-width: $small){
-                    display: none;
-                }
-                .gf_step{
-                    display: flex;
-                    align-items: center;
-                    margin: 0 0 7px;
-                    position: initial;
-                    &:first-child{
-                        @media only screen and (max-width: $m-large-1600){
-                            padding: 0 5px 0px 0;
-                        }
+                justify-content: space-between;
+                .image-choices-choice {
+                  width: 22.2%;
+                  background-color: $white;
+                  border-radius: 10px;
+                  @media only screen and (max-width: 1700px) {
+                    width: 21.2%;
+                  }
+                  @media only screen and (max-width: 1450px) {
+                    width: 21%;
+                  }
+                  @media only screen and (max-width: 1365px) {
+                    width: 48%;
+                    margin-right: 0 !important;
+                  }
+                  @media only screen and (max-width: $small) {
+                    width: 24%;
+                    margin-right: 0 !important;
+                  }
+                  @media only screen and (max-width: $iphone) {
+                    width: 23%;
+                  }
+                  label {
+                    height: 100%;
+                    @media only screen and (max-width: 1700px) {
+                      padding: 10px 5px !important;
                     }
-                    @media only screen and (max-width: $m-large-1600){
-                        justify-content: center;
-                        width: fit-content;
-                        padding: 0 5px;
-                        margin-bottom: 5px;
-                    }
-                    // @media only screen and (max-width: 1365px){
-                    //     width: 48%;
-                    // }
-                    // @media only screen and (max-width: $small){
-                    //     width: 50%;
-                    // }
-             
-                    &::after{
-                        content: "";
-                        background: #16d0c5;
-                        width: 16px;
-                        height: 1px;
-                        display: inline-block;
-                        vertical-align: middle;
-                        margin: 0 10px;
-                       
-                        @media only screen and (max-width: 1850px){
-      
-                            width: 16px;
+                    span {
+                      &.image-choices-choice-image-wrap {
+                        width: 60px;
+                        height: 56px;
+                        @media only screen and (max-width: 1700px) {
+                          width: 40px;
+                          height: 36px;
                         }
-                        @media only screen and (max-width: 1800px){
-                          
-                            width: 12px;                                    
-                        }
-                        @media only screen and (max-width: 1700px){
-                    
-                            width: 12px;
-                        }
-                        @media only screen and (max-width: 1650px){
-            
-                            width: 12px;
-                        }
-                        @media only screen and (max-width: $m-large-1600){
-                 
-                            margin-top: 3px;
-                        }
-                        @media only screen and (max-width: $ipad-min){
-                            
-                        }
-                    }
-
-                    &:last-child{
-                        &::after{
-                            display: none;
-                            @media only screen and (max-width: $m-large-1600){
-                                display: inline-block;
-                            }
-                      
-                        }
-                    }
-      
-                    .gf_step_number{
-                        font-size: 0;
-                        background-image: url('../images/un-active-icon.svg');
-                        background-size: 12px 12px;
-                        background-repeat: no-repeat;
-                        width: 12px;
-                        height: 12px;
-                        background-color: transparent;
-                        border: 0;
-                        @media only screen and (max-width: 1800px){
-                            background-size: 10px 10px;
-                            width: 10px;
-                            height: 10px;
-                        }
-                        @media only screen and (max-width: 1700px){
-                            background-size: 12px 12px;
-                            width: 12px;
-                            height: 12px;
-                        }
-                        &::before{
-                            display: none;
-                        }
-                        &::after{
-                            display: none;
-                        }
-                    }
-                    .gf_step_label{
-                        font-size: 11px;
-                        line-height: 11px;
-                        font-family: $rajdhani_font;
+                      }
+                      &.image-choices-choice-text {
                         font-weight: 600;
-                        padding-left: 5px;
-                        color: $opal;
-                        position: relative;
-                        @media only screen and (max-width: 1700px){
-                            font-size: 10px;
-                            line-height: 9px;
-                            padding-top: 2px;
-                            padding-left: 2px;
-                        }
-                        @media only screen and (max-width: 1650px){
-                            padding-left: 1px;
-                            padding-top: 1px;
-                        }
-                        @media only screen and (max-width: $m-large-1600){
-                            padding-top: 3px;
-                            padding-left: 5px;
-                            font-size: 11px;
-                            line-height: 11px;
-                        }
-                        @media only screen and (max-width: $medium){
-                            font-size: 8px;
-                        }
-                        @media only screen and (max-width: $small){
-                            font-size: 11px;
-                        }
-                    }
-     
-                }
-            }
-            .gf_step_active{
-                &.gf_step{
-                    &::after{
-                        background-color: $primary;
-                        @media only screen and (max-width: $m-large-1600){
-                            margin-top: 2px;
-                        }
-                    }
-                }
-                .gf_step_label{
-                    color: $primary !important;
-                }
-                .gf_step_number{
-                    background-image: url('../images/active-icon.svg') !important;
-                }
-            }
-            .gf_step_previous{
-                &.gf_step{
-                    &::after{
-                        background-color: $primary;
-                        @media only screen and (max-width: $m-large-1600){
-                            background-color: #16d0c5;
-                        }
-                    }
-                }
-            }
-            .gform-body{
-                .gform_page{
-                    .gform_page_fields{
-                        h2{
-                            font-size: 35px;
-                            line-height: 42px;
-                            text-align: center;
-                            @media only screen and (max-width: $large){
-                                font-size: 28px;
-                                line-height: 34px;
-                            }
-                            @media only screen and (max-width: $small){
-                                font-size: 20px;
-                                line-height: 24px;
-                            }
-                        }
-                        p{
-                            // order: 4;
-                            font-size: 14px;
-                            line-height: 24px;
-                            font-weight: 500;
-                            font-family: $rajdhani_font;
-                            text-align: center;
-                            padding: 5px 0;
-                            @media only screen and (max-width: $small){
-                                font-size: 12px;
-                                line-height: 20px;
-                            }
-                        }
-                        fieldset{
-                            legend{
-                                font-weight: 600;
-                                font-family: $rajdhani_font;
-                                text-align: center;
-                            }
-                            .gfield_radio{
-                                display: flex;
-                                flex-wrap: wrap;
-                                justify-content: space-between;
-                                .image-choices-choice{
-                                    width: 22.2%;
-                                    background-color: $white;
-                                    border-radius: 10px;
-                                    @media only screen and (max-width: 1700px){
-                                        width: 21.2%;
-                                    }
-                                    @media only screen and (max-width: 1450px){
-                                        width: 21%;
-                                    }
-                                    @media only screen and (max-width: 1365px){
-                                        width: 48%;
-                                        margin-right: 0 !important;                                        
-                                    }
-                                    @media only screen and (max-width: $small){
-                                        width: 24%;
-                                        margin-right: 0 !important;                                        
-                                    }
-                                    @media only screen and (max-width: $iphone){
-                                        width: 23%;
-                                    }
-                                    label{
-                                        height: 100%;
-                                        @media only screen and (max-width: 1700px){
-                                            padding: 10px 5px !important;
-                                        }
-                                        span{
-                                            &.image-choices-choice-image-wrap{
-                                                width: 60px;
-                                                height: 56px;
-                                                @media only screen and (max-width: 1700px){
-                                                    width: 40px;
-                                                    height: 36px;
-                                                }
-                                            }
-                                            &.image-choices-choice-text{
-                                                font-weight: 600;
-                                                font-family: $rajdhani_font;
-                                                // @media only screen and (max-width: 1700px){
-                                                //     word-break: break-all;
-                                                // }
-                                        
-                                                @media only screen and (max-width: 1365px){
-                                                    font-size: 12px;
-                                                    line-height: 15px;
-                                                }
-                                                @media only screen and (max-width:$iphone){
-                                                    font-size: 10px;
-                                                    line-height: 11px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    &.image-choices-choice-selected{
-                                        border: 1px solid $primary;
-                                        span{
-                                            &.image-choices-choice-text{
-                                                color: $primary-ming;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            &.step2_moment_wrapper{
-                                .ginput_container{
-                                    .gfield_radio{
-                                        .gchoice{
-                                            &.image-choices-choice{
-                                                width: 47%;
-                                                label{
-                                                    padding: 15px 10px !important;
-                                                    span{
-                                                        &.image-choices-choice-text{
-                                                            padding-top: 14px;
-                                                            @media only screen and (max-width:$iphone){
-                                                                font-size: 10px;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .gform_fields{
-                            @media only screen and (max-width:$small){
-                                grid-column-gap: 2%;
-                            }
-                        }
-                        .gfield{
-                            > h3{
-                                font-size: 16px;
-                                line-height: 20px;
-                                text-align: center;
-                                margin-bottom: 0;
-                            }
-                            input{
-                                font-size: 11px !important;
-                                line-height: 22px;
-                                font-weight: 400;
-                                height: 44px;
-                                @media only screen and (max-width: 1700px){
-                                    height: 42px;
-                                }
-                            }
-                            input::-webkit-input-placeholder{
-                                font-size: 11px !important;
-                                line-height: 22px;
-                                color: $opal;
-                            }
-                            input:-moz-placeholder {
-                                font-size: 11px !important;
-                                line-height: 22px;
-                                color: $opal;
-                            }
-                            select{
-                                background: $white;
-                                border: 1px solid $white-light;
-                                border-radius: 10px;
-                                height: 44px;
-                                background-image: url('../images/select-arrow.svg');
-                                background-size: 20px 20px;
-                                background-repeat: no-repeat;
-                                -moz-appearance: none;
-                                -webkit-appearance: none;
-                                background-position: right 7px center;
-                                font-size: 11px;
-                                line-height: 22px;
-                                font-weight: 400;
-                                color: $primary;
-                                outline: none;
-                                @media only screen and (max-width: 1700px){
-                                    background-position: right 5px center;
-                                    background-size: 14px 14px;
-                                    height: 42px;
-                                }
-                                .gf_placeholder{
-                                    color: $opal;
-                                }
-                            }
-                            textarea{
-                                border-radius: 10px;
-                                border: 0;
-                                max-height: 110px;
-                                font-size: 11px;
-                                line-height: 22px;
-                                color: $primary;
-                                outline: none;
-                            }
-                            ul{
-                                li{
-                                    font-size: 13px;
-                                    line-height: 18px;
-                                    font-weight: 500;
-                                    // font-family: $rajdhani_font;
-                                    text-align: center;
-                                    padding-left: 0;
-                                    &::before{
-                                        font-size: 13px !important;                 
-                                        margin-left: -20px;
-                                        left: initial;
-                                    }
-                                }
-                            }
-                            &.Indicatie_budget_icon{
-                                position: relative;
-                                &::after{
-                                    content: '';
-                                    background-image: url('../images/detail-icon.svg');
-                                    background-size: 20px 20px;
-                                    width: 20px;
-                                    height: 20px;
-                                    position: absolute;
-                                    right: 10px;
-                                    top: 50%;
-                                    transform: translate(0px, -50%);
-                                    background-position: right center;
-                                   
-                                }
-                                .ginput_container{
-                                    select{
-                                        &.gfield_select{
-                                            background-image: none;
-                                            @media only screen and (max-width: $iphone){
-                                                padding-right: 40px;
-                                            }
-                                        }
-                                    }
-                                }
-                                .gfield_description{
-                                    display: none;
-                                    // display: block;
-                                    font-size: 12px;
-                                    line-height: 14px;
-                                    font-weight: 500;
-                                    font-family: $rajdhani_font;
-                                    background-color: $white;
-                                    padding: 14px 6px;
-                                    position: absolute;
-                                    // top: -70px;
-                                    border-radius: 10px;
-                                    right: -54px;
-                                    max-width: 150px;
-                                    text-align: center;
-                                    box-shadow: 1px 1px 1px #eee;
-                                    bottom: calc(100% + 18px);
-                                    z-index: 1;
-                                    // left: 0;
-                                    @media only screen and (max-width: $large1){
-                                        right: -20px;
-                                    }
-                                    @media only screen and (max-width: $medium){                                         
-                                        right: -53px;
-                                    }
-                                    @media only screen and (max-width: 580px){                                         
-                                        right: -20px;
-                                    }
-                            
-                                    &::after{
-                                        content: "";
-                                        border-top: 22px solid #fff;
-                                        border-left: 1rem solid transparent;
-                                        border-right: 1rem solid transparent;
-                                        height: 0;
-                                        left: 0;
-                                        position: absolute;
-                                        bottom: -22px;
-                                        width: 0;
-                                        right: 0;
-                                        margin: 0 auto;
-                                        @media only screen and (max-width: $large1){                                         
-                                            left: initial;
-                                            right: 20px;
-                                        }
-                                        @media only screen and (max-width: $medium){                                         
-                                            left: 0;
-                                            right: 0px;
-                                        }
-                                        @media only screen and (max-width: 580px){                                         
-                                            left: initial;
-                                            right: 20px;
-                                        }
-                                    }
-                                }
-                                &:hover{
-                                    .gfield_description{
-                                        display: block;
-                                    }
-                                }
-                            }
-                            // &.s3_name,
-                            // &.s3_bed,
-                            // &.aanvraag_iap,
-                            // &.Indicatie_budget_icon,
-                            // &.step_aantal,
-                            // &.step_budget,
-                            // &.step_budget_person,
-                            // &.step_budget_pp,
-                            // &.step_aantal_stulk{
-                            //     @media only screen and (max-width: $small){
-                            //         grid-column: span 6;
-                            //     }
-                            // }
-                            // &.s3_address{
-                            //     @media only screen and (max-width: $small){
-                            //         grid-column: span 9;
-                            //     }
-                            // }
-                            // &.s3_postcode{
-                            //     @media only screen and (max-width: $small){
-                            //         grid-column: span 3;
-                            //     }
-                            // }
-                            // &.s3_country,
-                            // &.s3_email,
-                            // &.s3_tel,
-                            // &.aanvraag_email,
-                            // &.aanvraag_tel,
-                            // &.step_bezor,
-                            // &.step_bezorging{
-                            //     @media only screen and (max-width: $small){
-                            //         grid-column: span 12;
-                            //     }
-                            // }
-                            // &.aanvraag_name,
-                            // &.aanvraag_bed,
-                            // &.aanvraag_country{
-                            //     @media only screen and (max-width: $small){
-                            //         grid-column: span 4;
-                            //     }
-                            // }
-                        }
-                    }
-                }
-                textarea{
-                    border-radius: 10px;
-                    border: 0;
-                    max-height: 110px;
-                    font-size: 11px;
-                    line-height: 22px;
-                    color: $primary;
-                    outline: none;
+                        font-family: $rajdhani_font;
+                        // @media only screen and (max-width: 1700px){
+                        //     word-break: break-all;
+                        // }
 
+                        @media only screen and (max-width: 1365px) {
+                          font-size: 12px;
+                          line-height: 15px;
+                        }
+                        @media only screen and (max-width: $iphone) {
+                          font-size: 10px;
+                          line-height: 11px;
+                        }
+                      }
+                    }
+                  }
+                  &.image-choices-choice-selected {
+                    border: 1px solid $primary;
+                    span {
+                      &.image-choices-choice-text {
+                        color: $primary-ming;
+                      }
+                    }
+                  }
                 }
-                textarea::-webkit-input-placeholder{
-                    color:$opal;
+              }
+              &.step2_moment_wrapper {
+                .ginput_container {
+                  .gfield_radio {
+                    .gchoice {
+                      &.image-choices-choice {
+                        width: 47%;
+                        label {
+                          padding: 15px 10px !important;
+                          span {
+                            &.image-choices-choice-text {
+                              padding-top: 14px;
+                              @media only screen and (max-width: $iphone) {
+                                font-size: 10px;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
-                textarea:-moz-placeholder {
-                    color:$opal;
-                }
+              }
             }
-            .gform_page_footer{
-                text-align: end;
-                padding-bottom: 0;
-                > .gform_next_button,
-                .gform_button{
-                    border: 1px solid $danger;
-                    background: $danger;
-                    padding: 14px 20px;
-                    font-weight: 600;
-                    font-size: 14px;
-                    color: $white;
-                    display: inline-block;
-                    line-height: 17px;
-                    border-radius: 30px;
-                    transition: all 0.5s ease;
-                    font-family: $montserrat_font;
-                    @media only screen and (max-width: $small){
-                        font-size: 12px !important;
-                        line-height: 20px;
-                        padding: 10px 20px;
-                    }
-                    &:hover{
-                        background-color: $primary-btn-hover;
-                        border-color: $primary-btn-hover;
-                        color: $white;
-                    }
-                }
-                .gform_previous_button{
-                    padding: 12px 20px;
-                    font-family: $montserrat_font;
-                    color: $danger;
-                    font-weight: 600;
-                    display: inline-block;
-                    font-size: 14px;
-                    line-height: 17px;
-                    border: 1px solid $danger;
-                    border-radius: 30px;
-                    margin: 0 15px 0 5px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    background-color: transparent;
-                    @media only screen and (max-width: $large-1400){
-                        margin: 0 5px;
-                    }
-                    @media only screen and (max-width: $medium){
-                        margin: 0 5px 0 0;
-                    }
-                    @media only screen and (max-width: $small){
-                        font-size: 12px !important;
-                        line-height: 20px;
-                        padding: 10px 20px;
-                    }
-                    &:hover{
-                        background: $danger;
-                        color: $white;
-                    }
-                }
+            .gform_fields {
+              @media only screen and (max-width: $small) {
+                grid-column-gap: 2%;
+              }
             }
+            .gfield {
+              > h3 {
+                font-size: 16px;
+                line-height: 20px;
+                text-align: center;
+                margin-bottom: 0;
+              }
+              input {
+                font-size: 11px !important;
+                line-height: 22px;
+                font-weight: 400;
+                height: 44px;
+                @media only screen and (max-width: 1700px) {
+                  height: 42px;
+                }
+              }
+              input::-webkit-input-placeholder {
+                font-size: 11px !important;
+                line-height: 22px;
+                color: $opal;
+              }
+              input:-moz-placeholder {
+                font-size: 11px !important;
+                line-height: 22px;
+                color: $opal;
+              }
+              select {
+                background: $white;
+                border: 1px solid $white-light;
+                border-radius: 10px;
+                height: 44px;
+                background-image: url('../images/select-arrow.svg');
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                background-position: right 7px center;
+                font-size: 11px;
+                line-height: 22px;
+                font-weight: 400;
+                color: $primary;
+                outline: none;
+                @media only screen and (max-width: 1700px) {
+                  background-position: right 5px center;
+                  background-size: 14px 14px;
+                  height: 42px;
+                }
+                .gf_placeholder {
+                  color: $opal;
+                }
+              }
+              textarea {
+                border-radius: 10px;
+                border: 0;
+                max-height: 110px;
+                font-size: 11px;
+                line-height: 22px;
+                color: $primary;
+                outline: none;
+              }
+              ul {
+                li {
+                  font-size: 13px;
+                  line-height: 18px;
+                  font-weight: 500;
+                  // font-family: $rajdhani_font;
+                  text-align: center;
+                  padding-left: 0;
+                  &::before {
+                    font-size: 13px !important;
+                    margin-left: -20px;
+                    left: initial;
+                  }
+                }
+              }
+              &.Indicatie_budget_icon {
+                position: relative;
+                &::after {
+                  content: '';
+                  background-image: url('../images/detail-icon.svg');
+                  background-size: 20px 20px;
+                  width: 20px;
+                  height: 20px;
+                  position: absolute;
+                  right: 10px;
+                  top: 50%;
+                  transform: translate(0px, -50%);
+                  background-position: right center;
+                }
+                .ginput_container {
+                  select {
+                    &.gfield_select {
+                      background-image: none;
+                      @media only screen and (max-width: $iphone) {
+                        padding-right: 40px;
+                      }
+                    }
+                  }
+                }
+                .gfield_description {
+                  display: none;
+                  // display: block;
+                  font-size: 12px;
+                  line-height: 14px;
+                  font-weight: 500;
+                  font-family: $rajdhani_font;
+                  background-color: $white;
+                  padding: 14px 6px;
+                  position: absolute;
+                  // top: -70px;
+                  border-radius: 10px;
+                  right: -54px;
+                  max-width: 150px;
+                  text-align: center;
+                  box-shadow: 1px 1px 1px #eee;
+                  bottom: calc(100% + 18px);
+                  z-index: 1;
+                  // left: 0;
+                  @media only screen and (max-width: $large1) {
+                    right: -20px;
+                  }
+                  @media only screen and (max-width: $medium) {
+                    right: -53px;
+                  }
+                  @media only screen and (max-width: 580px) {
+                    right: -20px;
+                  }
+
+                  &::after {
+                    content: '';
+                    border-top: 22px solid #fff;
+                    border-left: 1rem solid transparent;
+                    border-right: 1rem solid transparent;
+                    height: 0;
+                    left: 0;
+                    position: absolute;
+                    bottom: -22px;
+                    width: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    @media only screen and (max-width: $large1) {
+                      left: initial;
+                      right: 20px;
+                    }
+                    @media only screen and (max-width: $medium) {
+                      left: 0;
+                      right: 0px;
+                    }
+                    @media only screen and (max-width: 580px) {
+                      left: initial;
+                      right: 20px;
+                    }
+                  }
+                }
+                &:hover {
+                  .gfield_description {
+                    display: block;
+                  }
+                }
+              }
+              // &.s3_name,
+              // &.s3_bed,
+              // &.aanvraag_iap,
+              // &.Indicatie_budget_icon,
+              // &.step_aantal,
+              // &.step_budget,
+              // &.step_budget_person,
+              // &.step_budget_pp,
+              // &.step_aantal_stulk{
+              //     @media only screen and (max-width: $small){
+              //         grid-column: span 6;
+              //     }
+              // }
+              // &.s3_address{
+              //     @media only screen and (max-width: $small){
+              //         grid-column: span 9;
+              //     }
+              // }
+              // &.s3_postcode{
+              //     @media only screen and (max-width: $small){
+              //         grid-column: span 3;
+              //     }
+              // }
+              // &.s3_country,
+              // &.s3_email,
+              // &.s3_tel,
+              // &.aanvraag_email,
+              // &.aanvraag_tel,
+              // &.step_bezor,
+              // &.step_bezorging{
+              //     @media only screen and (max-width: $small){
+              //         grid-column: span 12;
+              //     }
+              // }
+              // &.aanvraag_name,
+              // &.aanvraag_bed,
+              // &.aanvraag_country{
+              //     @media only screen and (max-width: $small){
+              //         grid-column: span 4;
+              //     }
+              // }
+            }
+          }
         }
-        .rating-text{
-            &.vrag-ratting{
-                justify-content: end;
-                width: 100%;
-            }
+        textarea {
+          border-radius: 10px;
+          border: 0;
+          max-height: 110px;
+          font-size: 11px;
+          line-height: 22px;
+          color: $primary;
+          outline: none;
         }
+        textarea::-webkit-input-placeholder {
+          color: $opal;
+        }
+        textarea:-moz-placeholder {
+          color: $opal;
+        }
+      }
+      .gform_page_footer {
+        text-align: end;
+        padding-bottom: 0;
+        > .gform_next_button,
+        .gform_button {
+          border: 1px solid $danger;
+          background: $danger;
+          padding: 14px 20px;
+          font-weight: 600;
+          font-size: 14px;
+          color: $white;
+          display: inline-block;
+          line-height: 17px;
+          border-radius: 30px;
+          transition: all 0.5s ease;
+          font-family: $montserrat_font;
+          @media only screen and (max-width: $small) {
+            font-size: 12px !important;
+            line-height: 20px;
+            padding: 10px 20px;
+          }
+          &:hover {
+            background-color: $primary-btn-hover;
+            border-color: $primary-btn-hover;
+            color: $white;
+          }
+        }
+        .gform_previous_button {
+          padding: 12px 20px;
+          font-family: $montserrat_font;
+          color: $danger;
+          font-weight: 600;
+          display: inline-block;
+          font-size: 14px;
+          line-height: 17px;
+          border: 1px solid $danger;
+          border-radius: 30px;
+          margin: 0 15px 0 5px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background-color: transparent;
+          @media only screen and (max-width: $large-1400) {
+            margin: 0 5px;
+          }
+          @media only screen and (max-width: $medium) {
+            margin: 0 5px 0 0;
+          }
+          @media only screen and (max-width: $small) {
+            font-size: 12px !important;
+            line-height: 20px;
+            padding: 10px 20px;
+          }
+          &:hover {
+            background: $danger;
+            color: $white;
+          }
+        }
+      }
     }
+    .rating-text {
+      &.vrag-ratting {
+        justify-content: end;
+        width: 100%;
+      }
+    }
+  }
 }
 
-
-@media only screen and (max-width: $small){
-    .section-contact_section{
-        .hero-contact-form-section{
-            form{
-                &.contact-sterkado-form{
-                    .gform-body{
-                        .first-last-name{
-                            .ginput_complex{
-                                span{
-                                    flex: 0 0 50%;
-                                }
-                            }
-                        }
-                        .first-last-name,
-                        .contact-compny,
-                        .contact-textarea{
-                            grid-column: span 12;
-                        }
-                        .contact-mail{
-                            grid-column: span 7;
-             
-                        }
-                        .contact-tele{
-                            grid-column: span 5;
-                            
-                        }
-                    }
+@media only screen and (max-width: $small) {
+  .section-contact_section {
+    .hero-contact-form-section {
+      form {
+        &.contact-sterkado-form {
+          .gform-body {
+            .first-last-name {
+              .ginput_complex {
+                span {
+                  flex: 0 0 50%;
                 }
+              }
             }
+            .first-last-name,
+            .contact-compny,
+            .contact-textarea {
+              grid-column: span 12;
+            }
+            .contact-mail {
+              grid-column: span 7;
+            }
+            .contact-tele {
+              grid-column: span 5;
+            }
+          }
         }
+      }
     }
-    .section-hero_banner_section{
-        form{
-            &.offerte-sterkado-aanvragen{
-                .gform-body{
-                    .s3_name,
-                    .s3_bed{
-                        grid-column: span 12;
-                        span{
-                            flex: 0 0 50%;
-                        }
-                    }
-                    .s3_email{
-                        grid-column: span 7;
-                    }
-                    .s3_tel{
-                        grid-column: span 5;
-                    }
-                }
+  }
+  .section-hero_banner_section {
+    form {
+      &.offerte-sterkado-aanvragen {
+        .gform-body {
+          .s3_name,
+          .s3_bed {
+            grid-column: span 12;
+            span {
+              flex: 0 0 50%;
             }
-            &.contact-sterkado-form{
-                .gform-body{
-                    .first-last-name{
-                        span{
-                            flex: 0 0 50%;
-                        }
-                    }
-                    .first-last-name,
-                    .contact-compny{
-                        grid-column: span 12;
-                    }
-                    .contact-mail{
-                        grid-column: span 7;
-                    }
-                    .contact-tele{
-                        grid-column: span 5;
-                    }
-                }
-            }
-            &.demo_aanvraag_form{
-                .gform-body{
-                    .first-last-name{
-                        span{
-                            flex: 0 0 50%;
-                        }
-                    }
-                    .aanvraag_bed,
-                    .aanvraag_country{
-                        grid-column: span 6;
-                    }
-                    .aanvraag_email{
-                        grid-column: span 7;
-                    }
-                    .aanvraag_tel{
-                        grid-column: span 5;
-                    }
-                }
-            }
+          }
+          .s3_email {
+            grid-column: span 7;
+          }
+          .s3_tel {
+            grid-column: span 5;
+          }
         }
+      }
+      &.contact-sterkado-form {
+        .gform-body {
+          .first-last-name {
+            span {
+              flex: 0 0 50%;
+            }
+          }
+          .first-last-name,
+          .contact-compny {
+            grid-column: span 12;
+          }
+          .contact-mail {
+            grid-column: span 7;
+          }
+          .contact-tele {
+            grid-column: span 5;
+          }
+        }
+      }
+      &.demo_aanvraag_form {
+        .gform-body {
+          .first-last-name {
+            span {
+              flex: 0 0 50%;
+            }
+          }
+          .aanvraag_bed,
+          .aanvraag_country {
+            grid-column: span 6;
+          }
+          .aanvraag_email {
+            grid-column: span 7;
+          }
+          .aanvraag_tel {
+            grid-column: span 5;
+          }
+        }
+      }
     }
+  }
 }
 
-@media only screen and (max-width: 640px){
-    .section-contact_section {
-        .hero-contact-form-section {
-            form.contact-sterkado-form {
-                .gform-body {
-                    .first-last-name {
-                        .ginput_complex {
-                            span{
-                                &.name_first{
-                                    padding-right: 1%;
-                                }
-                                &.name_last{
-                                    padding-left: 1%;
-                                }
-                            }
-                        }
-                    }
-
-                    .contact-mail{
-                        padding-right: 2%;
-                    }
-                    .contact-tele{
-                        padding-left: 2%;
-                    }
+@media only screen and (max-width: 640px) {
+  .section-contact_section {
+    .hero-contact-form-section {
+      form.contact-sterkado-form {
+        .gform-body {
+          .first-last-name {
+            .ginput_complex {
+              span {
+                &.name_first {
+                  padding-right: 1%;
                 }
+                &.name_last {
+                  padding-left: 1%;
+                }
+              }
             }
+          }
+
+          .contact-mail {
+            padding-right: 2%;
+          }
+          .contact-tele {
+            padding-left: 2%;
+          }
         }
+      }
     }
+  }
 
-    .section-hero_banner_section{
-        form{
-            .gform-body{
-                .s3_name,
-                .first-last-name{
-                    span{
-                        &.name_first{
-                            padding-right: 1%;
-                        }
-                        &.name_last{
-                            padding-left: 1%;
-                        }
-                    }
-                }
-
+  .section-hero_banner_section {
+    form {
+      .gform-body {
+        .s3_name,
+        .first-last-name {
+          span {
+            &.name_first {
+              padding-right: 1%;
             }
-            &.contact-sterkado-form{
-                .gform-body{
-                    .contact-mail{
-                        padding-right: 2%;
-                    }
-                    .contact-tele{
-                        padding-left: 2%;
-                    }
-                }
+            &.name_last {
+              padding-left: 1%;
             }
+          }
         }
+      }
+      &.contact-sterkado-form {
+        .gform-body {
+          .contact-mail {
+            padding-right: 2%;
+          }
+          .contact-tele {
+            padding-left: 2%;
+          }
+        }
+      }
     }
+  }
 }
 
-.page-template-tpl-vraag-demo-aan{
-    .section-hero_banner_section {
-        .user-text{
-            margin-top: 70px !important;
-            position: relative !important;
-            @media only screen and (max-width:$small){
-                margin-top: 0 !important;
-            }
-        }
+.page-template-tpl-vraag-demo-aan {
+  .section-hero_banner_section {
+    .user-text {
+      margin-top: 70px !important;
+      position: relative !important;
+      @media only screen and (max-width: $small) {
+        margin-top: 0 !important;
+      }
     }
+  }
 }

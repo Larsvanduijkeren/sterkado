@@ -1,311 +1,324 @@
-.case-detail-banner{
-    padding-top: 220px !important;
-    height: 630px !important;
-    @media only screen and (max-width: 1700px){
-        height: 700px !important;
-        padding-top: 200px !important;
-    }
-    @media only screen and (max-width: $large-1400) {
-        height: 550px !important; 
-    }
-    @media only screen and (max-width: $large2) {
-        height: 430px !important;
-        padding-top: 180px !important;
-    }
-    @media only screen and (max-width: $ipad-min){
-        padding-top: 130px !important;
-    }
-    .case-info-table{
-        background: #ECF3F3;
-        border-radius: 20px;
-        padding: 70px;
-        position: relative;
-        z-index: 1;
-        @media only screen and (max-width: 1700px) {
-            padding:30px;
-        }
-        @media only screen and (max-width: $small) {
-            padding: 30px 10px 40px;
-        }
-        .banner-table-content{
-            padding-right: 50px;
-            @media only screen and (max-width: $small) {
-                padding: 0  0  50px;
-            }
-            .cat_name {
-                li{
-                    padding: 0;
-                    margin: 0;
-                    display: inline-block;
-                    font-weight: 600;
-                    font-size: 12px;
-                    line-height: 22px;
-                    color: $danger;
-                    border: 2px solid $danger;
-                    opacity: 1;
-                    border-radius: 50px;
-                    padding: 6px 15px;
-                    margin-bottom: 10px;
-                    &::before{
-                        content: none;
-                    }
-                    
-                }
-            }
-        }
-        .companies{
-        
-            li{
-                padding: 0;
-                margin: 0;
-                &::before{
-                    content: none;
-                }
-                p{
-                    border-bottom: 1px solid rgba($black, 0.3);
-                    opacity: 0.7;
-                    display: block;
-                    margin-bottom: 15px;
-                    padding-bottom: 15px;
-                    span{
-                        font-weight: 700;
-                        min-width: 140px;
-                        padding-right: 10px;
-                        display: inline-block;
-                        @media only screen and (max-width: $small) {
-                            min-width: 50%;
-                        }
-                    }
-                }
-                &:last-child{
-                    p{
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
-    }
-}
-.case_detail_content {
-    @media only screen and (max-width: $m-large-1600) {
-        padding-top: 100px;
-    }
-    @media only screen and (max-width: $large2) {
-        padding-top: 80px;
+.case-detail-banner {
+  padding-top: 220px !important;
+  height: 630px !important;
+  @media only screen and (max-width: 1700px) {
+    height: 700px !important;
+    padding-top: 200px !important;
+  }
+  @media only screen and (max-width: $large-1400) {
+    height: 550px !important;
+  }
+  @media only screen and (max-width: $large2) {
+    height: 430px !important;
+    padding-top: 180px !important;
+  }
+  @media only screen and (min-width: $ipad) and (max-width: $ipad-min) {
+    padding-top: 130px !important;
+  }
+  .case-info-table {
+    background: #ecf3f3;
+    border-radius: 20px;
+    padding: 70px;
+    position: relative;
+    z-index: 1;
+    @media only screen and (max-width: 1700px) {
+      padding: 30px;
     }
     @media only screen and (max-width: $small) {
-        padding-bottom: 40px;
+      padding: 30px 10px 40px;
     }
-    .details-content {
-        padding-top: 0px;
+    .banner-table-content {
+      padding-right: 50px;
+      @media only screen and (max-width: $small) {
+        padding: 0 0 50px;
+      }
+      .cat_name {
+        li {
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 22px;
+          color: $danger;
+          border: 2px solid $danger;
+          opacity: 1;
+          border-radius: 50px;
+          padding: 6px 15px;
+          margin-bottom: 10px;
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+    .companies {
+      li {
+        padding: 0;
+        margin: 0;
+        &::before {
+          content: none;
+        }
+        p {
+          border-bottom: 1px solid rgba($black, 0.3);
+          opacity: 0.7;
+          display: block;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          span {
+            font-weight: 700;
+            min-width: 140px;
+            padding-right: 10px;
+            display: inline-block;
+            @media only screen and (max-width: $small) {
+              min-width: 50%;
+            }
+          }
+        }
+        &:last-child {
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.case_detail_content {
+  @media only screen and (max-width: $m-large-1600) {
+    padding-top: 100px;
+  }
+  @media only screen and (max-width: $large2) {
+    padding-top: 80px;
+  }
+  @media only screen and (max-width: $small) {
+    padding-bottom: 40px;
+  }
+  .details-content {
+    padding-top: 0px;
+    @media only screen and (max-width: $small) {
+      padding-top: 430px;
+    }
+  }
+}
+
+.page-template-tpl-cases {
+  .section-hero_banner_section {
+    &.only-banner-content {
+      .row {
+        > div {
+          @media only screen and (max-width: 1700px) {
+            max-width: 80%;
+            flex: 0 0 80%;
+          }
+
+          @media only screen and (max-width: $small) {
+            max-width: 100%;
+            flex: 100%;
+          }
+
+          .contact-banner-link {
+            @media only screen and (max-width: 1700px) {
+              justify-content: center;
+            }
+            .sterkado_news_cat_filter {
+              @media only screen and (max-width: $large1) {
+                justify-content: center;
+              }
+
+              @media only screen and (max-width: $small) {
+                justify-content: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.single {
+  &.single-case {
+    .case_detail_content {
+      .row {
         @media only screen and (max-width: $small) {
-            padding-top: 430px;
+          display: flex;
+          flex-direction: column;
         }
+      }
+      .form-box {
+        .form-new-design {
+          @media only screen and (max-width: $m-large-1600) {
+            margin-top: 70px !important;
+          }
+          @media only screen and (max-width: $medium) {
+            margin-top: 130px !important;
+          }
+          @media only screen and (max-width: $small) {
+            margin-top: 100px !important;
+          }
+        }
+      }
+      .details-content {
+        @media only screen and (max-width: $small) {
+          padding-top: 230px !important;
+        }
+        @media only screen and (max-width: $iphone) {
+          padding-top: 300px !important;
+        }
+      }
     }
-}
+    .section-hero_banner_section {
+      &.case-detail-banner {
+        margin-bottom: 90px;
+        @media only screen and (min-width: 1920px) {
+          margin-bottom: 120px;
+        }
+        @media only screen and (max-width: 1700px) {
+          margin-bottom: 60px;
+        }
+        @media only screen and (max-width: 1600px) {
+          margin-bottom: 0px;
+        }
+        @media only screen and (max-width: $large2) {
+          margin-bottom: 50px;
+        }
+        @media only screen and (max-width: $medium) {
+          margin-bottom: 0;
+          padding-top: 60px !important;
+        }
 
-.page-template-tpl-cases{
-    .section-hero_banner_section{
-        &.only-banner-content{
-            .row{
-                > div{
-                    @media only screen and (max-width:1700px){
-                        max-width: 80%;
-                        flex: 0 0 80%;
-                    }
-                    .contact-banner-link{
-                        @media only screen and (max-width:1700px){
-                            justify-content: center;
-                        }
-                        .sterkado_news_cat_filter{
-                            @media only screen and (max-width:$large1){
-                                justify-content: center;
-                            }
-                        }
-                    }
-                }
-            }
+        @media screen and (min-width: $large-1400) {
+          margin-bottom: 0;
         }
-    }
-}
 
-.single{
-    &.single-case{
-        .case_detail_content {
-           .row{
-                @media only screen and (max-width: $small){
-                    display: flex;
-                    flex-direction: column;
-                }
+        .hero-case-extra {
+          > div {
+            @media only screen and (max-width: 1700px) {
+              flex: 0 0 62.333333%;
+              max-width: 62.333333%;
             }
-            .form-box{
-                .form-new-design{
-                    @media only screen and (max-width: $m-large-1600){
-                        margin-top: 70px !important;
-                    }
-                    @media only screen and (max-width: $medium){
-                        margin-top: 130px !important;
-                    }
-                    @media only screen and (max-width: $small){
-                        margin-top: 100px !important;
-                    }
-                }
+            @media only screen and (max-width: $small-laptop) {
+              flex: 0 0 68.333333%;
+              max-width: 68.333333%;
             }
-            .details-content{
-                @media only screen and (max-width: $small){
-                    padding-top: 230px !important;
-                }
-                @media only screen and (max-width: $iphone){
-                    padding-top: 300px !important;
-                }
+            @media only screen and (max-width: 1120px) {
+              flex: 0 0 65.333333%;
+              max-width: 65.333333%;
             }
+            @media only screen and (max-width: $medium) {
+              flex: 0 0 85.333333%;
+              max-width: 85.333333%;
+            }
+            @media only screen and (max-width: 850px) {
+              flex: 0 0 92.333333%;
+              max-width: 92.333333%;
+            }
+            @media only screen and (max-width: $small) {
+              flex: initial;
+              max-width: initial;
+            }
+          }
+          .case-info-table {
+            > div {
+              &:first-child {
+                @media only screen and (max-width: 1700px) {
+                  flex: 0 0 62.666667%;
+                  max-width: 62.666667%;
+                }
+                @media only screen and (max-width: $large2) {
+                  flex: 0 0 58.666667%;
+                  max-width: 58.666667%;
+                }
+                @media only screen and (max-width: 1120px) {
+                  flex: 0 0 52.666667%;
+                  max-width: 52.666667%;
+                }
+                @media only screen and (max-width: $medium) {
+                  flex: 0 0 50.666667%;
+                  max-width: 50.666667%;
+                }
+                @media only screen and (max-width: $small) {
+                  flex: initial;
+                  max-width: initial;
+                }
+              }
+              &:last-child {
+                @media only screen and (max-width: 1700px) {
+                  flex: 0 0 37.333333%;
+                  max-width: 37.333333%;
+                }
+                @media only screen and (max-width: $large2) {
+                  flex: 0 0 40.333333%;
+                  max-width: 40.333333%;
+                }
+                @media only screen and (max-width: 1120px) {
+                  flex: 0 0 46.333333%;
+                  max-width: 46.333333%;
+                }
+                @media only screen and (max-width: $medium) {
+                  flex: 0 0 48.666667%;
+                  max-width: 48.666667%;
+                }
+                @media only screen and (max-width: $small) {
+                  flex: initial;
+                  max-width: initial;
+                }
+              }
+            }
+          }
         }
-        .section-hero_banner_section{
-            &.case-detail-banner{
-                margin-bottom: 90px;
-                @media only screen and (min-width: 1920px){
-                    margin-bottom: 120px;
+        &.no_short_description {
+          margin-bottom: 100px;
+          @media only screen and (max-width: $m-large-1600) {
+            margin-bottom: 0px;
+          }
+
+          + .post_detail_content {
+            &.case_detail_content {
+              .details-content {
+                @media only screen and (max-width: $small) {
+                  padding-top: 0 !important;
                 }
-                @media only screen and (max-width: 1700px){
-                    margin-bottom: 60px;
-                }
-                @media only screen and (max-width: 1600px){
-                    margin-bottom: 0px;
-                }
-                @media only screen and (max-width: $large2){
-                    margin-bottom: 50px;
-                }
-                @media only screen and (max-width: $small){
-                    margin-bottom: 0;
-                }
-                .hero-case-extra{
-                    > div{
-                        @media only screen and (max-width: 1700px){
-                            flex: 0 0 62.333333%;
-                            max-width: 62.333333%;                        
-                        }
-                        @media only screen and (max-width: $small-laptop){
-                            flex: 0 0 68.333333%;
-                            max-width: 68.333333%; 
-                        }
-                        @media only screen and (max-width: 1120px){
-                            flex: 0 0 65.333333%;
-                            max-width: 65.333333%;  
-                        }
-                        @media only screen and (max-width: $medium){
-                            flex: 0 0 85.333333%;
-                            max-width: 85.333333%; 
-                        }
-                        @media only screen and (max-width: 850px){
-                            flex: 0 0 92.333333%;
-                            max-width: 92.333333%; 
-                        }
-                        @media only screen and (max-width: $small){
-                            flex: initial;
-                            max-width: initial; 
-                        }
-                    }
-                    .case-info-table{
-                        > div{
-                            &:first-child{
-                                @media only screen and (max-width: 1700px){
-                                    flex: 0 0 62.666667%;
-                                    max-width: 62.666667%;
-                                }
-                                @media only screen and (max-width: $large2){
-                                    flex: 0 0 58.666667%;
-                                    max-width: 58.666667%;
-                                }
-                                @media only screen and (max-width: 1120px){
-                                    flex: 0 0 52.666667%;
-                                    max-width: 52.666667%;
-                                }
-                                @media only screen and (max-width: $medium){
-                                    flex: 0 0 50.666667%;
-                                    max-width: 50.666667%;
-                                }
-                                @media only screen and (max-width: $small){
-                                    flex: initial;
-                                    max-width: initial; 
-                                }
-                            }
-                            &:last-child{
-                                @media only screen and (max-width: 1700px){
-                                    flex: 0 0 37.333333%;
-                                    max-width: 37.333333%;
-                                }
-                                @media only screen and (max-width: $large2){
-                                    flex: 0 0 40.333333%;
-                                    max-width: 40.333333%;
-                                }
-                                @media only screen and (max-width: 1120px){
-                                    flex: 0 0 46.333333%;
-                                    max-width: 46.333333%;
-                                }
-                                @media only screen and (max-width: $medium){
-                                    flex: 0 0 48.666667%;
-                                    max-width: 48.666667%;
-                                }
-                                @media only screen and (max-width: $small){
-                                    flex: initial;
-                                    max-width: initial; 
-                                }
-                            }
-                        }
-                    }
-                }
-                &.no_short_description{
-                    margin-bottom: 100px;
-                    @media only screen and (max-width: $m-large-1600){
-                        margin-bottom: 0px;
-                    }
-                
-                    +.post_detail_content{
-                        &.case_detail_content{
-                            .details-content{
-                                
-                                @media only screen and (max-width: $small){
-                                    padding-top: 0 !important;
-                                }
-                            }
-                        }
-                    }
-                }
+              }
             }
+          }
         }
+      }
     }
-    .post_detail_content{
-        .form-box{
-            &.single-new-form{
-                .hero-contact-form-section{
-                    &.form-new-design{
-                        @media only screen and (max-width: $small){
-                            margin-top: 100px !important;
-                        }
-                        @media only screen and (max-width: $iphone){
-                            margin-top: 80px !important;
-                        }
-                    }
-                }
+  }
+  .post_detail_content {
+    .form-box {
+      &.single-new-form {
+        .hero-contact-form-section {
+          &.form-new-design {
+            @media only screen and (max-width: $small) {
+              margin-top: 100px !important;
             }
+            @media only screen and (max-width: $iphone) {
+              margin-top: 80px !important;
+            }
+          }
         }
+      }
     }
-    &.single-case{
-        .case_detail_content{
-            .entry_content{
-                &.details-content{
-                    @media only screen and (max-width: $m-large-1600){
-                        padding-top: 0;
-                    }
-                }
-            }
+  }
+  &.single-case {
+    .case_detail_content {
+      .entry_content {
+        &.details-content {
+          @media only screen and (max-width: $m-large-1600) {
+            padding-top: 0;
+          }
         }
-        .section-right_gift{
-            .section-space{
-                @media only screen and (max-width: $medium){
-                    padding: 70px 0 30px;
-                }
-            }
-        }
+      }
     }
+    .section-right_gift {
+      .section-space {
+        @media only screen and (max-width: $medium) {
+          padding: 70px 0 30px;
+        }
+      }
+    }
+  }
 }

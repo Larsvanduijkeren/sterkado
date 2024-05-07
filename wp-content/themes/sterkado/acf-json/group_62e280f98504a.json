@@ -106,7 +106,7 @@
             "label": "Contact form",
             "name": "contact_form",
             "aria-label": "",
-            "type": "forms",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -115,9 +115,22 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "choices": {
+                "algemeen_offerte_aanvragen": "Algemeen Offerte aanvragen",
+                "contact_formulier_zakelijk": "Contact Formulier Zakelijk",
+                "faq_veelgestelde_vragen_pagina": "FAQ Form Veelgestelde Vragen Pagina",
+                "kerstpakketten_offerte_aanvragen": "Kerstpakketten Offerte Aanvragen",
+                "keuzeKado_offerte_aanvragen": "KeuzeKado Offerte Aanvragen",
+                "solliciteer_direct": "Solliciteer Direct",
+                "test_webshop_aanvragen": "Test Webshop Aanvragen"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
             "allow_null": 0,
-            "multiple": 0
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_644bbae7cf789",
@@ -245,5 +258,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712299002
+    "modified": 1714587631
 }
